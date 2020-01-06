@@ -1,3 +1,5 @@
 <?php
-session_destroy();
+session_start();
+//session_destroy();
+$_SESSION['connected'] = 0;
 header("Location:index.php");

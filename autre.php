@@ -1,3 +1,7 @@
+<?php
+session_start(); 
+var_dump($_SESSION['connected']);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

@@ -26,3 +26,4 @@ require("db.php");
     } else {
         header("Location:connexion.php");
     }
+    $_SESSION['connected'] = 1;

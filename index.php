@@ -1,13 +1,12 @@
 <?php
 session_start();
-if($_SESSION['auth'] != 0) {
+var_dump($_SESSION['connected']);
+if($_SESSION['connected'] == 1) {
   header("Location:autre.php");
   exit;
 } else {
-  $_SESSION['auth'] = 0;
+  $_SESSION['connected'] = 0;
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
