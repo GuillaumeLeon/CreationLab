@@ -1,0 +1,30 @@
+html {
+    font-family: sans-serif;
+    background-color: #3b4252;
+}
+nav {
+    background-color:#434c5e;
+}
+
+body{
+    background-color: #3b4252;
+}
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gp-bt-log {
+    position: fixed;
+    margin-left: auto;
+}
+
+.inscription {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #3b4252;
+    width: 15em;
+}
+.inscription label {
+    color: #e5e9f0;
+}
