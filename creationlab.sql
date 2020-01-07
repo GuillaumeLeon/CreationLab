@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 06 jan. 2020 à 22:47
+-- Généré le :  mar. 07 jan. 2020 à 21:00
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.4.0
 
@@ -47,7 +47,14 @@ CREATE TABLE IF NOT EXISTS `post` (
   KEY `upvote` (`upvote`),
   KEY `downvote` (`downvote`),
   KEY `slug` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `post`
+--
+
+INSERT INTO `post` (`post_id`, `post_name`, `post_desc`, `upvote`, `downvote`, `tag`, `author`, `slug`, `date_post`) VALUES
+(3, 'post test 1', 'this is a test post', 543, 213, 1, 1, 'post test 1', '2020-01-07');
 
 -- --------------------------------------------------------
 
@@ -104,7 +111,14 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `slug` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `tag_desc` tinytext CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`tag_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `tag`
+--
+
+INSERT INTO `tag` (`tag_id`, `tag_name`, `slug`, `tag_desc`) VALUES
+(1, 'test', 'test', 'test tag');
 
 -- --------------------------------------------------------
 
