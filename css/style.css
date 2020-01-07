@@ -28,3 +28,35 @@ body{
 .inscription label {
     color: #e5e9f0;
 }
+
+.post {
+    border: 1px solid black;
+    height: 610px;
+    width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
+    display: flex;
+}
+
+.vote {
+    background-color: red;
+    width: 40px;
+    height: auto;
+}
+
+.corps {
+    background-color:blue;
+
+}
+.info {
+    background-color:green;
+    height: 30px;
+    width: 600px;
+}
+
+.title {
+    font-size: 24px;
+    background-color: black;
+    height: 50px; 
+}

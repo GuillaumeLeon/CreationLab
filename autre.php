@@ -21,6 +21,27 @@ var_dump($_SESSION['connected']);
           height="71"></a></span>
     <span><a href="deco.php"><button>Déconnexion</button></a></span>
   </nav>
+<?php 
+
+?>
+
+<div class="container post">
+  <div class="vote">
+    <button class="upvote"></button>
+    <div class="numberVote">30</div>
+    <button class="downvote"></button>
+  </div>
+<div class="corps">
+  <div class="info">
+  info (auteur, date)
+  </div>
+  <div class="title">
+    titre
+  </div>
+  <div class="contenue"></div>
+</div>
+  </div>
+</div>
 </body>
 
 </html>
