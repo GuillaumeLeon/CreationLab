@@ -44,7 +44,10 @@ body{
     width: 40px;
     height: auto;
 }
-
+.vote button {
+    background: transparent;
+    border: transparent;
+}
 .corps {
     background-color:blue;
 
@@ -59,4 +62,9 @@ body{
     font-size: 24px;
     background-color: black;
     height: 50px; 
+}
+
+.contenue {
+    background-color: yellow; 
+    height: 80%;
 }

@@ -26,10 +26,10 @@ var_dump($_SESSION['connected']);
 ?>
 
 <div class="container post">
-  <div class="vote">
-    <button class="upvote"></button>
+  <div class="vote text-center">
+    <button><img src="image/arrow_up.svg" alt="upvote"></button>
     <div class="numberVote">30</div>
-    <button class="downvote"></button>
+    <button><img src="image/arrow_down.svg" alt="downvote"></button>
   </div>
 <div class="corps">
   <div class="info">
@@ -38,7 +38,13 @@ var_dump($_SESSION['connected']);
   <div class="title">
     titre
   </div>
-  <div class="contenue"></div>
+  <div class="contenue">
+  contenue du post
+  </div>
+  <div class="interaction">
+<button>Commenter</button>
+<button>Partager</button>
+  </div>
 </div>
   </div>
 </div>
