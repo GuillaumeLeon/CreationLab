@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 var_dump($_SESSION['connected']);
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ var_dump($_SESSION['connected']);
           height="71"></a></span>
     <span><a href="deco.php"><button>Déconnexion</button></a></span>
   </nav>
-<?php 
+<?php
 
 ?>
 
