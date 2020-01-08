@@ -21,10 +21,6 @@ var_dump($_SESSION['connected']);
           height="71"></a></span>
     <span><a href="deco.php"><button>Déconnexion</button></a></span>
   </nav>
-<?php
-
-?>
-
 <div class="container post">
   <div class="vote text-center">
     <button><img src="image/arrow_up.svg" alt="upvote"></button>
