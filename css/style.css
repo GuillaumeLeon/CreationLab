@@ -35,36 +35,29 @@ body{
     width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: aqua;
     display: flex;
+    border-radius: 0.5%;
 }
 
 .vote {
-    background-color: red;
     width: 40px;
     height: auto;
 }
 .vote button {
     background: transparent;
     border: transparent;
-}
-.corps {
-    background-color:blue;
 
 }
 .info {
-    background-color:green;
     height: 30px;
     width: 600px;
 }
 
 .title {
     font-size: 24px;
-    background-color: black;
-    height: 50px; 
+    height: 50px;
 }
 
 .contenue {
-    background-color: yellow; 
     height: 80%;
 }
