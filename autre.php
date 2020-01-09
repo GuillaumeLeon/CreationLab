@@ -1,5 +1,5 @@
 <?php
-require('db.php');
+require 'db.php';
 
 session_start();
 var_dump($_SESSION['connected']);
@@ -25,35 +25,33 @@ var_dump($_SESSION['connected']);
 </nav>
 
 <?php
-$get_post = $db->prepare('select * from users where');
+$get_post = $db->prepare('SELECT * FROM post_text');
 $get_post->execute();
 $get_array = $get_post->fetchAll();
 
 var_dump($get_array);
 ?>
-
 <div class="container post mt-5">
     <div class="vote text-center">
         <button><img src="image/arrow_up.svg" alt="upvote"></button>
-        <div class="numberVote">30</div>
+        <div class="numberVote"><?php echo ($get_array[0]['upvote'] - $get_array[0]['downvote']) ?></div>
         <button><img src="image/arrow_down.svg" alt="downvote"></button>
     </div>
     <div class="corps">
         <div class="info">
-            info (auteur, date)
+           <?php echo "Crée par " . $get_array[0]['author'] . " le " . $get_array[0]['date_post']; ?>
         </div>
         <div class="title">
-            titre
+            <?php echo $get_array[0]['post_name'] ?>
         </div>
         <div class="contenue">
-            contenue du post
+           <?php echo $get_array[0]['contenue'] ?>
         </div>
         <div class="interaction">
             <button>Commenter</button>
             <button>Partager</button>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
