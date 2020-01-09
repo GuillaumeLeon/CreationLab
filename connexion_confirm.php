@@ -27,3 +27,9 @@ require("db.php");
         header("Location:connexion.php");
     }
     $_SESSION['connected'] = 1;
+
+    $get_username = $db->prepare("SELECT username FROM users WHERE email='$email'");
+    $get_username->execute();
+    $username = $get_username->fetch();
+    $_SESSION['username'] = $username[0];
+
