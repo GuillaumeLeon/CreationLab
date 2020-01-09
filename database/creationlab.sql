@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 07 jan. 2020 à 21:00
+-- Généré le :  jeu. 09 jan. 2020 à 21:23
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.4.0
 
@@ -31,12 +31,12 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `post_name` varchar(255) CHARACTER SET latin1 NOT NULL,
   `post_desc` text CHARACTER SET latin1 DEFAULT NULL,
   `upvote` int(11) DEFAULT NULL,
   `downvote` int(11) DEFAULT NULL,
-  `tag` int(11) DEFAULT NULL,
-  `author` int(11) DEFAULT NULL,
+  `tag` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `author` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `slug` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `date_post` date NOT NULL,
   PRIMARY KEY (`post_id`),
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`post_id`, `post_name`, `post_desc`, `upvote`, `downvote`, `tag`, `author`, `slug`, `date_post`) VALUES
-(3, 'post test 1', 'this is a test post', 543, 213, 1, 1, 'post test 1', '2020-01-07');
+(3, 'post test 1', 'this is a test post', 543, 213, '1', 'zappellin', 'post test 1', '2020-01-07');
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,10 @@ CREATE TABLE IF NOT EXISTS `post_draw` (
   `parent_node` int(11) DEFAULT NULL,
   `upvote` int(11) DEFAULT NULL,
   `downvote` int(11) DEFAULT NULL,
-  `tag` int(11) DEFAULT NULL,
-  `author` int(11) DEFAULT NULL,
+  `tag` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `author` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `date_post` date NOT NULL,
   PRIMARY KEY (`post_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -93,10 +94,18 @@ CREATE TABLE IF NOT EXISTS `post_text` (
   `upvote` int(11) DEFAULT NULL,
   `downvote` int(11) DEFAULT NULL,
   `tag` int(11) DEFAULT NULL,
-  `author` int(11) DEFAULT NULL,
+  `author` varchar(255) COLLATE utf8_bin NOT NULL,
   `slug` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `date_post` date NOT NULL,
   PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `post_text`
+--
+
+INSERT INTO `post_text` (`post_id`, `post_name`, `post_desc`, `contenue`, `parent_node`, `upvote`, `downvote`, `tag`, `author`, `slug`, `date_post`) VALUES
+(1, 'teste poste ecrit', 'teste poste ecrit', 'Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.', 1, 666, 234, 1, '1', 'test_post_text', '2020-01-09');
 
 -- --------------------------------------------------------
 
