@@ -1,11 +1,11 @@
 <?php
 session_start();
 var_dump($_SESSION['connected']);
-if($_SESSION['connected'] == 1) {
-  header("Location:autre.php");
-  exit;
+if ($_SESSION['connected'] == 1) {
+    header("Location:autre.php");
+    exit;
 } else {
-  $_SESSION['connected'] = 0;
+    $_SESSION['connected'] = 0;
 }
 ?>
 <!DOCTYPE html>
