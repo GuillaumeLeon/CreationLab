@@ -17,15 +17,7 @@ if($_SESSION['connected'] != 1) {
     <link rel="icon" href="image/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <title>Creation Lab</title>
-    <style type="text/css">
-        .ajax-load{
-            background: #e1e1e1;
-            padding: 10px 0px;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -34,63 +26,35 @@ if($_SESSION['connected'] != 1) {
 						height="71"></a></span>
     <span><a href="deco.php"><button>Déconnexion</button></a></span>
 </nav>
-<div class="post-data">
 <?php
 $get_post = $db->prepare('SELECT * FROM post_text');
 $get_post->execute();
+$post = $get_post->fetchAll();
 
 ?>
-<?php include('data.php'); ?>
 </div>
 
-<div class="ajax-load text-center" style="display:none">
-    <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More post</p>
+<div class="container post mt-5">
+    <div class="vote text-center">
+	<button><img src="image/arrow_up.svg" alt="upvote"></button>
+	<div class="numberVote"><?php echo ($post[0]['upvote'] - $post[0]['downvote']) ?></div>
+	<button><img src="image/arrow_down.svg" alt="downvote"></button>
+    </div>
+    <div class="corps">
+	<div class="info">
+	   <?php echo "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
+	</div>
+	<div class="title">
+	    <?php echo $post[0]['post_name'] ?>
+	</div>
+	<div class="contenue">
+	   <?php echo $post[0]['contenue'] ?>
+	</div>
+	<div class="interaction">
+	    <button>Commenter</button>
+	    <button>Partager</button>
+	</div>
+    </div>
 </div>
-<script type="text/javascript">
-$(window).scroll(function() {
-
-   if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-
-      var last_id = $(".post-id:last").attr("id");
-
-      loadMoreData(last_id);
-
-	}
-
-    });
-    function loadMoreData(last_id){
-       $.ajax(
-    {
-
-       url: '/loadMoreData.php?last_id=' + last_id,
-
-	  type: "get",
-
-	  beforeSend: function()
-
-	  {
-
-	     $('.ajax-load').show();
-
-		}
-
-	    })
-
-	    .done(function(data)
-
-	    {
-
-	       $('.ajax-load').hide();
-
-	       $("#post-data").append(data);
-
-	    })
-	    .fail(function(jqXHR, ajaxOptions, thrownError)
-	    {
-	       alert('server not responding...');
-	    });
-    }
-
-</script>
 </body>
 </html>

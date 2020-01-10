@@ -1,64 +1,65 @@
 html {
-    font-family: sans-serif;
-    background-color: #3b4252;
+   font-family: sans-serif;
+   background-color: #3b4252;
 }
 nav {
-    background-color:#434c5e;
+   background-color:#434c5e;
 }
 
 body{
-    color: #e5e9f0;
-    background-color: #3b4252;
+   color: #e5e9f0;
+   background-color: #3b4252;
 }
 .logo {
-    margin-left: auto;
-    margin-right: auto;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .gp-bt-log {
-    position: fixed;
-    margin-left: auto;
+   position: fixed;
+   margin-left: auto;
 }
 
 .inscription {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #3b4252;
-    width: 15em;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: #3b4252;
+   width: 15em;
 }
 .inscription label {
-    color: #e5e9f0;
+   color: #e5e9f0;
 }
 
 .post {
-    border: 1px solid black;
-    height: 610px;
-    width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    border-radius: 0.5%;
+   border: 1px solid black;
+   height: 610px;
+   width: 640px;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   border-radius: 0.5%;
 }
 
 .vote {
-    width: 40px;
-    height: auto;
+   width: 40px;
+   height: auto;
 }
 .vote button {
-    background: transparent;
-    border: transparent;
+   background: transparent;
+   border: transparent;
 
 }
 .info {
-    height: 30px;
-    width: 600px;
+   height: 30px;
+   width: 600px;
 }
 
 .title {
-    font-size: 24px;
-    height: 50px;
+   font-size: 24px;
+   height: 50px;
 }
 
 .contenue {
-    height: 80%;
+   height: 80%;
+   width: 90%;
 }
