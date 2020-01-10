@@ -33,22 +33,22 @@ $post = $get_post->fetchAll();
 
 ?>
 </div>
-
-<div class="container post mt-5">
+<?php for($i = 0; $i < count($post); $i++){?>
+<div class="container row post mt-5">
     <div class="vote text-center">
 	<button><img src="image/arrow_up.svg" alt="upvote"></button>
-	<div class="numberVote"><?php echo ($post[0]['upvote'] - $post[0]['downvote']) ?></div>
+	<div class="numberVote"><?php echo ($post[$i]['upvote'] - $post[$i]['downvote']) ?></div>
 	<button><img src="image/arrow_down.svg" alt="downvote"></button>
     </div>
     <div class="corps">
 	<div class="info">
-	   <?php echo "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
+	   <?php echo "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?>
 	</div>
 	<div class="title">
-	    <?php echo $post[0]['post_name'] ?>
+	    <?php echo $post[$i]['post_name'] ?>
 	</div>
 	<div class="contenue">
-	   <?php echo $post[0]['contenue'] ?>
+	   <?php echo $post[$i]['contenue'] ?>
 	</div>
 	<div class="interaction">
 	    <button>Commenter</button>
@@ -56,5 +56,6 @@ $post = $get_post->fetchAll();
 	</div>
     </div>
 </div>
+<?php }?>
 </body>
 </html>
