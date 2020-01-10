@@ -19,4 +19,4 @@ $password = hash('sha256', $password);
 $add_users = $db->prepare("INSERT INTO users (username, password, email) VALUE (?,?,?)");
 $add_users->execute(array($username, $password, $email));
 
-header("Location:connexion.php");
+header("Location:connexion.html");

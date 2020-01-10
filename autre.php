@@ -1,10 +1,10 @@
 <?php
-require('db.php');
+require 'db.php';
 
 session_start();
 var_dump($_SESSION['connected']);
-if($_SESSION['connected'] != 1) {
-   header('Location:index.php');
+if ($_SESSION['connected'] != 1) {
+    header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -22,9 +22,10 @@ if($_SESSION['connected'] != 1) {
 
 <body>
 <nav class="navbar">
+	<span><button type="button" class="btn btn-light"><a href="new_project.php">Créer un nouveau projet</a></button></span>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
 						height="71"></a></span>
-    <span><a href="deco.php"><button>Déconnexion</button></a></span>
+    <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <?php
 $get_post = $db->prepare('SELECT * FROM post_text');
@@ -33,13 +34,13 @@ $post = $get_post->fetchAll();
 
 ?>
 </div>
-<?php for($i = 0; $i < count($post); $i++){?>
+<?php for ($i = count($post)-1; $i >= 0 ; $i--) {?>
 <div class="container row post mt-5">
     <div class="vote text-center">
-	<button><img src="image/arrow_up.svg" alt="upvote"></button>
+	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
 	<div class="numberVote"><?php echo ($post[$i]['upvote'] - $post[$i]['downvote']) ?></div>
-	<button><img src="image/arrow_down.svg" alt="downvote"></button>
-    </div>
+	<button type="button" class="btn btn-light"><img src="image/arrow_down.svg" alt="downvote"></button>
+	</div>
     <div class="corps">
 	<div class="info">
 	   <?php echo "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?>
@@ -51,10 +52,11 @@ $post = $get_post->fetchAll();
 	   <?php echo $post[$i]['contenue'] ?>
 	</div>
 	<div class="interaction">
-	    <button>Commenter</button>
-	    <button>Partager</button>
+	    <button type="button" class="btn btn-light">Commenter</button>
+	    <button type="button" class="btn btn-light">Partager</button>
+	    <button type="button" class="btn btn-light">Continuer l'histoire</button>
 	</div>
-    </div>
+	</div>
 </div>
 <?php }?>
 </body>

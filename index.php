@@ -25,8 +25,10 @@ if ($_SESSION['connected'] == 1) {
   <nav class="navbar">
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
           height="71"></a></span>
-    <span class="gp-bt-log"><button><a href="inscription.php">Inscription</a></button><button><a
-          href="connexion.php">Connexion</a></button></span>
+    <span class="gp-bt-log">
+    <button type="button" class="btn btn-light"><a href="inscription.php">Inscription</a></button>
+    <button type="button" class="btn btn-light"><a href="connexion.html">Connexion</a></button>
+    </span>
   </nav>
 
 </body>

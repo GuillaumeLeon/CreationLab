@@ -2,14 +2,16 @@ html {
    font-family: sans-serif;
    background-color: #3b4252;
 }
+
 nav {
-   background-color:#434c5e;
+   background-color: #434c5e;
 }
 
-body{
+body {
    color: #e5e9f0;
    background-color: #3b4252;
 }
+
 .logo {
    margin-left: auto;
    margin-right: auto;
@@ -26,6 +28,7 @@ body{
    background-color: #3b4252;
    width: 15em;
 }
+
 .inscription label {
    color: #e5e9f0;
 }
@@ -36,30 +39,32 @@ body{
    width: 640px;
    margin-left: auto;
    margin-right: auto;
-   display: flex;
    border-radius: 0.5%;
+   display: flex;
 }
 
 .vote {
    width: 40px;
-   height: auto;
 }
+
 .vote button {
    background: transparent;
    border: transparent;
 
 }
+
 .info {
    height: 30px;
-   width: 600px;
+   width: 550px;
 }
 
 .title {
    font-size: 24px;
    height: 50px;
+   width: 550px;
 }
 
 .contenue {
    height: 80%;
-   width: 90%;
+   width: 550px;
 }

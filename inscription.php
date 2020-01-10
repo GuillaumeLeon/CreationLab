@@ -30,11 +30,15 @@ require "db.php";
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe </label>
-            <input type="password" class="form-control" id="password" name="password">
+            <input type="password" class="form-control" id="password" name="password" required>
         </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Confirmer le mot de passe </label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-
+<script src="js/password_validatio.js"></script>
 </body>
-
 </html>
