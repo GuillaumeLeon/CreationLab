@@ -36,9 +36,12 @@ require "db.php";
             <label for="exampleInputPassword1">Confirmer le mot de passe </label>
             <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
         </div>
-
+        <div class="form-group">
+        <input type="checkbox" name="cgu" id="cgu" required>
+        <p>En cochant cette case vous acceptez les conditions générals d'utilisation</p>
+        </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-<script src="js/password_validatio.js"></script>
+<script src="js/password_validation.js"></script>
 </body>
 </html>
