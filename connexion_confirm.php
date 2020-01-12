@@ -25,6 +25,7 @@ if ($password == $pass[0]) {
     header("Location:autre.php");
 } else {
     header("Location:connexion.html");
+    exit;
 }
 $_SESSION['connected'] = 1;
 
