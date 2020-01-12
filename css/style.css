@@ -68,3 +68,11 @@ body {
    height: 80%;
    width: 550px;
 }
+
+#title_post {
+   width: 200px;
+}
+
+#desc_post {
+   width: 300px;
+}
