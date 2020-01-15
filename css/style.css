@@ -18,7 +18,6 @@ body {
 }
 
 .gp-bt-log {
-   position: fixed;
    margin-left: auto;
 }
 
@@ -50,7 +49,6 @@ body {
 .vote button {
    background: transparent;
    border: transparent;
-
 }
 
 .info {
@@ -75,4 +73,97 @@ body {
 
 #desc_post {
    width: 300px;
+}
+
+/* CSS de kaorie */
+
+footer {
+   background: #ccc;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding-top: 15px;
+   height: 10%;
+   background-color: #2e3440;
+   font-family: oswald;
+   text-align: center;
+   font-size: 12px;
+}
+
+.menu ul li {
+   position: relative;
+}
+
+.menu {
+   text-transform: uppercase;
+   color: #626262;
+   height: 4em;
+   background-color: #2e3440;
+   width: 100%;
+}
+
+li {
+   list-style: none;
+   font-style: small-caps;
+   font-size: 1.2em;
+   display: inline-block;
+   margin-top: 1em;
+   margin-left: 170px;
+}
+
+.sous {
+   display: none;
+   background-color: lightgrey;
+   position: absolute;
+   z-index: 1000;
+}
+
+.menu>ul li:hover .sous {
+   display: block;
+   background-color: #2e3440;
+}
+
+.sous li {
+   float: none;
+   width: 12em;
+   text-align: left;
+   font-size: 0.7em;
+   margin-bottom: 0.3em;
+   margin-left: 0px;
+   list-style-type: none;
+}
+
+.sous a {
+   margin-bottom: 0.2em;
+   margin-top: 0.2em;
+}
+
+.sous a:hover {
+   color: orange;
+   list-style-type: none;
+}
+
+#firstli {
+   padding-top: 0.5em;
+}
+
+ul {
+   list-style-type: none;
+}
+
+li a {
+   display: block;
+   color: lightgray;
+}
+
+#publier {
+   margin-top: 0.5em;
+}
+
+h1 {
+   text-align: center;
+   font-family: Oswald;
+   padding-bottom: 5px;
+   padding-top: 1em;
+
 }
