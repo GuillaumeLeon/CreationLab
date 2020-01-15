@@ -6,11 +6,11 @@ if ($_SESSION['connected'] == 0) {
         $email = $_POST['email'];
         $password = $_POST['password'];
     } else {
-        header("Location:connexion.html");
+        header("Location:connexion.php");
         exit;
     }
 } else {
-    header("Location:connexion.html");
+    header("Location:connexion.php");
     exit;
 }
 
@@ -24,7 +24,7 @@ $auth = 1;
 if ($password == $pass[0]) {
     header("Location:autre.php");
 } else {
-    header("Location:connexion.html");
+    header("Location:connexion.php");
     exit;
 }
 $_SESSION['connected'] = 1;

@@ -1,5 +1,5 @@
 <?php
 session_start();
 //session_destroy();
-$_SESSION['connected'] = 0;
+$_SESSION['connected'] = array();
 header("Location:index.php");
