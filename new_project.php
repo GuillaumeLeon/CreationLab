@@ -1,4 +1,5 @@
 <?php
+
 require 'db.php';
 
 session_start();
@@ -38,10 +39,12 @@ function setForm(value) {
           height="71"></a></span>
   </nav>
 <?php include 'partials/menu.php';?>
+<div>
 <select class="mdb-select md-form" onchange="setForm(this.value)">
   <option value="form_text">Textuel</option>
   <option value="form_draw">Bande dessiner</option>
 </select>
+</div>
   <div class="container" id="form_text">
       <form action="new_post.php" method="post">
         <div class="form-group">
