@@ -43,5 +43,6 @@ require "db.php";
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
 <script src="js/password_validation.js"></script>
+<?php include 'partials/footer.php';?>
 </body>
 </html>

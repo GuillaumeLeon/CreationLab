@@ -27,6 +27,7 @@ if ($_SESSION['connected'] != 1) {
 						height="71"></a></span>
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
+<?php include 'partials/menu.php';?>
 <?php
 $get_post = $db->prepare('SELECT * FROM post_text');
 $get_post->execute();
@@ -34,8 +35,8 @@ $post = $get_post->fetchAll();
 
 ?>
 </div>
-<?php for ($i = count($post)-1; $i >= 0 ; $i--) {?>
-<div class="container row post mt-3">
+<?php for ($i = count($post) - 1; $i >= 0; $i--) {?>
+<div class="container row post mt-3 mb-2">
     <div class="vote text-center">
 	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
 	<div class="numberVote"><?php echo ($post[$i]['upvote'] - $post[$i]['downvote']) ?></div>
@@ -59,5 +60,6 @@ $post = $get_post->fetchAll();
 	</div>
 </div>
 <?php }?>
+<?php include 'partials/footer.php';?>
 </body>
 </html>

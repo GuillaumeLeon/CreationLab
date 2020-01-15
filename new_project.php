@@ -1,5 +1,4 @@
 <?php
-
 require 'db.php';
 
 session_start();
@@ -38,7 +37,7 @@ function setForm(value) {
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
           height="71"></a></span>
   </nav>
-</div>
+<?php include 'partials/menu.php';?>
 <select class="mdb-select md-form" onchange="setForm(this.value)">
   <option value="form_text">Textuel</option>
   <option value="form_draw">Bande dessiner</option>
@@ -73,10 +72,11 @@ function setForm(value) {
       <div class="form-group">
       <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
   <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
-  Envoyez ce fichier : <input name="userfile" type="file" /> 
+  Envoyez ce fichier : <input name="userfile" type="file" />
       </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
       </form>
   </div>
+  <?php include 'partials/footer.php';?>
 </body>
 </html>

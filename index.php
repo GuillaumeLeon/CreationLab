@@ -1,15 +1,15 @@
 <?php
-include('db.php');
+include 'db.php';
 session_start();
 var_dump($_SESSION['connected']);
 if ($_SESSION['connected'] == 1) {
-   header("Location:autre.php");
-   exit;
+    header("Location:autre.php");
+    exit;
 } else {
-   $_SESSION['connected'] = 0;
+    $_SESSION['connected'] = 0;
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE.php>
 <html lang="fr">
 
 <head>
@@ -24,21 +24,19 @@ if ($_SESSION['connected'] == 1) {
 
 <body>
   <nav class="navbar">
+    <button type="button" class="btn btn-light m-1"><a href="inscription.php">Inscription</a></button>
+    <button type="button" class="btn btn-light m-1"><a href="connexion.php">Connexion</a></button>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
 	  height="71"></a></span>
-    <span class="gp-bt-log">
-    <button type="button" class="btn btn-light"><a href="inscription.php">Inscription</a></button>
-    <button type="button" class="btn btn-light"><a href="connexion.html">Connexion</a></button>
-    </span>
   </nav>
 <?php
-$get_post = $db->prepare('SELECT * FROM post_text');                                                        
+$get_post = $db->prepare('SELECT * FROM post_text');
 $get_post->execute();
-$post = $get_post->fetchAll();                                                                             
+$post = $get_post->fetchAll();
 
 ?>
 </div>
-<?php for ($i = count($post)-1; $i >= 0 ; $i--) {?>
+<?php for ($i = count($post) - 1; $i >= 0; $i--) {?>
 <div class="container row post mt-3">
     <div class="vote text-center">
 	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
@@ -61,6 +59,8 @@ $post = $get_post->fetchAll();
 	</div>
 	</div>
 </div>
-<?php }?>
+<?php }
+include 'partials/footer.php';
+?>
 </body>
- </html>
+</html>
