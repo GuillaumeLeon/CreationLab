@@ -1,14 +1,15 @@
-<footer>
-  <div id="monfooter1"> 
+    <script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<footer class="page-footer text-center">
+  <div id="monfooter1" class="container-fluid"> 
     <a href="#"> A notre propos </a>
     <a href="#"> Recrutement </a>
     <a href="#"> Mention legale</a>
 </div>
 
-<div id="monfooter2"> 
+<div id="monfooter2" class="container-fluid"> 
     <a href="#"> Contact </a>
     <a href="#"><i class="fab fa-twitter"></i> </a>
-    <a href="https://www.instagram.com/creationlab__/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/creationlab__/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 
 <div id="monfooter3">

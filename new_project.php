@@ -74,7 +74,6 @@ function setForm(value) {
       </div>
       <div class="form-group">
       <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-  <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
   Envoyez ce fichier : <input name="userfile" type="file" />
       </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>

@@ -2,7 +2,6 @@
 require 'db.php';
 
 session_start();
-var_dump($_SESSION['connected']);
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }

@@ -1,7 +1,6 @@
 <?php
 include 'db.php';
 session_start();
-var_dump($_SESSION['connected']);
 if ($_SESSION['connected'] == 1) {
     header("Location:autre.php");
     exit;
@@ -37,7 +36,7 @@ $post = $get_post->fetchAll();
 ?>
 </div>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {?>
-<div class="container row post mt-3">
+<div class="container row post mt-3 mb-3">
     <div class="vote text-center">
 	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
 	<div class="numberVote"><?php echo ($post[$i]['upvote'] - $post[$i]['downvote']) ?></div>
@@ -59,8 +58,7 @@ $post = $get_post->fetchAll();
 	</div>
 	</div>
 </div>
-<?php }
-include 'partials/footer.php';
-?>
+<?php }?>
+<?php include 'partials/footer.php';?>
 </body>
 </html>
