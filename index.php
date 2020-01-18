@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'database/db.php';
 session_start();
 if ($_SESSION['connected'] == 1) {
     header("Location:autre.php");

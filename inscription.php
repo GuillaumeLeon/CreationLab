@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "database/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">

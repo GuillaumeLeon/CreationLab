@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
