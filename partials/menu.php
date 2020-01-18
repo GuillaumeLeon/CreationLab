@@ -8,7 +8,6 @@
             <li> <a href="#"> Abonnements </a></li>
             <li> <a href="#"> Mes projets préféres </a></li>
             <li> <a href="#"> Aléatoire </a></li>
-            <li> <a href="nouvellehistoire.html"> Nouvelle création </a> </li>
           </ul>
         </li>
         <li><a href="#"> Abonnements </a></li>

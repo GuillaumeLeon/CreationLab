@@ -22,10 +22,6 @@ body {
    margin-right: auto;
 }
 
-.gp-bt-log {
-   margin-left: auto;
-}
-
 .inscription {
    margin-left: auto;
    margin-right: auto;
@@ -47,11 +43,6 @@ body {
    border-radius: 0.5%;
    display: flex;
 }
-
-.vote {
-   width: 40px;
-}
-
 .vote button {
    background: transparent;
    border: transparent;
@@ -82,7 +73,6 @@ body {
 }
 
 /* CSS de kaorie */
-
 footer {
    background: #ccc;
    background-color: #2e3440;
