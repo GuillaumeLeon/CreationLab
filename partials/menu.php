@@ -4,9 +4,9 @@
         <li class="deroulant "><a href="#"> Mon profil </a>
           <ul class="sous text-center"> 
             <li id="firstli"> <a href="#"> Profil Détaillé </a></li>
-            <li> <a href="project.php"> Mes textes </a></li>
+            <li> <a href="project.php"> Mes projets </a></li>
             <li> <a href="#"> Abonnements </a></li>
-            <li> <a href="#"> Mes textes préféres </a></li>
+            <li> <a href="#"> Mes projets préféres </a></li>
             <li> <a href="#"> Aléatoire </a></li>
             <li> <a href="nouvellehistoire.html"> Nouvelle création </a> </li>
           </ul>
