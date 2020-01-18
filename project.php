@@ -3,7 +3,7 @@ require 'db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
-   header('Location:index.php');
+    header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ if ($_SESSION['connected'] != 1) {
 </nav>
 <?php include 'partials/menu.php';?>
 <?php
-$query = "SELECT * FROM post_text WHERE author='".$_SESSION['username']."'";
+$query = "SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "'";
 $get_post = $db->prepare($query);
 $get_post->execute();
 $post = $get_post->fetchAll();
@@ -53,7 +53,7 @@ $post = $get_post->fetchAll();
 	   <?php echo $post[$i]['contenue'] ?>
 	</div>
 	<div class="interaction">
-	    <button type="button" class="btn btn-light">Commenter</button>
+	   <a href="connexion.php"><button type="button" class="btn btn-light">Commenter</button></a>
 	    <button type="button" class="btn btn-light">Partager</button>
 	    <button type="button" class="btn btn-light">Continuer l'histoire</button>
 	</div>
