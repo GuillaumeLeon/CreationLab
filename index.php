@@ -1,11 +1,13 @@
 <?php
 include 'database/db.php';
 session_start();
-if ($_SESSION['connected'] == 1) {
-    header("Location:autre.php");
-    exit;
-} else {
-    $_SESSION['connected'] = 0;
+if(isset($_SESSION['connected'])) {
+   if ($_SESSION['connected'] == 1) {
+      header("Location:autre.php");
+      exit;
+   } else {
+      $_SESSION['connected'] = 0;
+   }
 }
 ?>
 <!DOCTYPE.php>
@@ -36,8 +38,8 @@ $post = $get_post->fetchAll();
 </div>
 <?php 
 for ($i = count($post) - 1; $i >= 0; $i--) {
-	include('partials/data_not_connected.php');
- }?>
+   include('partials/data_not_connected.php');
+}?>
 <?php include 'partials/footer.php';?>
 </body>
 </html>
