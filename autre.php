@@ -3,7 +3,7 @@ require 'database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
-    header('Location:index.php');
+   header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $post = $get_post->fetchAll();
 </div>
 <?php 
 for ($i = count($post) - 1; $i >= 0; $i--) {
-    include 'partials/data_connected.php';
+   include 'partials/data_connected.php';
 }
 ?>
 
