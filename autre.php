@@ -1,7 +1,7 @@
 <?php
 require 'database/db.php';
-
 session_start();
+
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }

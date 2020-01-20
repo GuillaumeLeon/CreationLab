@@ -164,3 +164,19 @@ h1 {
    padding-bottom: 5px;
    padding-top: 1em;
 }
+
+#profiloption {
+   width: 60%;
+}
+
+.profil {
+   width: 40em;
+   font-size: 14px;
+   text-align: justify;
+}
+
+#photoprofil {
+   height: 205px;
+   width: 205px;
+   text-align: center;
+}
