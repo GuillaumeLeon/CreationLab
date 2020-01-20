@@ -19,6 +19,7 @@ require "database/db.php";
 <nav class="navbar">
         <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149" height="71"></a></span>
     </nav>
+<div class="main">
     <form class="inscription mt-3" action="add_users.php" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Adresse Email</label>
@@ -42,6 +43,7 @@ require "database/db.php";
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
+</div>
 <script src="js/password_validation.js"></script>
 <?php include 'partials/footer.php';?>
 </body>

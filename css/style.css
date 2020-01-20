@@ -19,6 +19,9 @@ body {
    background-color: #3b4252;
 }
 
+.main {
+   height: 100vh;
+}
 .logo {
    margin-left: auto;
    margin-right: auto;
@@ -29,7 +32,6 @@ body {
    margin-right: auto;
    background-color: #3b4252;
    width: 15em;
-   height: 85vh;
 }
 
 .inscription label {
@@ -173,10 +175,4 @@ h1 {
    width: 40em;
    font-size: 14px;
    text-align: justify;
-}
-
-#photoprofil {
-   height: 205px;
-   width: 205px;
-   text-align: center;
 }
