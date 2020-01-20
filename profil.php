@@ -9,7 +9,6 @@ $user = $_SESSION["username"];
 $query = $db->prepare('SELECT * FROM USERS WHERE username="' . $user . '"');
 $query->execute();
 $result = $query->fetchAll();
-var_dump($result);
 ?>
 <!DOCTYPE.php>
 <html lang="fr">
@@ -32,7 +31,7 @@ var_dump($result);
 <?php include 'partials/menu.php';?>
     <h1> Profil </h1>
 <div class="container" style="display:flex;">
-    <img src="image/Creation_Lab.png" alt="photoprofile" id="photoprofil">
+    <img src="image/Creation_Lab.png" alt="photoprofile" id="photoprofil" class="m-5">
 <div class="profil" class="ml-5">
     <p>Pseudo : <?php echo $result[0]['username'] ?> <input type="button" value="Modifier" class="modifier"></p>
     <p>Nom : <?php echo $result[0]['name'] ?> <input type="button" value="Modifier" class="modifier"> </p>
