@@ -38,7 +38,17 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
    include 'partials/data_connected.php';
 }
 ?>
-
+<script>
+/*function getPage(id) {
+	$('#output').html('<img src="image/ajax_load.gif" />');
+	jQuery.ajax({
+		url: "partials/data_connected.php",
+		data:'id='+id,
+		type: "POST",
+		success:function(data){$('#output').html(data);}
+	});
+}
+</script>
 <?php include 'partials/footer.php';?>
 </body>
 </html>
