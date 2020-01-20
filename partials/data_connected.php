@@ -1,5 +1,5 @@
 <div class="container row post mt-3 mb-3" style="overflow:hidden;">
-    <div class="vote">
+    <div class="vote text-center">
 	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
 	<div class="numberVote"><?php echo ($post[$i]['upvote'] - $post[$i]['downvote']) ?></div>
 	<button type="button" class="btn btn-light"><img src="image/arrow_down.svg" alt="downvote"></button>

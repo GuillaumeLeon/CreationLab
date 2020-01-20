@@ -3,7 +3,7 @@ require 'database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
-   header('Location:index.php');
+    header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -33,22 +33,11 @@ $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
 </div>
-<?php 
+<?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
-   include 'partials/data_connected.php';
+    include 'partials/data_connected.php';
 }
 ?>
-<script>
-/*function getPage(id) {
-	$('#output').html('<img src="image/ajax_load.gif" />');
-	jQuery.ajax({
-		url: "partials/data_connected.php",
-		data:'id='+id,
-		type: "POST",
-		success:function(data){$('#output').html(data);}
-	});
-}
-</script>
 <?php include 'partials/footer.php';?>
 </body>
 </html>
