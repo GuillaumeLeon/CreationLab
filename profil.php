@@ -6,7 +6,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
 $user = $_SESSION["username"];
-$query = $db->prepare('SELECT * FROM USERS WHERE username="' . $user . '"');
+$query = $db->prepare('SELECT * FROM users WHERE username="' . $user . '"');
 $query->execute();
 $result = $query->fetchAll();
 ?>
