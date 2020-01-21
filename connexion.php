@@ -16,6 +16,7 @@
         <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
                     height="71"></a></span>
     </nav>
+    <div class="main">
     <form class="inscription mt-3" action="connexion_confirm.php" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Adresse Email</label>
@@ -28,6 +29,7 @@
 
         <button type="submit" class="btn btn-light">Envoyer</button>
     </form>
+</div>
   <?php include('partials/footer.php');?>
 </body>
 

@@ -19,6 +19,9 @@ body {
    background-color: #3b4252;
 }
 
+.main {
+   height: 100vh;
+}
 .logo {
    margin-left: auto;
    margin-right: auto;
@@ -29,7 +32,6 @@ body {
    margin-right: auto;
    background-color: #3b4252;
    width: 15em;
-   height: 85vh;
 }
 
 .inscription label {
@@ -163,4 +165,14 @@ h1 {
    font-family: 'Oswald', sans-serif;
    padding-bottom: 5px;
    padding-top: 1em;
+}
+
+#profiloption {
+   width: 60%;
+}
+
+.profil {
+   width: 40em;
+   font-size: 14px;
+   text-align: justify;
 }

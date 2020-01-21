@@ -33,8 +33,9 @@ function setForm(value) {
 
 <body>
   <nav class="navbar">
-    <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
+    <span class="logo" style="left:-187px;"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
           height="71"></a></span>
+          <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
 <?php include 'partials/menu.php';?>
 <div>
@@ -43,6 +44,7 @@ function setForm(value) {
   <option value="form_draw">Bande dessiner</option>
 </select>
 </div>
+<div class="main">
   <div class="container" id="form_text">
       <form action="new_post.php" method="post">
         <div class="form-group">
@@ -77,6 +79,7 @@ function setForm(value) {
         <button type="submit" class="btn btn-primary">Envoyer</button>
       </form>
   </div>
+</div>
   <?php include 'partials/footer.php';?>
 </body>
 </html>
