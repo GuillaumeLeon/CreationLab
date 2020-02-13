@@ -5,11 +5,19 @@ session_start();
 if ($_SESSION['connected'] != 1) {
 header('Location:index.php');
 }
-$title = $_GET["post"];
-$title = str_replace('_', ' ', $title);
-$get_post = $db->prepare("SELECT * FROM post_text WHERE post_name='$title'");
+$id = $_GET["post"];
+$get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
 $post = $get_post->fetchAll();
+
+$get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
+$get_com->execute();
+$com = $get_com->fetchAll();
+
+var_dump($com);
+if(empty($post)){
+    header('Location:autre.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,7 +29,7 @@ $post = $get_post->fetchAll();
     <link rel="icon" href="image/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Creation Lab</title>
+    <title><?php echo $post[0]['post_name']; ?></title>
 </head>
 
 <body>
@@ -50,11 +58,14 @@ $post = $get_post->fetchAll();
             <?php echo $post[0]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="post.php?post=<?php echo $title; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
             <button type="button" class="btn btn-light">Partager</button>
             <button type="button" class="btn btn-light">Continuer l'histoire</button>
         </div>
     </div>
+</div>
+
+<div class="container comment row">
+
 </div>
 <?php include 'partials/footer.php';?>
 </body>

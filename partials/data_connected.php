@@ -1,4 +1,3 @@
-<?php $title = str_replace(' ', '_', $post[$i]['post_name'] );?>
 <div class="container row post mt-3 mb-3" style="overflow:hidden;">
     <div class="vote text-center">
 	<button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
@@ -16,7 +15,7 @@
 	   <?php echo $post[$i]['contenue'] ?>
 	</div>
 	<div class="interaction">
-        <a href="post.php?post=<?php echo $title; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
+        <a href="post.php?post=<?php echo $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
 	    <button type="button" class="btn btn-light">Partager</button>
 	    <button type="button" class="btn btn-light">Continuer l'histoire</button>
 	</div>

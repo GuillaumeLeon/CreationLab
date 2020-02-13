@@ -6,36 +6,24 @@ DROP TABLE IF EXISTS `comment`;
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `author` varchar(255) NOT NULL,
   `post_id` int(11) NOT NULL,
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 
-#
-# TABLE STRUCTURE FOR: post_draw
-#
-
-DROP TABLE IF EXISTS `post_draw`;
-
-CREATE TABLE `post_draw` (
-  `post_id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `post_desc` text COLLATE utf8_bin DEFAULT NULL,
-  `contenue_url` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `parent_node` int(11) DEFAULT NULL,
-  `upvote` int(11) DEFAULT NULL,
-  `downvote` int(11) DEFAULT NULL,
-  `tag` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `author` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `date_post` date NOT NULL,
-  PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-INSERT INTO `post_draw` (`post_id`, `post_name`, `post_desc`, `contenue_url`, `parent_node`, `upvote`, `downvote`, `tag`, `author`, `slug`, `date_post`) VALUES (1, 'test image', 'test image\r\n', './testFolder/cX3nrNq.png', NULL, 0, 0, NULL, 'zappellin', NULL, '2020-01-13');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (26, 'kaokao', 52, 'Eveniet dolorem magnam ratione qui illum consequatur laborum voluptatem unde.', '2014-07-21 06:37:07', '1975-12-05 15:22:46');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (27, 'zappellin', 53, 'Sint enim explicabo qui ut odit eos aut perspiciatis voluptas assumenda recusandae tempora.', '1994-12-29 03:47:31', '2017-12-11 05:33:11');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (28, 'kaokao', 54, 'Minus voluptatibus et minima necessitatibus exercitationem optio sed dolores vero maiores iusto.', '1985-01-24 22:05:33', '1977-09-20 01:49:43');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (29, 'zappellin', 55, 'Corrupti illo blanditiis et illo at dolorum consequuntur est possimus ut a aut.', '1992-04-22 19:34:11', '1997-12-10 15:43:14');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (30, 'kaokao', 56, 'Eius possimus dolore mollitia quia quia id ad.', '1984-02-18 12:57:57', '1988-06-04 17:57:35');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (31, 'zappellin', 57, 'Quia quis et sit eius quas nesciunt ducimus.', '1976-02-04 07:58:16', '1997-03-17 21:15:28');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (32, 'kaokao', 58, 'Quibusdam itaque consectetur vel tenetur sit consequatur at similique a.', '2001-10-07 08:17:16', '1972-12-08 08:51:53');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (33, 'zappellin', 59, 'Molestiae sint ducimus sequi et soluta laborum similique delectus quia exercitationem porro.', '2013-05-02 21:16:28', '1973-09-06 21:42:54');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (34, 'kaokao', 60, 'Autem at ut recusandae libero velit rerum dolore id in.', '2008-06-12 11:10:59', '2000-09-12 03:47:31');
+INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `updated_at`) VALUES (35, 'zappellin', 61, 'Sunt ducimus praesentium soluta expedita atque repellendus et quasi porro corrupti.', '1986-05-16 20:47:12', '2009-01-23 13:07:13');
 
 
 #
@@ -94,7 +82,7 @@ DROP TABLE IF EXISTS `replies`;
 
 CREATE TABLE `replies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `author` varchar(255) NOT NULL,
   `comment_id` int(11) NOT NULL,
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
