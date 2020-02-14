@@ -176,3 +176,13 @@ h1 {
    font-size: 14px;
    text-align: justify;
 }
+.comment {
+   border: 1px solid black;
+   width: 428px;
+   height: 5em;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 1.5%;
+   display: flex;
+   font-family: 'Roboto', sans-serif;
+}
