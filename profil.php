@@ -10,7 +10,7 @@ $query = $db->prepare('SELECT * FROM users WHERE username="' . $user . '"');
 $query->execute();
 $result = $query->fetchAll();
 ?>
-<!DOCTYPE.php>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>

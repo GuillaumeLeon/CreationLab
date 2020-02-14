@@ -83,7 +83,6 @@ body {
 footer {
    background: #ccc;
    background-color: #2e3440;
-   font-family: oswald;
    font-size: 12px;
 }
 
@@ -101,7 +100,6 @@ footer {
 
 li {
    list-style: none;
-   font-style: small-caps;
    font-size: 1.2em;
    display: inline-block;
    margin-top: 1em;

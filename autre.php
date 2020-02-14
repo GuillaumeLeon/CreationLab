@@ -21,9 +21,9 @@ if ($_SESSION['connected'] != 1) {
 
 <body>
 <nav class="navbar">
-	<span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
+    <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-						height="71"></a></span>
+                                                height="71"></a></span>
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <?php include 'partials/menu.php';?>
@@ -32,7 +32,6 @@ $get_post = $db->prepare('SELECT * FROM post_text');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
-</div>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'partials/data_connected.php';
