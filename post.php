@@ -3,7 +3,7 @@ require 'database/db.php';
 session_start();
 
 if ($_SESSION['connected'] != 1) {
-header('Location:index.php');
+    header('Location:index.php');
 }
 $id = $_GET["post"];
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
@@ -63,10 +63,16 @@ if(empty($post)){
         </div>
     </div>
 </div>
-
-<div class="container comment row">
-
-</div>
+<?php if(!empty($com)) {
+    for($i = 0; $i < count($com); $i++) {
+        ?>
+        <div class="container comment row mb-3">
+            <div id="info"> crée le <?php echo $com[$i]['created_at']." par ".$com[$i]['author']; ?></div>
+            <div id="content"><?php echo $com[$i]['content']; ?></div>
+        </div>
+    <?php }
+}
+?>
 <?php include 'partials/footer.php';?>
 </body>
 </html>
