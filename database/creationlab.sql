@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 13 fév. 2020 à 16:34
+-- Généré le :  sam. 15 fév. 2020 à 18:20
 -- Version du serveur :  10.3.22-MariaDB-0+deb10u1
 -- Version de PHP :  7.3.11-1~deb10u1
 
@@ -51,7 +51,10 @@ INSERT INTO `comment` (`id`, `author`, `post_id`, `content`, `created_at`, `upda
 (32, 'kaokao', 58, 'Quibusdam itaque consectetur vel tenetur sit consequatur at similique a.', '2001-10-07 06:17:16', '1972-12-08 07:51:53'),
 (33, 'zappellin', 59, 'Molestiae sint ducimus sequi et soluta laborum similique delectus quia exercitationem porro.', '2013-05-02 19:16:28', '1973-09-06 20:42:54'),
 (34, 'kaokao', 60, 'Autem at ut recusandae libero velit rerum dolore id in.', '2008-06-12 09:10:59', '2000-09-12 01:47:31'),
-(35, 'zappellin', 61, 'Sunt ducimus praesentium soluta expedita atque repellendus et quasi porro corrupti.', '1986-05-16 18:47:12', '2009-01-23 12:07:13');
+(35, 'zappellin', 61, 'Sunt ducimus praesentium soluta expedita atque repellendus et quasi porro corrupti.', '1986-05-16 18:47:12', '2009-01-23 12:07:13'),
+(36, 'zappellin', 52, 'comment test', '2020-02-14 09:09:41', '0000-00-00 00:00:00'),
+(38, 'zappellin', 77, 'test', '2020-02-13 23:00:00', '0000-00-00 00:00:00'),
+(39, 'zappellin', 77, 'test', '2020-02-13 23:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -210,7 +213,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT pour la table `post_text`
