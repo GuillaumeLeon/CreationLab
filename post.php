@@ -15,7 +15,7 @@ $get_com->execute();
 $com = $get_com->fetchAll();
 
 $_SESSION['post'] = $post;
-if(empty($post)){
+if (empty($post)) {
     header('Location:autre.php');
 }
 ?>
@@ -65,22 +65,22 @@ if(empty($post)){
 </div>
 <div class="add_comment">
     <form action="comment.php" method="POST">
-    <textarea class="form-control add_comment mb-3" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true"></textarea>
+    <textarea class="form-control add_comment mb-3" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
         <input type="submit" value="Commenter">
         </form>
 </div>
-<?php if(!empty($com)) {
-    for($i = 0; $i < count($com); $i++) {
+<?php if (!empty($com)) {
+    for ($i = count($com) - 1; $i > 0 ; $i--) {
         ?>
             <div class="container comment row mb-3">
-                <div id="info"> Crée le <?php echo $com[$i]['created_at']." par ".$com[$i]['author']; ?></div>
+                <div id="info"> Crée le <?php echo $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></div>
                 <div id="content"><?php echo $com[$i]['content']; ?></div>
                 <form action="replies.php" method="POST">
                 <input id="content_com" type="text" style="display: none">
                 <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">
                 </form>
+               <!-- <button class="replies" onclick="comment();">Répondre</button>-->
             </div>
-        <button class="replies" onclick="comment();">Répondre</button>
     <?php }
 }
 ?>

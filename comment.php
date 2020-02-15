@@ -7,16 +7,15 @@ if ($_SESSION['connected'] != 1) {
 }
 
 if (!isset($_POST['com_content'])) {
-   header('Location:index.php');
-   exit;
+    header("Location:post.php?post=$id");
+    exit;
 } else {
-    $author = $_SESSION['post'][0]['author'];
+    $author  = $_SESSION['username'];
     $content = $_POST['com_content'];
     date_default_timezone_set(date_default_timezone_get());
-    $date = date('Y/m/d');
+    $date = date('Y/m/d h:i:s');
 }
-
 $new_comment = $db->prepare('INSERT INTO comment (author, post_id, content, created_at) VALUES(?,?,?,?)');
 $new_comment->execute(array($author, $id, $content, $date));
 //unset($_SESSION['post']);
-header("Location:post.php?post='$id'");
+header("Location:post.php?post=$id");

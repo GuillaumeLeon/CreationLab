@@ -15,7 +15,7 @@
 			<?php echo $post[$i]['contenue'] ?>
 		</div>
 		<div class="interaction">
-			<button type="button" class="btn btn-light">Commenter</button>
+            <a href="connexion.php"><button type="button" class="btn btn-light">Commenter</button></a>
 			<button type="button" class="btn btn-light">Partager</button>
 		</div>
 	</div>
