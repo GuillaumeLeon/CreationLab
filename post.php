@@ -14,6 +14,7 @@ $get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
 $get_com->execute();
 $com = $get_com->fetchAll();
 
+$_SESSION['post'] = $post;
 if(empty($post)){
     header('Location:autre.php');
 }
@@ -63,7 +64,10 @@ if(empty($post)){
     </div>
 </div>
 <div class="add_comment">
-    <textarea class="form-control add_comment mb-3" id="post_content" name="post_content" placeholder="ajouter un commentaire" spellcheck="true"></textarea>
+    <form action="comment.php" method="POST">
+    <textarea class="form-control add_comment mb-3" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true"></textarea>
+        <input type="submit" value="Commenter">
+        </form>
 </div>
 <?php if(!empty($com)) {
     for($i = 0; $i < count($com); $i++) {
