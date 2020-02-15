@@ -179,10 +179,18 @@ h1 {
 .comment {
    border: 1px solid black;
    width: 428px;
-   height: 5em;
+   height: 10em;
    margin-left: auto;
    margin-right: auto;
    border-radius: 1.5%;
    display: flex;
    font-family: 'Roboto', sans-serif;
+}
+.replies {
+   height: 2.5em;
+}
+.add_comment{
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
 }
