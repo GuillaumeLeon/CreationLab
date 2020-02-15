@@ -63,24 +63,24 @@ if (empty($post)) {
         </div>
     </div>
 </div>
-<div class="add_comment">
+<div class="container add_comment">
     <form action="comment.php" method="POST">
-    <textarea class="form-control add_comment mb-3" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
-        <input type="submit" value="Commenter">
-        </form>
+        <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
+        <input class="submit_comment mb-1" type="submit" value="Commenter">
+    </form>
 </div>
 <?php if (!empty($com)) {
     for ($i = count($com) - 1; $i > 0 ; $i--) {
         ?>
-            <div class="container comment row mb-3">
-                <div id="info"> Crée le <?php echo $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></div>
-                <div id="content"><?php echo $com[$i]['content']; ?></div>
-                <form action="replies.php" method="POST">
+        <div class="container row comment mb-3" >
+            <p class="info"> Crée le <?php echo $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+            <p class="content "><?php echo $com[$i]['content']; ?></p>
+            <form action="replies.php" method="POST">
                 <input id="content_com" type="text" style="display: none">
                 <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">
-                </form>
-               <!-- <button class="replies" onclick="comment();">Répondre</button>-->
-            </div>
+            </form>
+            <!-- <button class="replies" onclick="comment();">Répondre</button>-->
+        </div>
     <?php }
 }
 ?>

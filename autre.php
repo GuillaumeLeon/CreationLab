@@ -5,6 +5,9 @@ session_start();
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
+$get_post = $db->prepare('SELECT * FROM post_text LIMIT 10');
+$get_post->execute();
+$post = $get_post->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,11 +30,6 @@ if ($_SESSION['connected'] != 1) {
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <?php include 'partials/menu.php';?>
-<?php
-$get_post = $db->prepare('SELECT * FROM post_text');
-$get_post->execute();
-$post = $get_post->fetchAll();
-?>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'partials/data_connected.php';
