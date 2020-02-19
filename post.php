@@ -43,9 +43,9 @@ if (empty($post)) {
 
 <div class="container row post mt-3 mb-3" style="overflow:hidden;">
     <div class="vote text-center">
-        <button type="button" class="btn btn-light"><img src="image/arrow_up.svg" alt="upvote"></button>
+        <button type="button" class="btn btn-light"name="upvote" onclick="upvote()"><img src="image/arrow_up.svg" alt="upvote"></button>
         <div class="numberVote"><?php echo ($post[0]['upvote'] - $post[0]['downvote']) ?></div>
-        <button type="button" class="btn btn-light"><img src="image/arrow_down.svg" alt="downvote"></button>
+        <button type="button" class="btn btn-light"name="downvote" onclick="downvote()"><img src="image/arrow_down.svg" alt="downvote" ></button>
     </div>
     <div class="corps">
         <div class="info">
@@ -85,6 +85,35 @@ if (empty($post)) {
 }
 ?>
 <?php include 'partials/footer.php';?>
+<script>
+    function upvote() {
+        let upvote = "upvote";
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'vote.php');
+      xhr.onload = function(){
+          if(xhr.status === 200) {
+              alert('ok');
+          } else if(xhr.status !== 200){
+              alert('c\'est la merde');
+          }
+      };
+        xhr.send('voteType=' + upvote+"&post_id=<?php echo $post[0]['post_id']?>");
+    }
+    function downvote() {
+        let downvote = "downvote";
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'vote.php');
+        xhr.onload = function(){
+            if(xhr.status === 200) {
+                alert('ok');
+            } else if(xhr.status !== 200){
+                alert('c\'est la merde');
+            }
+        };
+        xhr.send('voteType=' + downvote +"&post_id=<?php echo $post[0]['post_id']?>");
+    }
+</script>
 <script src="js/index.js"></script>
+</form>
 </body>
 </html>

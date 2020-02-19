@@ -18,6 +18,6 @@ if (!isset($_POST['title_post']) && !isset($_POST['content'])) {
 }
 
     $content = $_POST['content'];
-    $new_post = $db->prepare('INSERT INTO post_text (post_name, post_desc, contenue, upvote, downvote, author, date_post,slug) VALUES(?,?,?,?,?,?,?)');
+    $new_post = $db->prepare('INSERT INTO post_text (post_name, post_desc, contenue, upvote, downvote, author, date_post,slug) VALUES(?,?,?,?,?,?,?,?)');
     $new_post->execute(array($title, $desc, $content, 0, 0, $_SESSION['username'], $date,$slug));
 header('Location:index.php');

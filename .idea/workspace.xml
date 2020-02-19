@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
     </list>
@@ -34,22 +34,22 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - creationlab@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - creationlab@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - creationlab@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - creationlab@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="post_text: table" type="dbc44a63:MariaImplModel$Table" />
@@ -75,12 +75,12 @@
   <component name="ProjectId" id="1XoaFbleJfn043zjMKLxyEh6K2r" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -88,7 +88,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.mallowigi.config" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -103,12 +103,12 @@
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MariaDB - creationlab@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="root:creationlab@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MariaDB - creationlab@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@2b5a7c61" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="root:creationlab@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@27304e6b" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -144,7 +144,13 @@
       <workItem from="1581786423833" duration="35000" />
       <workItem from="1581786505569" duration="1717000" />
       <workItem from="1581795662728" duration="848000" />
-      <workItem from="1581804123912" duration="2113000" />
+      <workItem from="1581804123912" duration="2209000" />
+      <workItem from="1581950229759" duration="562000" />
+      <workItem from="1582067723155" duration="2369000" />
+      <workItem from="1582111453894" duration="11000" />
+      <workItem from="1582111485243" duration="1000" />
+      <workItem from="1582111505989" duration="87000" />
+      <workItem from="1582151734538" duration="2733000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -153,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581698452588</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="comment system &quot;finished&quot;">
+      <created>1581806314625</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581806314625</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +174,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aaa" />
+    <MESSAGE value="comment system &quot;finished&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment system &quot;finished&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -172,6 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" width="816" height="726" key="#Intentions/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581804660466" />
+    <state x="552" y="178" key="#Notifications" timestamp="1581950292317">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Notifications/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581950292317" />
     <state x="603" y="75" width="740" height="890" key="#PHP" timestamp="1581796493005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -184,10 +202,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Vim_Emulation/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786716698" />
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581786574922">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582067866635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786574922" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582067866635" />
     <state x="625" y="310" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581786724942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -196,34 +214,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581714814062" />
-    <state x="512" y="28" key="CommitChangelistDialog2" timestamp="1581806298212">
+    <state x="512" y="28" key="CommitChangelistDialog2" timestamp="1581806314139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581806298212" />
-    <state width="1294" height="262" key="GridCell.Tab.0.bottom" timestamp="1581786976681">
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581806314139" />
+    <state width="1324" height="268" key="GridCell.Tab.0.bottom" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1294" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786976681" />
-    <state width="1294" height="262" key="GridCell.Tab.0.center" timestamp="1581786976681">
+    <state width="1324" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
+    <state width="1324" height="268" key="GridCell.Tab.0.center" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1294" height="262" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786976681" />
-    <state width="1294" height="262" key="GridCell.Tab.0.left" timestamp="1581786976681">
+    <state width="1324" height="268" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
+    <state width="1324" height="268" key="GridCell.Tab.0.left" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1294" height="262" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786976681" />
-    <state width="1294" height="262" key="GridCell.Tab.0.right" timestamp="1581786976681">
+    <state width="1324" height="268" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
+    <state width="1324" height="268" key="GridCell.Tab.0.right" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1294" height="262" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786976681" />
+    <state width="1324" height="268" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1581786546290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="539" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786546290" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1581805314324">
+    <state x="764" y="439" key="NewPhpFileDialog" timestamp="1582068305168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581805314324" />
+    <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582068305168" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1582111583361">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582111583361" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1581806323600">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581806323600" />
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154340870" />
     <state x="669" y="157" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581786958493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,17 +262,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786425086" />
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581806076651">
+    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582154382921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581806076651" />
+    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154382921" />
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581787374784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581787374784" />
+    <state x="613" y="109" width="694" height="822" key="find.popup" timestamp="1581950527803">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581950527803" />
     <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1581787380304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581787380304" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582068691928">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582068691928" />
   </component>
 </project>
