@@ -87,30 +87,28 @@ if (empty($post)) {
 <?php include 'partials/footer.php';?>
 <script>
     function upvote() {
-        let upvote = "upvote";
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'vote.php');
-      xhr.onload = function(){
-          if(xhr.status === 200) {
-              alert('ok');
-          } else if(xhr.status !== 200){
-              alert('c\'est la merde');
-          }
-      };
-        xhr.send('voteType=' + upvote+"&post_id=<?php echo $post[0]['post_id']?>");
-    }
-    function downvote() {
-        let downvote = "downvote";
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'vote.php');
         xhr.onload = function(){
             if(xhr.status === 200) {
-                alert('ok');
+                console.log('upvote');
             } else if(xhr.status !== 200){
-                alert('c\'est la merde');
+                console.log('c\'est la merde');
             }
         };
-        xhr.send('voteType=' + downvote +"&post_id=<?php echo $post[0]['post_id']?>");
+        xhr.send("voteType=downvote&post_id=<?php echo $post[0]['post_id']?>");
+    }
+    function downvote() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'vote.php');
+        xhr.onload = function(){
+            if(xhr.status === 200) {
+                console.log('downvote');
+            } else if(xhr.status !== 200){
+                console.log('c\'est la merde');
+            }
+        };
+        xhr.send("voteType=downvote&post_id=<?php echo $post[0]['post_id']?>");
     }
 </script>
 <script src="js/index.js"></script>
