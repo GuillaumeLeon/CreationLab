@@ -9,8 +9,11 @@ if(isset($_SESSION['connected'])) {
       $_SESSION['connected'] = 0;
    }
 }
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text LIMIT 10');
+$get_post->execute();
+$post = $get_post->fetchAll();
 ?>
-<!DOCTYPE.php>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -31,12 +34,6 @@ if(isset($_SESSION['connected'])) {
 	  height="71"></a></span>
   </nav>
 <?php
-$get_post = $db->prepare('SELECT * FROM post_text');
-$get_post->execute();
-$post = $get_post->fetchAll();
-?>
-</div>
-<?php 
 for ($i = count($post) - 1; $i >= 0; $i--) {
    include('partials/data_not_connected.php');
 }?>

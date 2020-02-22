@@ -3,7 +3,7 @@ require 'database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
-   header('Location:index.php');
+    header('Location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -21,14 +21,14 @@ if ($_SESSION['connected'] != 1) {
 
 <body>
 <nav class="navbar">
-	<span><button type="button" class="btn btn-light"><a href="new_project.php">Créer un nouveau projet</a></button></span>
+    <span><button type="button" class="btn btn-light"><a href="new_project.php">Créer un nouveau projet</a></button></span>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-						height="71"></a></span>
+                                                height="71"></a></span>
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <?php include 'partials/menu.php';?>
 <?php
-$query = "SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "'";
+$query = "SELECT author,date_post,post_id,contenue,post_name FROM post_text WHERE author='" . $_SESSION['username'] . "'";
 $get_post = $db->prepare($query);
 $get_post->execute();
 $post = $get_post->fetchAll();
@@ -36,7 +36,7 @@ $post = $get_post->fetchAll();
 </div>
 <h1>Voici vos projets</h1>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
-include 'partials/data_connected.php';
+    include 'partials/data_connected.php';
 }?>
 <?php include 'partials/footer.php';?>
 </body>
