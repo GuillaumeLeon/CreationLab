@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote system almost finished and syntax adjustment">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/data_not_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_not_connected.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +63,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
+      <path value="$PROJECT_DIR$/../../bin/php/php7.4.0" />
       <path value="$USER_HOME$/bin/php/php7.4.0" />
     </include_path>
   </component>
@@ -173,6 +167,7 @@
       <workItem from="1582540063300" duration="1986000" />
       <workItem from="1582551340724" duration="358000" />
       <workItem from="1582551717904" duration="1750000" />
+      <workItem from="1582583777405" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
