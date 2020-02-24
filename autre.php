@@ -4,8 +4,9 @@ session_start();
 
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
+    exit;
 }
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name  FROM post_text LIMIT 10');
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name  FROM post_text limit 10');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
@@ -38,31 +39,31 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
 <?php include 'partials/footer.php';?>
 
 <script>
-    function upvote() {
+    function upvote(id) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
-            if(xhr.status === 200) {
-                console.log('upvote');
+            if(xhr.status === 200){
+                //console.log('upvote');
             } else if(xhr.status !== 200){
-                console.log('c\'est la merde');
+                //console.log('c\'est la merde');
             }
         };
-        xhr.send("voteType=upvote&post_id=<?php echo $post[0]['post_id']?>");
+        xhr.send("voteType=upvote&post_id="+id);
     }
-    function downvote() {
+    function downvote(id) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
             if(xhr.status === 200) {
-                console.log('downvote');
-            } else if(xhr.status !== 200){
-                console.log('c\'est la merde');
+                //console.log('downvote');
+            } else if(xhr.status !== 200) {
+                //console.log('c\'est la merde');
             }
         };
-        xhr.send("voteType=downvote&post_id=<?php echo $post[0]['post_id']?>");
+        xhr.send("voteType=downvote&post_id="+id);
     }
 </script>
 </body>

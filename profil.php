@@ -6,7 +6,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
 $user = $_SESSION["username"];
-$query = $db->prepare('SELECT * FROM users WHERE username="' . $user . '"');
+$query = $db->prepare("SELECT * FROM users WHERE username='$user'");
 $query->execute();
 $result = $query->fetchAll();
 ?>
@@ -36,13 +36,13 @@ $result = $query->fetchAll();
 <div class="container" style="display:flex;">
     <img src="https://via.placeholder.com/150x250" alt="photoprofile" id="photoprofil" height='250' width='150' class="m-5">
 <div class="profil" class="ml-5">
-    <p>Pseudo : <?php echo $result[0]['username'] ?> <input type="button" value="Modifier" class="modifier"></p>
-    <p>Nom : <?php echo $result[0]['name'] ?> <input type="button" value="Modifier" class="modifier"> </p>
-    <p>Prenom : <?php echo $result[0]['surname'] ?> <input type="button" value="Modifier" class="modifier"> </p>
-    <p>Email : <?php echo $result[0]['email'] ?> <input type="button" value="Modifier" class="modifier"> </p>
-    <p>Description :<br/> <?php echo $result[0]['desc'] ?> <input type="button" value="Modifier" class="modifier"></p>
-    <p>Nombre abonnés : <?php echo $result[0]['nb_follower'] ?></p>
-    <p>Nombre abonnements : <?php echo $result[0]['nb_sub'] ?></p>
+    <p>Pseudo : <?=  $result[0]['username'] ?> <input type="button" value="Modifier" class="modifier"></p>
+    <p>Nom : <?=  $result[0]['name'] ?> <input type="button" value="Modifier" class="modifier"> </p>
+    <p>Prenom : <?=  $result[0]['surname'] ?> <input type="button" value="Modifier" class="modifier"> </p>
+    <p>Email : <?=  $result[0]['email'] ?> <input type="button" value="Modifier" class="modifier"> </p>
+    <p>Description :<br/> <?=  $result[0]['desc'] ?> <input type="button" value="Modifier" class="modifier"></p>
+    <p>Nombre abonnés : <?=  $result[0]['nb_follower'] ?></p>
+    <p>Nombre abonnements : <?=  $result[0]['nb_sub'] ?></p>
     <p>Site internet : <?php if (isset($result[0]['website_url'])) {
     echo "<a href='http://" . $result[0]['website_url'] . "' target='_blank'>" . $result[0]['website_url'] . "</a>";
 }?> <input type="button" value="Modifier" class="modifier"> </p>
@@ -52,4 +52,3 @@ $result = $query->fetchAll();
 <?php include 'partials/footer.php';?>
 </body>
 </html>
-

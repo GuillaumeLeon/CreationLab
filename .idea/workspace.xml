@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote system almost finished and sql query optimisation">
+    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote system almost finished and syntax adjustment">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/data_not_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_not_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
-      <path value="$PROJECT_DIR$/../../bin/php/php7.4.0" />
+      <path value="$USER_HOME$/bin/php/php7.4.0" />
     </include_path>
   </component>
   <component name="ProjectConfigurationFiles">
@@ -100,7 +100,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -168,6 +168,11 @@
       <workItem from="1582383883686" duration="1616000" />
       <workItem from="1582407906158" duration="1418000" />
       <workItem from="1582411225536" duration="2489000" />
+      <workItem from="1582533501534" duration="3239000" />
+      <workItem from="1582539879194" duration="155000" />
+      <workItem from="1582540063300" duration="1986000" />
+      <workItem from="1582551340724" duration="358000" />
+      <workItem from="1582551717904" duration="1750000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -193,7 +198,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="aaa" />
     <MESSAGE value="comment system &quot;finished&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment system &quot;finished&quot;" />
+    <MESSAGE value="vote system almost finished and syntax adjustment" />
+    <option name="LAST_COMMIT_MESSAGE" value="vote system almost finished and syntax adjustment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -216,6 +222,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581804712403" />
+    <state x="550" y="199" width="800" height="677" key="#Updates" timestamp="1582533534932">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="550" y="199" width="800" height="677" key="#Updates/0.25.1920.1055@0.25.1920.1055" timestamp="1582533534932" />
     <state x="552" y="178" key="#Vim_Emulation" timestamp="1581786716698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,10 +242,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581714814062" />
-    <state x="512" y="28" key="CommitChangelistDialog2" timestamp="1582413871763">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog" timestamp="1582536582281">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582281" />
+    <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582553516330">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413871763" />
+    <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
     <state width="1324" height="268" key="GridCell.Tab.0.bottom" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,10 +275,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582068305168" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1582111583361">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="461" y="189" key="SettingsEditor" timestamp="1582536582732">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582111583361" />
+    <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
     <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1582413887747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -280,25 +296,32 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786425086" />
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582413044650">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582552444547">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413044650" />
+    <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1582552444547" />
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582413680660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413680660" />
-    <state x="613" y="109" width="694" height="822" key="find.popup" timestamp="1582411785537">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="984" y="67" width="747" height="834" key="find.popup" timestamp="1582552281733">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582411785537" />
+    <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
     <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1581787380304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581787380304" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582411298181">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="624" y="246" key="run.anything.popup" timestamp="1582552507767">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="624" y="246" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552507767" />
+    <state x="623" y="253" width="672" height="688" key="search.everywhere.popup" timestamp="1582552515606">
+      <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582411298181" />
+    <state x="623" y="253" width="672" height="688" key="search.everywhere.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552515606" />
   </component>
 </project>

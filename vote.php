@@ -16,30 +16,24 @@ $upvote = $get_upvote->fetchAll();
 $get_downvote = $db->prepare("SELECT user_id,post_id  FROM downvote WHERE post_id='$id'");
 $get_downvote->execute();
 $downvote = $get_downvote->fetchAll();
-var_dump($upvote);
-var_dump($downvote);
 
 for($i = 0; $i < count($upvote); $i++){
-    if(isset($upvote[$i]['user_id'])){
+    if($upvote[$i]['user_id'] == $Uid){
         $votable = false;
     }
 }
 for($i = 0; $i < count($downvote); $i++){
-    if(isset($downvote[$i]['user_id'])){
+    if($downvote[$i]['user_id'] == $Uid){
         $votable = false;
     }
 }
 if(isset($_POST['voteType'])) {
     if($votable){
         echo 'com voter';
-        if ($_POST['voteType'] = 'upvote') {
-           //$update = $db->prepare("UPDATE post_text SET upvote = upvote+1 WHERE post_id='$id'");
-           //$update->execute();
+        if ($_POST['voteType'] == 'upvote') {
             $new_upvote = $db->prepare("INSERT INTO upvote (user_id, post_id) VALUES (?,?)");
             $new_upvote->execute(array($Uid, $id));
-        } else if ($_POST['voteType'] = 'downvote') {
-           //$update = $db->prepare("UPDATE post_text SET downvote = downvote+1 WHERE post_id='$id'");
-           //$update->execute();
+        } else if ($_POST['voteType'] == 'downvote') {
             $new_downvote = $db->prepare("INSERT INTO downvote (user_id, post_id) VALUES (?,?)");
             $new_downvote->execute(array($Uid, $id));
         } else {

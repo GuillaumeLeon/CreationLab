@@ -4,6 +4,11 @@ session_start();
 
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
+    exit;
+}
+if (!isset($_GET['post'])){
+    header('Location:index.php');
+    exit;
 }
 $id = $_GET["post"];
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
@@ -19,23 +24,15 @@ if (empty($post)) {
     header('Location:autre.php');
 }
 $post_id = $post[0]['post_id'];
-$get_upvote = $db->prepare("SELECT id FROM upvote WHERE post_id='$post_id'");
+$get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
-$upvote = $get_upvote->fetch();
-if ($upvote) {
-    $upvote_nb = count($upvote) / 2;
-} else {
-    $upvote_nb = 0;
-}
-$get_downvote = $db->prepare("SELECT id as downvote FROM downvote WHERE post_id='$post_id'");
-$get_downvote->execute();
-$downvote = $get_downvote->fetch();
-if ($downvote) {
-    $downvote_nb = count($downvote) / 2;
-} else {
-    $downvote_nb = 0;
-}
+$upvote_nb = $get_upvote->fetch();
+var_dump($upvote_nb[0]);
 
+$get_downvote = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$post_id'");
+$get_downvote->execute();
+$downvote_nb = $get_downvote->fetch();
+var_dump($downvote_nb[0]);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,7 +44,7 @@ if ($downvote) {
     <link rel="icon" href="image/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title><?php echo $post[0]['post_name']; ?></title>
+    <title><?= $post[0]['post_name']; ?></title>
 </head>
 
 <body>
@@ -63,19 +60,19 @@ if ($downvote) {
 <div class="container row post mt-3 mb-3">
     <div class="vote text-center">
         <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="image/arrow_up.svg" alt="upvote"></button>
-        <div class="numberVote"><?= $upvote_nb - $downvote_nb ?></div>
+        <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
         <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="image/arrow_down.svg" alt="downvote"></button>
     </div>
 
     <div class="corps">
         <div class="info">
-            <?php echo "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
+            <?=  "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>
         <div class="title">
-            <?php echo $post[0]['post_name'] ?>
+            <?=  $post[0]['post_name'] ?>
         </div>
         <div class="contenue">
-            <?php echo $post[0]['contenue'] ?>
+            <?=  $post[0]['contenue'] ?>
         </div>
         <div class="interaction">
             <button type="button" class="btn btn-light">Partager</button>
@@ -93,8 +90,8 @@ if ($downvote) {
     for ($i = count($com) - 1; $i > 0 ; $i--) {
         ?>
         <div class="container row comment mb-3" >
-            <p class="info"> Crée le <?php echo $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
-            <p class="content "><?php echo $com[$i]['content']; ?></p>
+            <p class="info"> Crée le <?=  $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+            <p class="content "><?=  $com[$i]['content']; ?></p>
             <form action="replies.php" method="POST">
                 <input id="content_com" type="text" style="display: none">
                 <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">
@@ -117,7 +114,7 @@ if ($downvote) {
                 console.log('c\'est la merde');
             }
         };
-        xhr.send("voteType=upvote&post_id=<?php echo $post[0]['post_id']?>");
+        xhr.send("voteType=upvote&post_id=<?=  $post[0]['post_id']?>");
     }
     function downvote() {
         var xhr = new XMLHttpRequest();
@@ -130,7 +127,7 @@ if ($downvote) {
                 console.log('c\'est la merde');
             }
         };
-        xhr.send("voteType=downvote&post_id=<?php echo $post[0]['post_id']?>");
+        xhr.send("voteType=downvote&post_id=<?=  $post[0]['post_id']?>");
     }
 </script>
 <script src="js/index.js"></script>
