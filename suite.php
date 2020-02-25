@@ -10,6 +10,7 @@ if ($_SESSION['connected'] != 1) {
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$post_id'");
 $get_post->execute();
 $post = $get_post->fetchAll();
+$_SESSION['post_id'] = $post_id;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,10 +39,10 @@ $post = $get_post->fetchAll();
               <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
           </div>
           <div class="title">
-              <?=  $post[0]['post_name'] ?>
+              <?= $post[0]['post_name'] ?>
           </div>
           <div class="contenue">
-              <?=  $post[0]['contenue'] ?>
+              <?= $post[0]['contenue'] ?>
           </div>
           <div class="interaction">
               <button type="button" class="btn btn-light">Partager</button>
