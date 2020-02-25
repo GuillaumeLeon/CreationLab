@@ -2,14 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 html {
+   position: relative;
    font-family: sans-serif;
    background-color: #3b4252;
+   min-height: 100%;
 }
 
-body,
+/*body,
 html {
    height: 100vh;
-}
+}*/
 
 nav {
    background-color: #434c5e;
@@ -20,9 +22,6 @@ body {
    background-color: #3b4252;
 }
 
-.main {
-   height: 100vh;
-}
 .logo {
    margin-left: auto;
    margin-right: auto;
@@ -82,6 +81,8 @@ body {
 
 /* CSS de kaorie */
 footer {
+   bottom: 0;
+   width: 100%;
    background: #ccc;
    background-color: #2e3440;
    font-size: 12px;

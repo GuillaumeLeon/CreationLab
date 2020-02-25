@@ -27,12 +27,10 @@ $post_id = $post[0]['post_id'];
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
 $upvote_nb = $get_upvote->fetch();
-var_dump($upvote_nb[0]);
 
 $get_downvote = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$post_id'");
 $get_downvote->execute();
 $downvote_nb = $get_downvote->fetch();
-var_dump($downvote_nb[0]);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,7 +54,6 @@ var_dump($downvote_nb[0]);
 </nav>
 <?php include 'partials/menu.php';?>
 
-
 <div class="container row post mt-3 mb-3">
     <div class="vote text-center">
         <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="image/arrow_up.svg" alt="upvote"></button>
@@ -66,7 +63,7 @@ var_dump($downvote_nb[0]);
 
     <div class="corps">
         <div class="info">
-            <?=  "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
+            <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>
         <div class="title">
             <?=  $post[0]['post_name'] ?>
@@ -76,7 +73,7 @@ var_dump($downvote_nb[0]);
         </div>
         <div class="interaction">
             <button type="button" class="btn btn-light">Partager</button>
-            <button type="button" class="btn btn-light">Continuer l'histoire</button>
+            <a href="suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
         </div>
     </div>
 </div>
@@ -127,7 +124,7 @@ var_dump($downvote_nb[0]);
                 console.log('c\'est la merde');
             }
         };
-        xhr.send("voteType=downvote&post_id=<?=  $post[0]['post_id']?>");
+        xhr.send("voteType=downvote&post_id=<?= $post[0]['post_id']?>");
     }
 </script>
 <script src="js/index.js"></script>
