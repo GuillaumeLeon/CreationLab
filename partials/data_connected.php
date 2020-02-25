@@ -26,7 +26,7 @@ $downvote_nb = $get_downvote->fetch();
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="post.php?post=<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
+            <a href="post/<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
             <button type="button" class="btn btn-light">Partager</button>
             <a href="suite.php?post=<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
         </div>

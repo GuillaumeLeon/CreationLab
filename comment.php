@@ -7,7 +7,7 @@ if ($_SESSION['connected'] != 1) {
 }
 
 if (!isset($_POST['com_content'])) {
-    header("Location:post.php?post=$id");
+    header("Location:/post/post.php?post=$id");
     exit;
 } else {
     $author  = $_SESSION['username'];
@@ -18,4 +18,4 @@ if (!isset($_POST['com_content'])) {
 $new_comment = $db->prepare('INSERT INTO comment (author, post_id, content, created_at) VALUES(?,?,?,?)');
 $new_comment->execute(array($author, $id, $content, $date));
 //unset($_SESSION['post']);
-header("Location:post.php?post=$id");
+header("Location:/post/post.php?post=$id");

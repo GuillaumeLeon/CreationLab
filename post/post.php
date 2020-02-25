@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 
 if ($_SESSION['connected'] != 1) {
@@ -39,26 +39,44 @@ $downvote_nb = $get_downvote->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="image/favicon.ico" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../image/favicon.ico" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title><?= $post[0]['post_name']; ?></title>
 </head>
 
 <body>
 <nav class="navbar">
-    <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-    <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                height="71"></a></span>
-    <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+    <span><a href="../new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
+    <span class="logo"><a href="../index.php"><img src="../image/Creation_Lab.png" alt="logo_creationLab" width="149"
+                                                   height="71"></a></span>
+    <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include 'partials/menu.php';?>
+<div id="menu">
+    <nav class="menu text-center">
+        <ul>
+            <li class="deroulant "><a href="#"> Mon profil </a>
+                <ul class="sous text-center">
+                    <li id="firstli"> <a href="../users/profil.php"> Profil Détaillé </a></li>
+                    <li> <a href="../project.php"> Mes projets </a></li>
+                    <li> <a href="#"> Abonnements </a></li>
+                    <li> <a href="#"> Mes projets préféres </a></li>
+                    <li> <a href="#"> Aléatoire </a></li>
+                </ul>
+            </li>
+            <li><a href="#"> Abonnements </a></li>
+            <li><a href="#"> Tendances </a></li>
+            <li><a href="#"> Nouveautés </a></li>
+        </ul>
+
+    </nav>
+</div>
 
 <div class="container row post mt-3 mb-3">
     <div class="vote text-center">
-        <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="image/arrow_up.svg" alt="upvote"></button>
+        <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="../image/arrow_up.svg" alt="upvote"></button>
         <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-        <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="image/arrow_down.svg" alt="downvote"></button>
+        <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="../image/arrow_down.svg" alt="downvote"></button>
     </div>
 
     <div class="corps">
@@ -73,12 +91,12 @@ $downvote_nb = $get_downvote->fetch();
         </div>
         <div class="interaction">
             <button type="button" class="btn btn-light">Partager</button>
-            <a href="suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <a href="../suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
         </div>
     </div>
 </div>
 <div class="container add_comment">
-    <form action="comment.php" method="POST">
+    <form action="../comment.php" method="POST">
         <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
         <input class="submit_comment mb-1" type="submit" value="Commenter">
     </form>
@@ -98,7 +116,7 @@ $downvote_nb = $get_downvote->fetch();
     <?php }
 }
 ?>
-<?php include 'partials/footer.php';?>
+<?php include '../partials/footer.php';?>
 <script>
     function upvote() {
         var xhr = new XMLHttpRequest();
@@ -127,7 +145,7 @@ $downvote_nb = $get_downvote->fetch();
         xhr.send("voteType=downvote&post_id=<?= $post[0]['post_id']?>");
     }
 </script>
-<script src="js/index.js"></script>
+<script src="../js/index.js"></script>
 </form>
 </body>
 </html>

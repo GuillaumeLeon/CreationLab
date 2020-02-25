@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote system almost finished and syntax adjustment">
-      <change beforePath="$PROJECT_DIR$/partials/data_not_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_not_connected.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/autre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_connected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/profil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +57,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="downvote: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="post_text: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -98,6 +115,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\CreationLab\post" />
+      <recent name="C:\wamp64\www\CreationLab\users" />
       <recent name="C:\wamp64\www\CreationLab\database" />
     </key>
   </component>
@@ -168,6 +187,7 @@
       <workItem from="1582551340724" duration="358000" />
       <workItem from="1582551717904" duration="1750000" />
       <workItem from="1582583777405" duration="275000" />
+      <workItem from="1582671806897" duration="2050000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -241,10 +261,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582281" />
-    <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582553516330">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582673969461">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413871763" />
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673969461" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
     <state width="1324" height="268" key="GridCell.Tab.0.bottom" timestamp="1582154444098">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -291,19 +311,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786425086" />
-    <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582552444547">
-      <screen x="0" y="25" width="1920" height="1055" />
-    </state>
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413044650" />
-    <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1582552444547" />
-    <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582413680660">
+    <state x="711" y="209" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582673396611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413680660" />
-    <state x="984" y="67" width="747" height="834" key="find.popup" timestamp="1582552281733">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673396611" />
+    <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1582552444547" />
+    <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582673950495">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582411785537" />
+    <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673950495" />
+    <state x="613" y="109" width="694" height="822" key="find.popup" timestamp="1582672442885">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582672442885" />
     <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
     <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1581787380304">
       <screen x="0" y="0" width="1920" height="1040" />

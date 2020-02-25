@@ -6,7 +6,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
 }
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name  FROM post_text limit 10');
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>

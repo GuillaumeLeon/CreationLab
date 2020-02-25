@@ -28,7 +28,7 @@ if ($_SESSION['connected'] != 1) {
 <?php include 'partials/menu.php';?>
 <div class="main">
   <div class="container" id="form_text">
-      <form action="new_post.php" method="post">
+      <form action="add_post.php" method="post">
         <div class="form-group">
           <label for="title">Titre :</label>
           <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" />

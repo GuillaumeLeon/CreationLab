@@ -6,6 +6,7 @@ if(isset($_GET['post'])){
 }
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
+    exit;
 }
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$post_id'");
 $get_post->execute();
