@@ -2,15 +2,17 @@
 require '../database/db.php';
 session_start();
 
+
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
 }
 if (!isset($_GET['post'])){
-    header('Location:index.php');
+    header('Location:../index.php');
     exit;
 }
 $id = $_GET["post"];
+
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
 $post = $get_post->fetchAll();
@@ -18,12 +20,14 @@ $post = $get_post->fetchAll();
 $get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
 $get_com->execute();
 $com = $get_com->fetchAll();
-
 $_SESSION['post'] = $post;
-if (empty($post)) {
-    header('Location:autre.php');
-}
+
+$get_suite = $db->prepare("SELECT * FROM post_text WHERE parent_node='$id'");
+$get_suite->execute();
+$suite = $get_suite->fetch();
+
 $post_id = $post[0]['post_id'];
+
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
 $upvote_nb = $get_upvote->fetch();
@@ -90,11 +94,32 @@ $downvote_nb = $get_downvote->fetch();
             <?=  $post[0]['contenue'] ?>
         </div>
         <div class="interaction">
-            <button type="button" class="btn btn-light">Partager</button>
-            <a href="../suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <?php if(!isset($suite)) {?>
+                <button type="button" class="btn btn-light">Partager</button>
+                <a href="../suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <?php }?>
         </div>
     </div>
 </div>
+<?php if(isset($suite)) {?>
+    <div class="container row post mt-3 mb-3">
+        <div class="corps">
+            <div class="info">
+                <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
+            </div>
+            <div class="title">
+                <?=  $suite['post_name'] ?>
+            </div>
+            <div class="contenue">
+                <?=  $suite['contenue'] ?>
+            </div>
+            <div class="interaction">
+                <button type="button" class="btn btn-light">Partager</button>
+                <a href="../suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            </div>
+        </div>
+    </div>
+<?php } ?>
 <div class="container add_comment">
     <form action="../comment.php" method="POST">
         <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>

@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote system almost finished and syntax adjustment">
-      <change afterPath="$PROJECT_DIR$/post/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/data_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partials/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +114,11 @@
       <recent name="C:\wamp64\www\CreationLab\database" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git status" />
+    </option>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -187,7 +186,8 @@
       <workItem from="1582551340724" duration="358000" />
       <workItem from="1582551717904" duration="1750000" />
       <workItem from="1582583777405" duration="275000" />
-      <workItem from="1582671806897" duration="2050000" />
+      <workItem from="1582671806897" duration="2428000" />
+      <workItem from="1582727036341" duration="4007000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -203,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581806314625</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="remade the file structure and added some url rewriting rule">
+      <created>1582673977199</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582673977199</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +221,8 @@
     <MESSAGE value="aaa" />
     <MESSAGE value="comment system &quot;finished&quot;" />
     <MESSAGE value="vote system almost finished and syntax adjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="vote system almost finished and syntax adjustment" />
+    <MESSAGE value="remade the file structure and added some url rewriting rule" />
+    <option name="LAST_COMMIT_MESSAGE" value="remade the file structure and added some url rewriting rule" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -261,27 +269,27 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582281" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582673969461">
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582673976678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673969461" />
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673976678" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
-    <state width="1324" height="268" key="GridCell.Tab.0.bottom" timestamp="1582154444098">
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582674236101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1324" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
-    <state width="1324" height="268" key="GridCell.Tab.0.center" timestamp="1582154444098">
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236101" />
+    <state width="1921" height="269" key="GridCell.Tab.0.center" timestamp="1582674236100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1324" height="268" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
-    <state width="1324" height="268" key="GridCell.Tab.0.left" timestamp="1582154444098">
+    <state width="1921" height="269" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236100" />
+    <state width="1921" height="269" key="GridCell.Tab.0.left" timestamp="1582674236100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1324" height="268" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
-    <state width="1324" height="268" key="GridCell.Tab.0.right" timestamp="1582154444098">
+    <state width="1921" height="269" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236100" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right" timestamp="1582674236101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1324" height="268" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582154444098" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236101" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1581786546290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -295,10 +303,10 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582111583361" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1582413887747">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1582673983032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582413887747" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673983032" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -325,13 +333,14 @@
     </state>
     <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582672442885" />
     <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
-    <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1581787380304">
+    <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1582727048618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581787380304" />
-    <state x="624" y="246" key="run.anything.popup" timestamp="1582552507767">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582727048618" />
+    <state x="624" y="218" width="672" height="677" key="run.anything.popup" timestamp="1582674233332">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="624" y="218" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674233332" />
     <state x="624" y="246" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552507767" />
     <state x="623" y="253" width="672" height="688" key="search.everywhere.popup" timestamp="1582552515606">
       <screen x="0" y="25" width="1920" height="1055" />

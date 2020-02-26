@@ -3,11 +3,12 @@ require 'database/db.php';
 session_start();
 $votable = true;
 $username = $_SESSION['username'];
+$id = $_POST['post_id'];
+$Uid = $profile['Uid'];
+
 $get_profile = $db->prepare("SELECT Uid FROM users WHERE username='$username'");
 $get_profile->execute();
 $profile = $get_profile->fetch();
-$id = $_POST['post_id'];
-$Uid = $profile['Uid'];
 
 $get_upvote = $db->prepare("SELECT user_id,post_id FROM upvote WHERE post_id='$id'");
 $get_upvote->execute();
