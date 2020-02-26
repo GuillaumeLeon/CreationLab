@@ -124,6 +124,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
@@ -139,6 +140,21 @@
     <option name="myCommands">
       <command value="git status" />
     </option>
+  </component>
+  <component name="RunManager" selected="PHP Script.autre.php">
+    <configuration name="public" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/public" />
+      <method v="2" />
+    </configuration>
+    <configuration name="autre.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/public/autre.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.autre.php" />
+        <item itemvalue="PHPUnit.public" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -307,27 +323,47 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582281" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582757107583">
+    <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1582758864081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582757107583" />
+    <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582758987195">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758987195" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
-    <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582674236101">
+    <state width="1921" height="335" key="GridCell.Tab.0.bottom" timestamp="1582758904685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236101" />
-    <state width="1921" height="269" key="GridCell.Tab.0.center" timestamp="1582674236100">
+    <state width="1921" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.0.center" timestamp="1582758904685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="269" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236100" />
-    <state width="1921" height="269" key="GridCell.Tab.0.left" timestamp="1582674236100">
+    <state width="1921" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.0.left" timestamp="1582758904685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="269" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236100" />
-    <state width="1921" height="269" key="GridCell.Tab.0.right" timestamp="1582674236101">
+    <state width="1921" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.0.right" timestamp="1582758904685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="269" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674236101" />
+    <state width="1921" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.1.bottom" timestamp="1582758904685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.1.center" timestamp="1582758904685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="335" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.1.left" timestamp="1582758904685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="335" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="335" key="GridCell.Tab.1.right" timestamp="1582758904685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="335" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1581786546290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,10 +377,10 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582111583361" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1582757111899">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1582758979133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582757111899" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758979133" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -366,6 +402,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673950495" />
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1582758902147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758902147" />
     <state x="613" y="109" width="694" height="822" key="find.popup" timestamp="1582757612828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
