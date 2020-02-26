@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 $votable = true;
 $username = $_SESSION['username'];

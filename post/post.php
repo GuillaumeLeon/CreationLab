@@ -43,17 +43,17 @@ $downvote_nb = $get_downvote->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../image/favicon.ico" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../public/image/favicon.ico" />
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <title><?= $post[0]['post_name']; ?></title>
 </head>
 
 <body>
 <nav class="navbar">
-    <span><a href="../new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-    <span class="logo"><a href="../index.php"><img src="../image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                   height="71"></a></span>
+    <span><a href="../public/new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
+    <span class="logo"><a href="../public/index.php"><img src="../public/image/Creation_Lab.png" alt="logo_creationLab" width="149"
+                                                          height="71"></a></span>
     <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <div id="menu">
@@ -62,7 +62,7 @@ $downvote_nb = $get_downvote->fetch();
             <li class="deroulant "><a href="#"> Mon profil </a>
                 <ul class="sous text-center">
                     <li id="firstli"> <a href="../users/profil.php"> Profil Détaillé </a></li>
-                    <li> <a href="../project.php"> Mes projets </a></li>
+                    <li> <a href="../public/user_project.php"> Mes projets </a></li>
                     <li> <a href="#"> Abonnements </a></li>
                     <li> <a href="#"> Mes projets préféres </a></li>
                     <li> <a href="#"> Aléatoire </a></li>
@@ -78,9 +78,9 @@ $downvote_nb = $get_downvote->fetch();
 
 <div class="container row post mt-3 mb-3">
     <div class="vote text-center">
-        <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="../image/arrow_up.svg" alt="upvote"></button>
+        <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
         <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-        <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="../image/arrow_down.svg" alt="downvote"></button>
+        <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
     </div>
 
     <div class="corps">
@@ -96,12 +96,12 @@ $downvote_nb = $get_downvote->fetch();
         <div class="interaction">
             <?php if(!isset($suite)) {?>
                 <button type="button" class="btn btn-light">Partager</button>
-                <a href="../suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             <?php }?>
         </div>
     </div>
 </div>
-<?php if(isset($suite)) {?>
+<?php if($suite != false) {?>
     <div class="container row post mt-3 mb-3">
         <div class="corps">
             <div class="info">
@@ -115,7 +115,7 @@ $downvote_nb = $get_downvote->fetch();
             </div>
             <div class="interaction">
                 <button type="button" class="btn btn-light">Partager</button>
-                <a href="../suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                <a href="../public/suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             </div>
         </div>
     </div>
@@ -170,7 +170,7 @@ $downvote_nb = $get_downvote->fetch();
         xhr.send("voteType=downvote&post_id=<?= $post[0]['post_id']?>");
     }
 </script>
-<script src="../js/index.js"></script>
+<script src="../public/js/index.js"></script>
 </form>
 </body>
 </html>

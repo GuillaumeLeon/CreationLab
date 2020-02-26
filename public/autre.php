@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 
 if ($_SESSION['connected'] != 1) {
@@ -28,15 +28,15 @@ $post = $get_post->fetchAll();
     <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
                                                 height="71"></a></span>
-    <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+    <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include 'includes/menu.php';?>
+<?php include '../includes/menu.php';?>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
-    include 'includes/data_connected.php';
+    include '../includes/data_connected.php';
 }
 ?>
-<?php include 'includes/footer.php';?>
+<?php include '../includes/footer.php';?>
 
 <script>
     function upvote(id) {

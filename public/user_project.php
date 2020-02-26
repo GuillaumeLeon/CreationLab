@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
@@ -24,9 +24,9 @@ if ($_SESSION['connected'] != 1) {
     <span><button type="button" class="btn btn-light"><a href="new_project.php">Créer un nouveau projet</a></button></span>
     <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
                                                 height="71"></a></span>
-    <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+    <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include 'includes/menu.php';?>
+<?php include '../includes/menu.php';?>
 <?php
 $query = "SELECT author,date_post,post_id,contenue,post_name FROM post_text WHERE author='" . $_SESSION['username'] . "'";
 $get_post = $db->prepare($query);
@@ -38,6 +38,6 @@ $post = $get_post->fetchAll();
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'includes/data_connected.php';
 }?>
-<?php include 'includes/footer.php';?>
+<?php include '../includes/footer.php';?>
 </body>
 </html>

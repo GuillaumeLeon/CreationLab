@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 if(isset($_GET['post'])){
     $post_id = $_GET['post'];
@@ -29,10 +29,10 @@ $_SESSION['post_id'] = $post_id;
 <body>
   <nav class="navbar">
     <span class="logo" style="left:-187px;"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-          height="71"></a></span>
-          <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+                                                                     height="71"></a></span>
+          <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
-<?php include 'includes/menu.php';?>
+<?php include '../includes/menu.php';?>
 
   <div class="container row post mt-3 mb-3">
       <div class="corps">
@@ -52,7 +52,7 @@ $_SESSION['post_id'] = $post_id;
   </div>
 <div class="main">
   <div class="container" id="form_text">
-      <form action="add_suite.php" method="post">
+      <form action="../add_suite.php" method="post">
       <div class="form-group">
         <label for="contenue">Ecrivez votre histoire :</label>
         <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox"></textarea>
@@ -61,7 +61,7 @@ $_SESSION['post_id'] = $post_id;
       </form>
   </div>
 
-  <?php include 'includes/footer.php';?>
+  <?php include '../includes/footer.php';?>
 </body>
 </html>
 

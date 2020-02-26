@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
@@ -22,13 +22,13 @@ if ($_SESSION['connected'] != 1) {
 <body>
   <nav class="navbar">
     <span class="logo" style="left:-187px;"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-          height="71"></a></span>
-          <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+                                                                     height="71"></a></span>
+          <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
-<?php include 'includes/menu.php';?>
+<?php include '../includes/menu.php';?>
 <div class="main">
   <div class="container" id="form_text">
-      <form action="add_post.php" method="post">
+      <form action="../add_post.php" method="post">
         <div class="form-group">
           <label for="title">Titre :</label>
           <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" />
@@ -45,6 +45,6 @@ if ($_SESSION['connected'] != 1) {
       </form>
   </div>
 
-  <?php include 'includes/footer.php';?>
+  <?php include '../includes/footer.php';?>
 </body>
 </html>

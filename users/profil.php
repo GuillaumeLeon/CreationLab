@@ -17,17 +17,17 @@ $result = $query->fetchAll();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="../image/favicon.ico" />
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../public/image/favicon.ico" />
+  <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/css/style.css">
   <title>Creation Lab</title>
 </head>
 
 <body>
 <nav class="navbar">
-	<span><a href="../new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-    <span class="logo"><a href="../index.php"><img src="../image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                   height="71"></a></span>
+	<span><a href="../public/new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
+    <span class="logo"><a href="../public/index.php"><img src="../public/image/Creation_Lab.png" alt="logo_creationLab" width="149"
+                                                          height="71"></a></span>
     <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
 <?php include '../includes/menu.php';?>
