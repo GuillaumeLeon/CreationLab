@@ -30,7 +30,7 @@ $result = $query->fetchAll();
                                                    height="71"></a></span>
     <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include '../partials/menu.php';?>
+<?php include '../includes/menu.php';?>
 <div class="main">
     <h1> Profil </h1>
 <div class="container" style="display:flex;">
@@ -49,6 +49,6 @@ $result = $query->fetchAll();
   </div>
   </div>
 </div>
-<?php include '../partials/footer.php';?>
+<?php include '../includes/footer.php';?>
 </body>
 </html>

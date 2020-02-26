@@ -30,13 +30,13 @@ $post = $get_post->fetchAll();
                                                 height="71"></a></span>
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include 'partials/menu.php';?>
+<?php include 'includes/menu.php';?>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
-    include 'partials/data_connected.php';
+    include 'includes/data_connected.php';
 }
 ?>
-<?php include 'partials/footer.php';?>
+<?php include 'includes/footer.php';?>
 
 <script>
     function upvote(id) {

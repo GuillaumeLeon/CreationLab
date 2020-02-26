@@ -25,7 +25,7 @@ if ($_SESSION['connected'] != 1) {
           height="71"></a></span>
           <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
-<?php include 'partials/menu.php';?>
+<?php include 'includes/menu.php';?>
 <div class="main">
   <div class="container" id="form_text">
       <form action="add_post.php" method="post">
@@ -45,6 +45,6 @@ if ($_SESSION['connected'] != 1) {
       </form>
   </div>
 
-  <?php include 'partials/footer.php';?>
+  <?php include 'includes/footer.php';?>
 </body>
 </html>

@@ -141,7 +141,7 @@ $downvote_nb = $get_downvote->fetch();
     <?php }
 }
 ?>
-<?php include '../partials/footer.php';?>
+<?php include '../includes/footer.php';?>
 <script>
     function upvote() {
         var xhr = new XMLHttpRequest();

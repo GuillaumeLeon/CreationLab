@@ -30,7 +30,7 @@
         <button type="submit" class="btn btn-light">Envoyer</button>
     </form>
 </div>
-  <?php include('partials/footer.php');?>
+  <?php include('includes/footer.php');?>
 </body>
 
 </html>

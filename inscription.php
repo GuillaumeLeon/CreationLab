@@ -45,6 +45,6 @@ require "database/db.php";
     </form>
 </div>
 <script src="js/password_validation.js"></script>
-<?php include 'partials/footer.php';?>
+<?php include 'includes/footer.php';?>
 </body>
 </html>

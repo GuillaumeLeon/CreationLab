@@ -32,7 +32,7 @@ $_SESSION['post_id'] = $post_id;
           height="71"></a></span>
           <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
-<?php include 'partials/menu.php';?>
+<?php include 'includes/menu.php';?>
 
   <div class="container row post mt-3 mb-3">
       <div class="corps">
@@ -61,7 +61,7 @@ $_SESSION['post_id'] = $post_id;
       </form>
   </div>
 
-  <?php include 'partials/footer.php';?>
+  <?php include 'includes/footer.php';?>
 </body>
 </html>
 

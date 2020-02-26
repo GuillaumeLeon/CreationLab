@@ -35,8 +35,8 @@ $post = $get_post->fetchAll();
   </nav>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
-   include('partials/data_not_connected.php');
+   include('includes/data_not_connected.php');
 }?>
-<?php include 'partials/footer.php';?>
+<?php include 'includes/footer.php';?>
 </body>
 </html>

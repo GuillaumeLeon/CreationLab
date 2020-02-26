@@ -26,7 +26,7 @@ if ($_SESSION['connected'] != 1) {
                                                 height="71"></a></span>
     <span><a href="deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
 </nav>
-<?php include 'partials/menu.php';?>
+<?php include 'includes/menu.php';?>
 <?php
 $query = "SELECT author,date_post,post_id,contenue,post_name FROM post_text WHERE author='" . $_SESSION['username'] . "'";
 $get_post = $db->prepare($query);
@@ -36,8 +36,8 @@ $post = $get_post->fetchAll();
 </div>
 <h1>Voici vos projets</h1>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
-    include 'partials/data_connected.php';
+    include 'includes/data_connected.php';
 }?>
-<?php include 'partials/footer.php';?>
+<?php include 'includes/footer.php';?>
 </body>
 </html>
