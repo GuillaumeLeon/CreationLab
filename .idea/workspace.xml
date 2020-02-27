@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +118,7 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="git status" />
+      <command value="git checkout .idea/workspace.xml" />
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.autre.php">
@@ -320,27 +323,27 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582758998499">
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1582844317055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758998499" />
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582844317055" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
-    <state width="1921" height="335" key="GridCell.Tab.0.bottom" timestamp="1582758904685">
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582830647275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
-    <state width="1921" height="335" key="GridCell.Tab.0.center" timestamp="1582758904685">
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830647275" />
+    <state width="1921" height="269" key="GridCell.Tab.0.center" timestamp="1582830647275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
-    <state width="1921" height="335" key="GridCell.Tab.0.left" timestamp="1582758904685">
+    <state width="1921" height="269" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830647275" />
+    <state width="1921" height="269" key="GridCell.Tab.0.left" timestamp="1582830647274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
-    <state width="1921" height="335" key="GridCell.Tab.0.right" timestamp="1582758904685">
+    <state width="1921" height="269" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830647274" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right" timestamp="1582830647275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758904685" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830647275" />
     <state width="1921" height="335" key="GridCell.Tab.1.bottom" timestamp="1582758904685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -361,10 +364,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="539" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786546290" />
-    <state x="764" y="439" key="NewPhpFileDialog" timestamp="1582757975235">
+    <state x="764" y="439" key="NewPhpFileDialog" timestamp="1582830787050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582757975235" />
+    <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830787050" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1582759151368">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -386,10 +389,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786425086" />
-    <state x="711" y="209" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582673396611">
+    <state x="711" y="209" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582830792082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582673396611" />
+    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830792082" />
     <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1582552444547" />
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582673950495">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -404,10 +407,10 @@
     </state>
     <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582759254840" />
     <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
-    <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1582727048618">
+    <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1582830639856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582727048618" />
+    <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582830639856" />
     <state x="624" y="218" width="672" height="677" key="run.anything.popup" timestamp="1582674233332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
