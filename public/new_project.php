@@ -35,7 +35,7 @@ if ($_SESSION['connected'] != 1) {
        </div>
        <div class="form-group">
          <label for="description">Description :</label>
-          <textarea class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true"></textarea>
+          <textarea class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='280'></textarea>
       </div>
       <div class="form-group">
         <label for="contenue">Ecrivez votre histoire :</label>

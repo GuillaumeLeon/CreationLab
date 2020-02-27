@@ -55,7 +55,7 @@ $_SESSION['post_id'] = $post_id;
       <form action="../add_suite.php" method="post">
       <div class="form-group">
         <label for="contenue">Ecrivez votre histoire :</label>
-        <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox"></textarea>
+        <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox" maxlength='280'></textarea>
       </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
       </form>
