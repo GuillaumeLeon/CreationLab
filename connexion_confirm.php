@@ -6,11 +6,11 @@ if ($_SESSION['connected'] == 0) {
         $email = $_POST['email'];
         $password = $_POST['password'];
     } else {
-        header("Location:connexion.php");
+        header("Location:public/connexion.php");
         exit;
     }
 } else {
-    header("Location:connexion.php");
+    header("Location:public/connexion.php");
     exit;
 }
 
@@ -22,9 +22,9 @@ $pass = $connect->fetch();
 
 $auth = 1;
 if ($password == $pass[0]) {
-    header("Location:autre.php");
+    header("Location:public/autre.php");
 } else {
-    header("Location:connexion.php");
+    header("Location:public/connexion.php");
     exit;
 }
 $_SESSION['connected'] = 1;

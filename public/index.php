@@ -1,5 +1,5 @@
 <?php
-include 'database/db.php';
+include '../database/db.php';
 session_start();
 if(isset($_SESSION['connected'])) {
    if ($_SESSION['connected'] == 1) {
@@ -35,7 +35,7 @@ $post = $get_post->fetchAll();
   </nav>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
-   include('includes/data_not_connected.php');
+   include('../includes/data_not_connected.php');
 }?>
 <?php include '../includes/footer.php';?>
 </body>
