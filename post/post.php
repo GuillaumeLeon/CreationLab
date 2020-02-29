@@ -145,26 +145,22 @@ $downvote_nb = $get_downvote->fetch();
 <script>
     function upvote() {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'vote.php');
+        xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
             if(xhr.status === 200) {
-                console.log('upvote');
             } else if(xhr.status !== 200){
-                console.log('c\'est la merde');
             }
         };
         xhr.send("voteType=upvote&post_id=<?=  $post[0]['post_id']?>");
     }
     function downvote() {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'vote.php');
+        xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
             if(xhr.status === 200) {
-                console.log('downvote');
             } else if(xhr.status !== 200){
-                console.log('c\'est la merde');
             }
         };
         xhr.send("voteType=downvote&post_id=<?= $post[0]['post_id']?>");

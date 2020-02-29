@@ -41,7 +41,7 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
 <script>
     function upvote(id) {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'vote.php');
+        xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
             if(xhr.status === 200){
@@ -54,7 +54,7 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
     }
     function downvote(id) {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'vote.php');
+        xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
             if(xhr.status === 200) {
