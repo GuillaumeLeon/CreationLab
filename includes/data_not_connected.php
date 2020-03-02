@@ -9,23 +9,23 @@ $get_downvote->execute();
 $downvote_nb = $get_downvote->fetch();
 ?>
 <div class="container row post mt-3 mb-3">
-    <div class="vote text-center">
-        <a href="connexion.php"><button type="button" class="btn btn-light upvote"><img src="image/arrow_up.svg" alt="upvote"></button></a>
-        <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-        <a href="connexion.php"><button type="button" class="btn btn-light downvote"><img src="image/arrow_down.svg" alt="downvote"></button></a>
-    </div>
-
     <div class="corps">
         <div class="info">
+            <div class="vote">
+                <a href="connexion.php"><button type="button" class="btn btn-light upvote"><img src="image/arrow_up.svg" alt="upvote"></button></a>
+                <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+                <a href="connexion.php"><button type="button" class="btn btn-light downvote"><img src="image/arrow_down.svg" alt="downvote"></button></a>
+            </div>
             <?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?>
         </div>
         <div class="title">
-            <?= $post[$i]['post_name'] ?>
+            <h1><?= $post[$i]['post_name'] ?></h1>
         </div>
-        <div class="contenue">
+        <div class="contenue p-4">
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
+
             <a href="connexion.php"><button type="button" class="btn btn-light">Commenter</button></a>
             <button type="button" class="btn btn-light">Partager</button>
             <a href="connexion.php"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
