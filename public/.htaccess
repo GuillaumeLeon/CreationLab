@@ -2,7 +2,8 @@
 # Répertoire : /public/
 #--------------------------------------------------
 Options +FollowSymlinks
+
 RewriteEngine on
-RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
+

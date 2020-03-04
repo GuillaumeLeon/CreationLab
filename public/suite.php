@@ -28,8 +28,8 @@ $_SESSION['post_id'] = $post_id;
 
 <body>
   <nav class="navbar">
-    <span class="logo" style="left:-187px;"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                                     height="71"></a></span>
+    <span class="logo" style="left:-187px;"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="298"
+                                                height="142"></a></span>
           <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
   </nav>
 <?php include '../includes/menu.php';?>

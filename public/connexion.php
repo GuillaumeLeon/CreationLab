@@ -13,8 +13,7 @@
 
 <body>
     <nav class="navbar">
-        <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                    height="71"></a></span>
+        <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="298" height="142"></a></span>
     </nav>
     <div class="main">
     <form class="inscription mt-3" action="../connexion_confirm.php" method="post">
