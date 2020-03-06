@@ -18,8 +18,16 @@ body {
 .logo {
    margin-left: auto;
    margin-right: auto;
+   display: grid;
+   grid-template-columns: none;
+   grid-auto-columns: auto;
 }
 
+.red_line-nav {
+   background-color: #e8606b;
+   width: 100%;
+   height: 10px;
+}
 .inscription {
    margin-left: auto;
    margin-right: auto;

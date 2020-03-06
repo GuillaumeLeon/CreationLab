@@ -25,10 +25,16 @@ $post = $get_post->fetchAll();
 </head>
 
 <body>
-<nav class="navbar">
-    <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-    <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="298" height="142"></a></span>
-    <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+<nav class="navbar flex-column">
+        <div class="logo">
+            <div class="red_line-nav" style="grid-column: 1"></div>
+            <a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="620" height="437" ></a>
+            <div class="red_line-nav" style="grid-column: 1"></div>
+        </div>
+        <div class="bouton">
+            <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
+            <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+    </div>
 </nav>
 <?php include '../includes/menu.php';?>
 <?php
