@@ -66,5 +66,6 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
         xhr.send("voteType=downvote&post_id="+id);
     }
 </script>
+<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
 </body>
 </html>

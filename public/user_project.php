@@ -38,5 +38,6 @@ $post = $get_post->fetchAll();
 include 'includes/data_connected.php';
 }?>
 <?php include '../includes/footer.php';?>
+<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
 </body>
 </html>

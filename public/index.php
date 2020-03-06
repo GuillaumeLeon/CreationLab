@@ -38,5 +38,6 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
    include('../includes/data_not_connected.php');
 }?>
 <?php include '../includes/footer.php';?>
+  <script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
 </body>
 </html>

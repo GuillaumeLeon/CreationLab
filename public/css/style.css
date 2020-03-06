@@ -28,7 +28,7 @@ body {
 }
 
 .inscription label {
-   color: #e5e9f0;
+   color: #000000;
 }
 
 .post {
@@ -98,18 +98,20 @@ footer a {
 
 .menu ul li {
    position: relative;
+   color: #000000;
 }
 
 .menu {
    text-transform: uppercase;
-   color: #000000;
    height: 4em;
    background-color: #F7F6EE;
    width: 100%;
 }
+.menu a {
+   color: #000000;
+}
 
 li {
-   color:#000000;
    list-style: none;
    font-size: 1.2em;
    display: inline-block;
@@ -210,4 +212,22 @@ h1 {
    line-height: 1.5;
    font-size: 18px;
    overflow-wrap: break-word;
+}
+
+.red_line {
+   background-color: #e8606b;
+   width: 100%;
+   height: 5px;
+}
+
+.yellow_line {
+   background-color: #FCD068;
+   width: 100%;
+   height: 5px;
+}
+
+.blue_line {
+   background-color: #99DEDF;
+   width: 100%;
+   height: 5px;
 }

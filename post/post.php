@@ -77,27 +77,28 @@ $downvote_nb = $get_downvote->fetch();
 </div>
 
 <div class="container row post mt-3 mb-3">
-    <div class="vote text-center">
-        <button type="button" class="btn btn-light upvote" onclick="upvote()"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
-        <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-        <button type="button" class="btn btn-light downvote"onclick="downvote()"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
-    </div>
-
     <div class="corps">
         <div class="info">
+            <div class="vote">
+                <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
+                <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+            </div>
             <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>
         <div class="title">
-            <?=  $post[0]['post_name'] ?>
+            <h1><?= $post[0]['post_name'] ?></h1>
         </div>
-        <div class="contenue">
-            <?=  $post[0]['contenue'] ?>
+        <div class="contenue p-4">
+            <?= $post[0]['contenue'] ?>
         </div>
+
         <div class="interaction">
             <?php if(!isset($suite)) {?>
                 <button type="button" class="btn btn-light">Partager</button>
                 <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             <?php }?>
+
         </div>
     </div>
 </div>
@@ -130,8 +131,10 @@ $downvote_nb = $get_downvote->fetch();
     for ($i = count($com) - 1; $i > 0 ; $i--) {
         ?>
         <div class="container row comment mb-3" >
-            <p class="info"> Crée le <?=  $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
-            <p class="content "><?=  $com[$i]['content']; ?></p>
+            <p class="blebleble"> Crée le <?=  $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+            <div class="content">
+                <p class="content "><?=  $com[$i]['content']; ?></p>
+            </div>
             <form action="replies.php" method="POST">
                 <input id="content_com" type="text" style="display: none">
                 <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">

@@ -1,4 +1,6 @@
-<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<div class="red_line"></div>
+<div class="yellow_line"></div>
+<div class="blue_line"></div>
 <footer class="footer page-footer text-center">
     <div class="container">
         <div id="monfooter1" class="container-fluid">

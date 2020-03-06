@@ -46,5 +46,6 @@ require "../database/db.php";
 </div>
 <script src="js/password_validation.js"></script>
 <?php include '../includes/footer.php';?>
+<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
 </body>
 </html>
