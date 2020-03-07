@@ -25,15 +25,17 @@ $post = $get_post->fetchAll();
 </head>
 
 <body>
-<nav class="navbar flex-column">
-        <div class="logo">
-            <div class="red_line-nav" style="grid-column: 1"></div>
-            <a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="620" height="437" ></a>
-            <div class="red_line-nav" style="grid-column: 1"></div>
+<nav class="navbar">
+    <div class="logo row">
+        <div class="red_line-nav col"></div>
+        <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+        <div class="red_line-nav col"></div>
+    </div>
+    <div class="d-flex flex-row-reverse row m-2">
+        <div class="d-flex justify-content-start">
+            <div><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></div>
+            <div><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></div>
         </div>
-        <div class="bouton">
-            <span><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-            <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
     </div>
 </nav>
 <?php include '../includes/menu.php';?>
