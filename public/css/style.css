@@ -16,12 +16,8 @@ body {
 }
 
 .logo {
-    width: 100%;
+   width: 100%;
 }
-.logo-creation_lab {
-    object-fit: contain;
-}
-
 .red_line-nav {
    background-color: #e8606b;
    height: 10px;

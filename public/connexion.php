@@ -13,7 +13,11 @@
 
 <body>
     <nav class="navbar">
-        <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="298" height="142"></a></span>
+        <div class="logo row">
+            <div class="red_line-nav col"></div>
+            <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+            <div class="red_line-nav col"></div>
+        </div>
     </nav>
     <div class="main">
     <form class="inscription mt-3" action="../connexion_confirm.php" method="post">

@@ -17,7 +17,11 @@ require "../database/db.php";
 
 <body>
 <nav class="navbar">
-        <span class="logo"><a href="index.php"><img src="image/Creation_Lab.png" alt="logo_creationLab" width="149" height="71"></a></span>
+    <div class="logo row">
+        <div class="red_line-nav col"></div>
+        <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+        <div class="red_line-nav col"></div>
+    </div>
     </nav>
 <div class="main">
     <form class="inscription mt-3" action="../add_users.php" method="post">
