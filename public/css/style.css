@@ -7,14 +7,18 @@ html {
    min-height: 100vh;
 }
 
-nav {
-   background-color: #F7F6EE;
-}
-
 body {
    background-color: #F7F6EE;
 }
 
+nav {
+   background-color: #F7F6EE;
+}
+
+.button-menu {
+   position: absolute;
+    bottom: 30px;
+}
 .logo {
    width: 100%;
 }

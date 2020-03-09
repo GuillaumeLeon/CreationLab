@@ -51,16 +51,30 @@ $downvote_nb = $get_downvote->fetch();
 
 <body>
 <nav class="navbar">
-    <span><a href="../public/new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></span>
-    <span class="logo"><a href="../public/index.php"><img src="../public/image/Creation_Lab.png" alt="logo_creationLab" width="149"
-                                                          height="71"></a></span>
-    <span><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></span>
+    <div class="logo row">
+        <div class="red_line-nav col"></div>
+        <div class="col"><a href="index.php" style="grid-column: 1"><img src="../public/image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+        <div class="red_line-nav col"></div>
+    </div>
+    <div class="button-menu d-flex flex-row row m-2">
+        <!--<div><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></div>
+        <div><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></div>-->
+        <a href="../users/profil.php"><img class="m-2" src="../public/image/user.png" alt="user" width="45" height="45"></a>
+        <a href="../public/project.php"><img class="m-2" src="../public/image/star.png" alt="" width="45" height="45"></a>
+        <a href="../public/new_project.php"><img class="m-2" src="../public/image/cross.png" alt="" width="45" height="45"></a>
+        <a href="../deco.php"><img class="m-2" src="../public/image/door.svg" alt="deconnexion" width="45" height="45"/></a>
+    </div>
 </nav>
+
 <div id="menu">
+    <div class="red_line"></div>
+    <div class="yellow_line"></div>
+    <div class="blue_line"></div>
     <nav class="menu text-center">
         <ul>
-            <li class="deroulant "><a href="#"> Mon profil </a>
+            <li class="deroulant"><a href="#"> Mon profil </a>
                 <ul class="sous text-center">
+
                     <li id="firstli"> <a href="../users/profil.php"> Profil Détaillé </a></li>
                     <li> <a href="../public/user_project.php"> Mes projets </a></li>
                     <li> <a href="#"> Abonnements </a></li>
@@ -74,6 +88,9 @@ $downvote_nb = $get_downvote->fetch();
         </ul>
 
     </nav>
+    <div class="red_line"></div>
+    <div class="yellow_line"></div>
+    <div class="blue_line"></div>
 </div>
 
 <div class="container row post mt-3 mb-3">
