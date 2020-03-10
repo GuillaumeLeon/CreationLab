@@ -32,16 +32,15 @@ $post = $get_post->fetchAll();
         <div class="red_line-nav col"></div>
         <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
         <div class="red_line-nav col"></div>
-
     </div>
     <div class="button">
         <button type="button" class="btn btn-light m-1"><a href="inscription.php">Inscription</a></button>
         <button type="button" class="btn btn-light m-1"><a href="connexion.php">Connexion</a></button>
     </div>
+</nav>
 <div class="red_line"></div>
 <div class="yellow_line"></div>
 <div class="blue_line"></div>
-</nav>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
     include('../includes/data_not_connected.php');
