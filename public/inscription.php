@@ -1,6 +1,8 @@
 <?php
 session_start();
-require "../database/db.php";
+    if($_SESSION['connected'] == 1) {
+        header('Location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,8 +21,9 @@ require "../database/db.php";
 <nav class="navbar">
     <div class="logo row">
         <div class="red_line-nav col"></div>
-        <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
         <div class="red_line-nav col"></div>
+
     </div>
     </nav>
 <div class="main">
@@ -50,6 +53,6 @@ require "../database/db.php";
 </div>
 <script src="js/password_validation.js"></script>
 <?php include '../includes/footer.php';?>
-<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<script src="js/font_awesome.js"></script>
 </body>
 </html>

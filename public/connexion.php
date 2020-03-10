@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['connected'] == 1) {
+    header('Location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,14 +18,14 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo row">
-            <div class="red_line-nav col"></div>
-            <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
-            <div class="red_line-nav col"></div>
-        </div>
-    </nav>
-    <div class="main">
+<nav class="navbar">
+    <div class="logo row">
+        <div class="red_line-nav col"></div>
+        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
+        <div class="red_line-nav col"></div>
+    </div>
+</nav>
+<div class="main">
     <form class="inscription mt-3" action="../connexion_confirm.php" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Adresse Email</label>
@@ -33,8 +39,9 @@
         <button type="submit" class="btn btn-light">Envoyer</button>
     </form>
 </div>
-  <?php include '../includes/footer.php';?>
-    <script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<?php include '../includes/footer.php';?>
+<script src="js/font_awesome.js"></script>
+
 </body>
 
 </html>

@@ -28,7 +28,7 @@ $post = $get_post->fetchAll();
 <nav class="navbar">
     <div class="logo row">
         <div class="red_line-nav col"></div>
-        <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+       <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex flex-row row m-2">
@@ -50,7 +50,7 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
 
 <script>
     function upvote(id) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
@@ -63,7 +63,7 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
         xhr.send("voteType=upvote&post_id="+id);
     }
     function downvote(id) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
@@ -76,6 +76,6 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
         xhr.send("voteType=downvote&post_id="+id);
     }
 </script>
-<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<script src="js/font_awesome.js"></script>
 </body>
 </html>

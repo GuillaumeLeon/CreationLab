@@ -30,8 +30,9 @@ $post = $get_post->fetchAll();
 <nav class="navbar">
     <div class="logo row">
         <div class="red_line-nav col"></div>
-        <div class="col"><a href="index.php" style="grid-column: 1"><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a></div>
+        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
         <div class="red_line-nav col"></div>
+
     </div>
     <div class="button">
         <button type="button" class="btn btn-light m-1"><a href="inscription.php">Inscription</a></button>
@@ -43,6 +44,6 @@ for ($i = count($post) - 1; $i >= 0; $i--) {
     include('../includes/data_not_connected.php');
 }?>
 <?php include '../includes/footer.php';?>
-<script src="https://kit.fontawesome.com/f6b4bd03ce.js" crossorigin="anonymous"></script>
+<script src="js/font_awesome.js"></script>
 </body>
 </html>
