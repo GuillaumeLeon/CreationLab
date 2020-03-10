@@ -2,9 +2,8 @@
 # Répertoire : /post/
 #--------------------------------------------------
 Options +FollowSymlinks
-
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteRule ^(.*)$ post.php?post=$1&slug=$2 [L]
+RewriteRule ^(.*)$ post.php?post=$1 [L]

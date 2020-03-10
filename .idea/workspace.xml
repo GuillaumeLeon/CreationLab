@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/font_awesome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CreationLab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CreationLab.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/post/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/cross.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/inscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/password_validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/password_validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/new_project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/suite.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/suite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/user_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/user_project.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582758998920</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="script location and styling modif (as usual)">
+      <created>1583849772262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583849772262</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +291,8 @@
     <MESSAGE value="file structure" />
     <MESSAGE value="project structure modification" />
     <MESSAGE value="path modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="path modification" />
+    <MESSAGE value="script location and styling modif (as usual)" />
+    <option name="LAST_COMMIT_MESSAGE" value="script location and styling modif (as usual)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">

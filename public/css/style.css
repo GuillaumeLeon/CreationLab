@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-html {
+html, body {
     position: relative;
     font-family: sans-serif;
     min-height: 100vh;
-}
-
-body {
+    margin: 0;
+    padding : 0;
     background-color: #F7F6EE;
 }
 
+.main {
+    height: 69.70vh;
+}
+
+/* Navigation bar */ 
 nav {
     background-color: #F7F6EE;
 }
@@ -28,6 +32,8 @@ nav {
     height: 10px;
     top: 30px;
 }
+
+/* Inscription form*/
 .inscription {
     margin-left: auto;
     margin-right: auto;
@@ -35,9 +41,6 @@ nav {
     width: 15em;
 }
 
-.main {
-    height: 69.70vh;
-}
 .inscription label {
     color: #000000;
 }
@@ -81,6 +84,7 @@ button {
 .contenue {
     height: calc(100% - 168px);
     position: relative;
+    text-align: justify;
 }
 .interaction {
     background-color: #e8606b;
@@ -97,7 +101,7 @@ button {
     width: 300px;
 }
 
-/* CSS de kaorie */
+/* Footer  */
 footer {
     bottom: 0;
     width: 100%;
@@ -109,6 +113,7 @@ footer a {
     color: #e8606b;
 }
 
+/* Menu  */
 .menu ul li {
     position: relative;
     color: #000000;
@@ -142,6 +147,7 @@ li {
     -webkit-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
+    border: 1px solid black;
 }
 
 .menu>ul li:hover .sous {
@@ -168,6 +174,7 @@ li {
     color: orange;
     list-style-type: none;
 }
+
 
 #firstli {
     padding-top: 0.5em;
@@ -197,11 +204,20 @@ h1 {
     width: 60%;
 }
 
+/* Profile */
 .profil {
     width: 40em;
     font-size: 14px;
     text-align: justify;
 }
+.content-profil {
+
+}
+
+.profile button {
+   justify-content: flex-end;
+}
+/* Comment and replies section */
 .comment {
     border: 1px solid black;
     width: 428px;
@@ -227,6 +243,7 @@ h1 {
     overflow-wrap: break-word;
 }
 
+/* Menu and footer line */
 .red_line {
     background-color: #e8606b;
     width: 100%;

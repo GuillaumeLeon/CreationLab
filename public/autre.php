@@ -7,7 +7,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
 }
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL LIMIT 10');
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL ');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
@@ -32,8 +32,6 @@ $post = $get_post->fetchAll();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex flex-row row m-2">
-            <!--<div><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></div>
-            <div><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></div>-->
         <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
         <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
         <a href="new_project.php"><img class="m-2" src="image/cross.png" alt="" width="45" height="45"></a>

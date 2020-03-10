@@ -38,6 +38,9 @@ $post = $get_post->fetchAll();
         <button type="button" class="btn btn-light m-1"><a href="inscription.php">Inscription</a></button>
         <button type="button" class="btn btn-light m-1"><a href="connexion.php">Connexion</a></button>
     </div>
+<div class="red_line"></div>
+<div class="yellow_line"></div>
+<div class="blue_line"></div>
 </nav>
 <?php
 for ($i = count($post) - 1; $i >= 0; $i--) {
