@@ -12,6 +12,13 @@ $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$post_id'");
 $get_post->execute();
 $post = $get_post->fetchAll();
 $_SESSION['post_id'] = $post_id;
+$get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
+$get_upvote->execute();
+$upvote_nb = $get_upvote->fetch();
+
+$get_downvote = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$post_id'");
+$get_downvote->execute();
+$downvote_nb = $get_downvote->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,23 +47,24 @@ $_SESSION['post_id'] = $post_id;
   </nav>
 <?php include '../includes/menu.php';?>
 
-  <div class="container row post mt-3 mb-3">
-      <div class="corps">
-          <div class="info">
-              <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
-          </div>
-          <div class="title">
-              <?= $post[0]['post_name'] ?>
-          </div>
-          <div class="contenue">
-              <?= $post[0]['contenue'] ?>
-          </div>
-          <div class="interaction">
-              <button type="button" class="btn btn-light">Partager</button>
-          </div>
-      </div>
-  </div>
-<div class="main">
+<div class="container row post mt-3 mb-3">
+    <div class="corps">
+        <div class="info" style="justify-content: space-between">
+            <div class="vote">
+                <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="image/arrow_up.svg" alt="upvote"></button>
+                <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><img src="image/arrow_down.svg" alt="downvote"></button>
+            </div>
+            <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
+        </div>
+        <div class="title">
+            <h1><?= $post[0]['post_name'] ?></h1>
+        </div>
+        <div class="contenue p-4">
+            <?= $post[0]['contenue'] ?>
+        </div>
+    </div>
+</div><div class="main">
   <div class="container" id="form_text">
       <form action="../add_suite.php" method="post">
       <div class="form-group">

@@ -27,7 +27,7 @@ if ($_SESSION['connected'] != 1) {
         <div class="red_line-nav col"></div>
 
     </div>
-    <div class="button">
+    <div class="button-menu d-flex flex-row row m-2"">
         <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
         <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
         <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>

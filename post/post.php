@@ -57,8 +57,6 @@ $downvote_nb = $get_downvote->fetch();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex flex-row row m-2">
-	<!--<div><a href="new_project.php"><button type="button" class="btn btn-light">Créer un nouveau projet</button></a></div>
-	<div><a href="../deco.php"><button type="button" class="btn btn-light">Déconnexion</button></a></div>-->
 	<a href="../users/profil.php"><img class="m-2" src="../public/image/user.png" alt="user" width="45" height="45"></a>
 	<a href="../public/project.php"><img class="m-2" src="../public/image/star.png" alt="" width="45" height="45"></a>
 	<a href="../public/new_project.php"><img class="m-2" src="../public/image/cross.png" alt="" width="45" height="45"></a>
