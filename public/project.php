@@ -5,6 +5,11 @@ session_start();
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
+
+$query = "SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "'";
+$get_post = $db->prepare($query);
+$get_post->execute();
+$post = $get_post->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,13 +39,6 @@ if ($_SESSION['connected'] != 1) {
     </div>
 </nav>
 <?php include '../includes/menu.php';?>
-<?php
-$query = "SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "'";
-$get_post = $db->prepare($query);
-$get_post->execute();
-$post = $get_post->fetchAll();
-?>
-</div>
 <h1>Voici vos projets</h1>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include '../includes/data_connected.php';

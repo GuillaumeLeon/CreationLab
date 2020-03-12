@@ -53,10 +53,9 @@ nav {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Roboto', sans-serif;
-    overflow-wrap: scoll;
+    overflow-wrap: break-word;
     background-color: #ffffff;
     color: #000000;
-    overflow: auto;
 }
 .corps {
     width: 100%;
@@ -226,7 +225,6 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     border-radius: 1.5%;
-    display: flex;
     font-family: 'Roboto', sans-serif;
 }
 .replies {
@@ -242,6 +240,7 @@ h1 {
     line-height: 1.5;
     font-size: 18px;
     overflow-wrap: break-word;
+    justify-content: normal;
 }
 
 /* Menu and footer line */

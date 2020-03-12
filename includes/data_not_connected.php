@@ -25,7 +25,6 @@ $downvote_nb = $get_downvote->fetch();
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-
             <a href="connexion.php"><button type="button" class="btn btn-light">Commenter</button></a>
             <button type="button" class="btn btn-light">Partager</button>
             <a href="connexion.php"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
