@@ -2,6 +2,7 @@
 require '../database/db.php';
 session_start();
 
+
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
@@ -16,12 +17,12 @@ $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
 $post = $get_post->fetchAll();
 
-$get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id' ORDER BY created_at");
+$get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
 $get_com->execute();
 $com = $get_com->fetchAll();
 $_SESSION['post'] = $post;
 
-$get_suite = $db->prepare("SELECT * FROM post_text WHERE parent_node='$id'");
+$get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id'");
 $get_suite->execute();
 $suite = $get_suite->fetch();
 
@@ -34,7 +35,6 @@ $upvote_nb = $get_upvote->fetch();
 $get_downvote = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$post_id'");
 $get_downvote->execute();
 $downvote_nb = $get_downvote->fetch();
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -93,11 +93,11 @@ $downvote_nb = $get_downvote->fetch();
 
 <div class="container row post mt-3 mb-3">
     <div class="corps">
-        <div class="info" style="justify-content: space-between">
+        <div class="info">
             <div class="vote">
                 <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                <button type="button" class="btn btn-light downvote" id="<?= $post[$i]['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
             </div>
             <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>
@@ -117,25 +117,92 @@ $downvote_nb = $get_downvote->fetch();
         </div>
     </div>
 </div>
-<?php if($suite != false) {?>
+<?php
+if($suite != false) {
+    $id_suite = $suite['post_id'];
+
+    $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
+    $get_upvote_suite->execute();
+    $upvote_nb_suite = $get_upvote_suite->fetch();
+    $get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
+    $get_downvote_suite->execute();
+    $downvote_nb_suite = $get_downvote_suite->fetch();
+
+    $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
+    $get_suite_existing->execute();
+    $suite_existing = $get_suite_existing->fetch();
+    ?>
     <div class="container row post mt-3 mb-3">
         <div class="corps">
             <div class="info">
+                <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
+                <div class="numberVote"><?= $upvote_nb_suite[0] - $downvote_nb_suite[0] ?></div>
+                <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
                 <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
             </div>
-            <div class="title">
-                <h1><?=  $suite['post_name'] ?></h1>
-            </div>
-            <div class="contenue p-4">
-                <?=  $suite['contenue'] ?>
-            </div>
+        </div>
+        <div class="title">
+            <h1><?= $suite['post_name'] ?></h1>
+        </div>
+        <div class="contenue p-4">
+            <p><?= $suite['contenue'] ?></p>
+        </div>
+        <?php if($suite_existing == false){ ?>
             <div class="interaction">
                 <button type="button" class="btn btn-light">Partager</button>
-                <a href="../public/suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             </div>
-        </div>
+        <?php }?>
     </div>
-<?php } ?>
+    </div>
+    <?php
+    while($suite != false) {
+        $id_suite = $suite['post_id'];
+
+        $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
+        $get_upvote_suite->execute();
+        $upvote_nb_suite = $get_upvote_suite->fetch();
+        $get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
+        $get_downvote_suite->execute();
+        $downvote_nb_suite = $get_downvote_suite->fetch();
+
+        $get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id_suite'");
+        $get_suite->execute();
+        $suite = $get_suite->fetch();
+
+        if($suite != false) {
+            $id_suite = $suite['post_id'];
+            $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
+            $get_suite_existing->execute();
+            $suite_existing = $get_suite_existing->fetch();
+            ?>
+            <div class="container row post mt-3 mb-3">
+                <div class="corps">
+                    <div class="info">
+                        <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
+                        <div class="numberVote"><?= $upvote_nb_suite[0] - $downvote_nb_suite[0] ?></div>
+                        <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+                        <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
+                    </div>
+                    <div class="title">
+                        <h1><?= $suite['post_name'] ?></h1>
+                    </div>
+                    <div class="contenue p-4">
+                        <?= $suite['contenue'] ?>
+                    </div>
+                    <?php if ($suite_existing == false) { ?>
+                        <div class="interaction">
+                            <button type="button" class="btn btn-light">Partager</button>
+                            <a href="../public/suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <?php
+        }
+    }
+}
+?>
 <div class="container add_comment">
     <form action="../comment.php" method="POST">
         <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
@@ -143,21 +210,20 @@ $downvote_nb = $get_downvote->fetch();
     </form>
 </div>
 <?php if (!empty($com)) {
-    for ($i = 0; $i < count($com)  ; $i++) {
+    for ($i = 0; $i < count($com) ; $i++) {
         ?>
         <div class="container comment mb-3" >
-            <div class="info_bar">
-                <p> Crée le <?= $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
-            </div>
-            <div class="content">
+            <div class="row">
+            <p> Crée le <?=  $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+                </div>
+            <div class="content row p-4">
                 <p><?= $com[$i]['content']; ?></p>
             </div>
-            <!--
-            <form action="replies.php" method="POST">
+            <!-- <form action="replies.php" method="POST">
                 <input id="content_com" type="text" style="display: none">
                 <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">
             </form>
-             <button class="replies" onclick="comment();">Répondre</button>-->
+            <button class="replies" onclick="comment();">Répondre</button>-->
         </div>
     <?php }
 }
@@ -173,7 +239,7 @@ $downvote_nb = $get_downvote->fetch();
             } else if(xhr.status !== 200){
             }
         };
-        xhr.send("voteType=upvote&post_id=<?= $post[0]['post_id']?>");
+        xhr.send("voteType=upvote&post_id=<?=  $post[0]['post_id']?>");
     }
     function downvote() {
         var xhr = new XMLHttpRequest();
