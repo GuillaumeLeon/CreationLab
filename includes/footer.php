@@ -16,7 +16,7 @@
         </div>
 
         <div id="monfooter3">
-            Site crée par  <a href="#">WebChemistery</a>
+            Site crée par  <a href="http://webchemisters.yj.fr" target="_blank">WebChemisters</a>
         </div>
     </div>
 </footer>

@@ -9,7 +9,7 @@ if(isset($_SESSION['connected'])) {
         $_SESSION['connected'] = 0;
     }
 }
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text LIMIT 10');
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text ORDER BY date_post DESC');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
@@ -34,16 +34,20 @@ $post = $get_post->fetchAll();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button">
-        <button type="button" class="btn btn-light m-1"><a href="inscription.php">Inscription</a></button>
-        <button type="button" class="btn btn-light m-1"><a href="connexion.php">Connexion</a></button>
+        <button type="button" class="btn btn-outline-primary m-1"><a href="inscription.php">Inscription</a></button>
+        <button type="button" class="btn btn-outline-primary m-1"><a href="connexion.php">Connexion</a></button>
     </div>
 </nav>
 <div class="red_line"></div>
 <div class="yellow_line"></div>
 <div class="blue_line"></div>
 <?php
+
 for ($i = count($post) - 1; $i >= 0; $i--) {
     include('../includes/data_not_connected.php');
+}
+?>
+
 }?>
 <?php include '../includes/footer.php';?>
 <script src="js/font_awesome.js"></script>

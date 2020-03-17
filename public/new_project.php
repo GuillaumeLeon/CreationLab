@@ -5,6 +5,10 @@ session_start();
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
+
+$get_tag = $db->prepare("SELECT tag_name FROM tag");
+$get_tag->execute();
+$tag = $get_tag->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,9 +32,9 @@ if ($_SESSION['connected'] != 1) {
 
     </div>
     <div class="button-menu d-flex flex-row row m-2"">
-        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
-        <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
-        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
+    <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
+    <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
+    <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
     </div>
 </nav>
 <?php include '../includes/menu.php';?>
@@ -39,15 +43,26 @@ if ($_SESSION['connected'] != 1) {
         <form action="../add_post.php" method="post">
             <div class="form-group">
                 <label for="title">Titre :</label>
-                <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" />
+                <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" required/>
             </div>
             <div class="form-group">
                 <label for="description">Description :</label>
-                <textarea class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='280'></textarea>
+                <textarea class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='280'required></textarea>
+            </div>
+            <div class="tag">
+                <label for="tag">Tag :</label>
+                <input list="tag">
+                <datalist id="tag">
+                    <?php
+                    foreach ($tag as $row){
+                        echo "<option value=\"".$row['tag_name']."\"/>";
+                    }
+                    ?>
+                </datalist>
             </div>
             <div class="form-group">
                 <label for="contenue">Ecrivez votre histoire :</label>
-                <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox"></textarea>
+                <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
