@@ -8,7 +8,9 @@ if ($_SESSION['connected'] != 1) {
 
 $get_tag = $db->prepare("SELECT tag_name FROM tag");
 $get_tag->execute();
-$tag = $get_tag->fetchAll();
+$result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
+var_dump($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,6 +22,11 @@ $tag = $get_tag->fetchAll();
     <link rel="icon" href="image/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-tokenfield.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
     <title>Creation Lab</title>
 </head>
 
@@ -51,14 +58,17 @@ $tag = $get_tag->fetchAll();
             </div>
             <div class="tag">
                 <label for="tag">Tag :</label>
-                <input list="tag">
+                <!--<input list="tag">
                 <datalist id="tag">
                     <?php
-                    foreach ($tag as $row){
-                        echo "<option value=\"".$row['tag_name']."\"/>";
-                    }
-                    ?>
-                </datalist>
+                /*foreach ($tag as $row){
+                    echo "<option value=\"".$row['tag_name']."\"/>";
+                }
+                */?>
+                </datalist>-->
+                <div class="container">
+                    <input type="text" class="form-control" id="tokenfield" name="tag" />
+                </div>
             </div>
             <div class="form-group">
                 <label for="contenue">Ecrivez votre histoire :</label>
@@ -68,6 +78,25 @@ $tag = $get_tag->fetchAll();
         </form>
     </div>
 
+    <script type="text/javascript">
+
+        $('#tokenfield').tokenfield({
+            autocomplete:{
+                source: [<?php
+                    for ($i = 0; $i < count($result); $i++) {
+                        if(isset($result[$i+1])){
+                            echo "'".$result[$i]."',";
+                        } else {
+                            echo "'".$result[$i]."'";
+                        }
+                    }
+                    ?>],
+                delay: 100
+            },
+            showAutocompleteOnFocus: true
+        });
+
+    </script>
     <?php include '../includes/footer.php';?>
     <script src="js/font_awesome.js"></script>
 </body>
