@@ -21,7 +21,7 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
 <nav class="navbar mb-2">
     <div class="logo row">
         <div class="red_line-nav col"></div>
-        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
+        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
         <div class="red_line-nav col"></div>
     </div>
 

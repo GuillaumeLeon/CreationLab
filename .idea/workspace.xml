@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap-tokenfield.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap-tokenfield.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CreationLab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CreationLab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/new_project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/connexion.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,46 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="creationlab@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="creationlab: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="post_text: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-    </expand>
-    <select />
+    <execution />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="creationlab" />
@@ -108,7 +64,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -202,7 +158,14 @@
       <workItem from="1584310514647" duration="5342000" />
       <workItem from="1584355842606" duration="4572000" />
       <workItem from="1584453133528" duration="4846000" />
-      <workItem from="1584568680166" duration="3301000" />
+      <workItem from="1584568680166" duration="3551000" />
+      <workItem from="1584658938535" duration="22000" />
+      <workItem from="1584658995327" duration="1784000" />
+      <workItem from="1584662891567" duration="268000" />
+      <workItem from="1584733032919" duration="236000" />
+      <workItem from="1584733281127" duration="41000" />
+      <workItem from="1584733334103" duration="455000" />
+      <workItem from="1584733807150" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -267,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584486280336</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tag system front-end side (multiple js and css file)&#10;TODO : back-end (not working for some reason)">
+      <created>1584572219629</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1584572219630</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +265,8 @@
     <MESSAGE value="path modification" />
     <MESSAGE value="script location and styling modif (as usual)" />
     <MESSAGE value="indentation and tag system" />
-    <option name="LAST_COMMIT_MESSAGE" value="indentation and tag system" />
+    <MESSAGE value="tag system front-end side (multiple js and css file)&#10;TODO : back-end (not working for some reason)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tag system front-end side (multiple js and css file)&#10;TODO : back-end (not working for some reason)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -322,10 +293,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="550" y="199" width="800" height="677" key="#Updates/0.25.1920.1055@0.25.1920.1055" timestamp="1582533534932" />
-    <state x="550" y="163" width="804" height="671" key="#Vim_Emulation" timestamp="1583848956147">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="552" y="178" width="804" height="671" key="#Vim_Emulation" timestamp="1584733679661">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Vim_Emulation/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786716698" />
+    <state x="552" y="178" key="#Vim_Emulation/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584733679661" />
     <state x="550" y="163" width="804" height="671" key="#Vim_Emulation/0.0.1920.1080@0.0.1920.1080" timestamp="1583848956147" />
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582067866635">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -339,10 +310,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="671" y="336" width="568" height="314" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583086644823" />
-    <state x="638" y="237" width="628" height="535" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583023024336">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="640" y="249" width="628" height="535" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584662854051">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581714814062" />
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584662854051" />
     <state x="638" y="237" width="628" height="535" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583023024336" />
     <state x="711" y="379" width="527" height="349" key="#com.intellij.tools.ToolEditorDialog" timestamp="1582536582281">
       <screen x="0" y="25" width="1920" height="1055" />
@@ -352,10 +323,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1584572152302">
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1584743404199">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584572152302" />
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584743404199" />
     <state x="510" y="7" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1583849772102" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
     <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582830647275">
@@ -398,15 +369,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584568815786" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1583535388362">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1584733774657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1583535388362" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584733774657" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1584486284735">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1584572224154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584486284735" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584572224154" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -448,10 +419,10 @@
     </state>
     <state x="624" y="218" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582674233332" />
     <state x="624" y="246" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552507767" />
-    <state x="623" y="233" width="672" height="705" key="search.everywhere.popup" timestamp="1583229396607">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584733566352">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582411298181" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584733566352" />
     <state x="623" y="233" width="672" height="705" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1583229396607" />
     <state x="623" y="253" width="672" height="688" key="search.everywhere.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552515606" />
   </component>

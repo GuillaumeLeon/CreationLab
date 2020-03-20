@@ -7,11 +7,11 @@ if ($_SESSION['connected'] == 0) {
         $email = $_POST['email'];
         $password = $_POST['password'];
     } else {
-        header("Location:inscription.php");
+        header("Location:public/inscription.php");
         exit;
     }
 } else {
-    header("Location:inscription.php");
+    header("Location:public/inscription.php");
     exit;
 }
 
@@ -19,4 +19,4 @@ $password = hash('sha256', $password);
 $add_users = $db->prepare("INSERT INTO users (username, password, email) VALUE (?,?,?)");
 $add_users->execute(array($username, $password, $email));
 
-header("Location:connexion.php");
+header("Location:public/connexion.php");
