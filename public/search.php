@@ -1,10 +1,14 @@
 <?php
-require '../database/db.php';
+    require '../database/db.php';
 
-session_start();
-if ($_SESSION['connected'] != 1) {
-    header('Location:index.php');
+    var_dump($_GET);
+if(isset($_GET['search'])) {
+    $search = $_GET['search'];
 }
+    $get_post = $db->prepare("SELECT author,date_post,post_id,contenue,post_name,slug,tag FROM post_text WHERE post_name LIKE '%$search%' OR tag LIKE '%$search%' LIMIT 10");
+    $get_post->execute();
+    $post = $get_post->fetchAll();
+    var_dump($post);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -43,18 +47,47 @@ if ($_SESSION['connected'] != 1) {
 </nav>
 
 <?php include '../includes/menu.php';?>
+<div class="main">
+
 <?php
-$query = "SELECT author,date_post,post_id,contenue,post_name FROM post_text WHERE author='" . $_SESSION['username'] . "'";
-$get_post = $db->prepare($query);
-$get_post->execute();
-$post = $get_post->fetchAll();
+if(!empty($post)){
+for ($i = 0; $i <count($post); $i++) {
+    include '../includes/data_connected.php';
+}
+} else {
+    echo "C'EST VIDE LA PUTAIN DE TA RACE";
+}
 ?>
 </div>
-<h1>Voici vos projets</h1>
-<?php for ($i = count($post) - 1; $i >= 0; $i--) {
-    include 'includes/data_connected.php';
-}?>
 <?php include '../includes/footer.php';?>
+<script>
+    function upvote(id) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '../vote.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                //console.log('upvote');
+            } else if(xhr.status !== 200){
+                //console.log('c\'est la merde');
+            }
+        };
+        xhr.send("voteType=upvote&post_id="+id);
+    }
+    function downvote(id) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '../vote.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            if(xhr.status === 200) {
+                //console.log('downvote');
+            } else if(xhr.status !== 200) {
+                //console.log('c\'est la merde');
+            }
+        };
+        xhr.send("voteType=downvote&post_id="+id);
+    }
+</script>
 <script src="js/font_awesome.js"></script>
 </body>
 </html>

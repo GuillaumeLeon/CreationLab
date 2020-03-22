@@ -1,7 +1,7 @@
-<div class="red_line"></div>
-<div class="yellow_line"></div>
-<div class="blue_line"></div>
 <div id="menu">
+    <div class="red_line"></div>
+    <div class="yellow_line"></div>
+    <div class="blue_line"></div>
   <nav class="menu text-center">
  <ul>
         <li class="deroulant"><a href="#"> Mon profil </a>
@@ -19,7 +19,7 @@
   </ul> 
     
 </nav>
+    <div class="red_line"></div>
+    <div class="yellow_line"></div>
+    <div class="blue_line"></div>
 </div>
-<div class="red_line"></div>
-<div class="yellow_line"></div>
-<div class="blue_line"></div>

@@ -11,16 +11,15 @@ html, body {
 }
 
 .main {
-    height: 69.70vh;
+    min-height: 69.70vh;
 }
 
-/* Navigation bar */ 
+/* Navigation bar */
 nav {
     background-color: #F7F6EE;
 }
 
 .button-menu {
-    position: absolute;
     bottom: 30px;
 }
 .logo {
@@ -31,6 +30,10 @@ nav {
     background-color: #e8606b;
     height: 10px;
     top: 30px;
+}
+.submit-button {
+    background: transparent;
+    border: transparent;
 }
 
 /* Inscription form*/
@@ -215,7 +218,7 @@ h1 {
 }
 
 .profile button {
-   justify-content: flex-end;
+    justify-content: flex-end;
 }
 /* Comment and replies section */
 .comment {
