@@ -9,7 +9,6 @@ if ($_SESSION['connected'] != 1) {
 $get_tag = $db->prepare("SELECT tag_name FROM tag");
 $get_tag->execute();
 $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
-var_dump($result);
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ var_dump($result);
     <link rel="stylesheet" type="text/css" href="css/bootstrap-tokenfield.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+    <script src="js/bootstrap-tokenfield.min.js"></script>
     <title>Creation Lab</title>
 </head>
 
@@ -37,19 +36,19 @@ var_dump($result);
         <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
         <div class="red_line-nav col"></div>
     </div>
-        <div class="button-menu d-flex m-2">
-            <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
-            <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
-            <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
-        </div>
-        <div class="search_bar">
-            <form class="" action="search.php" method="GET">
-                <div class="md-form mt-0">
-                    <input class="form-control search-field" type="text" placeholder="recherche" aria-label="" required>
-                    <button class="submit-button" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-        </div>
+    <div class="button-menu d-flex m-2">
+        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="user" width="45" height="45"></a>
+        <a href="project.php"><img class="m-2" src="image/star.png" alt="" width="45" height="45"></a>
+        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
+    </div>
+    <div class="search_bar">
+        <form class="" action="search.php" method="GET">
+            <div class="md-form mt-0">
+                <input class="form-control search-field" type="text" placeholder="recherche" aria-label="" required>
+                <button class="submit-button" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
 </nav>
 
 <?php include '../includes/menu.php';?>
@@ -66,17 +65,7 @@ var_dump($result);
             </div>
             <div class="tag">
                 <label for="tag">Tag :</label>
-                <!--<input list="tag">
-                <datalist id="tag">
-                    <?php
-                /*foreach ($tag as $row){
-                    echo "<option value=\"".$row['tag_name']."\"/>";
-                }
-                */?>
-                </datalist>-->
-                <div class="container">
-                    <input type="text" class="form-control" id="tokenfield" name="tag" />
-                </div>
+                <input type="text" class="form-control" id="tokenfield" name="tag" row="5" />
             </div>
             <div class="form-group">
                 <label for="contenue">Ecrivez votre histoire :</label>
@@ -87,7 +76,6 @@ var_dump($result);
     </div>
 
     <script type="text/javascript">
-
         $('#tokenfield').tokenfield({
             autocomplete:{
                 source: [<?php

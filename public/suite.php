@@ -47,12 +47,16 @@ $downvote_nb = $get_downvote->fetch();
         <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
     </div>
     <div class="search_bar">
-        <form class="" action="search.php" method="GET">
-            <div class="md-form mt-0">
-                <input class="form-control search-field" type="text" placeholder="recherche" name="search" id="search" required>
-                <button class="submit-button" type="submit"><i class="fas fa-search"></i></button>
+        <form class="" action="search.php" method="get">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 lime-border search-field" type="text" placeholder="recherche" name="q" id="search" required>
+                <div class="input-group-append">
+                    <span class="input-group-text"><button class="submit-button" type="submit"><i class="fas fa-search"></i></button></span>
+                </div>
             </div>
         </form>
+    </div>
+
 </nav>
 
 <?php include '../includes/menu.php';?>

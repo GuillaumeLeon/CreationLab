@@ -1,14 +1,12 @@
 <?php
     require '../database/db.php';
 
-    var_dump($_GET);
-if(isset($_GET['search'])) {
-    $search = $_GET['search'];
+if(isset($_GET['q'])) {
+    $search = $_GET['q'];
 }
     $get_post = $db->prepare("SELECT author,date_post,post_id,contenue,post_name,slug,tag FROM post_text WHERE post_name LIKE '%$search%' OR tag LIKE '%$search%' LIMIT 10");
     $get_post->execute();
     $post = $get_post->fetchAll();
-    var_dump($post);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,13 +35,16 @@ if(isset($_GET['search'])) {
         <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="deconnexion" width="45" height="45"/></a>
     </div>
     <div class="search_bar">
-        <form class="" action="search.php" method="GET">
-            <div class="md-form mt-0">
-                <input class="form-control search-field" type="text" placeholder="recherche" name="search" id="search" required>
-                <button class="submit-button" type="submit"><i class="fas fa-search"></i></button>
+        <form class="" action="search.php" method="get">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 lime-border search-field" type="text" placeholder="recherche" name="q" id="search" required>
+                <div class="input-group-append">
+                    <span class="input-group-text"><button class="submit-button" type="submit"><i class="fas fa-search"></i></button></span>
+                </div>
             </div>
         </form>
     </div>
+
 </nav>
 
 <?php include '../includes/menu.php';?>

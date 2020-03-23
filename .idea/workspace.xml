@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CreationLab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CreationLab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/autre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/new_project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/suite.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/suite.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/user_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/user_project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/profil.php" afterDir="false" />
@@ -91,10 +92,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\CreationLab\public\js" />
+      <recent name="C:\wamp64\www\CreationLab\users" />
       <recent name="C:\wamp64\www\CreationLab\public\css" />
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="C:\wamp64\www\CreationLab\public\image" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -189,7 +190,9 @@
       <workItem from="1584733334103" duration="455000" />
       <workItem from="1584733807150" duration="1000" />
       <workItem from="1584743302065" duration="1345000" />
-      <workItem from="1584915064922" duration="4604000" />
+      <workItem from="1584915064922" duration="5463000" />
+      <workItem from="1584981389355" duration="1205000" />
+      <workItem from="1584996760370" duration="1564000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -268,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584743442390</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="search bar implemented">
+      <created>1584919917064</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1584919917064</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +308,8 @@
     <MESSAGE value="indentation and tag system" />
     <MESSAGE value="tag system front-end side (multiple js and css file)&#10;TODO : back-end (not working for some reason)" />
     <MESSAGE value="tag back-end done needed a fix on the db" />
-    <option name="LAST_COMMIT_MESSAGE" value="tag back-end done needed a fix on the db" />
+    <MESSAGE value="search bar implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="search bar implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -355,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1584919895322">
+    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1584919916566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584919895322" />
+    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584919916566" />
     <state x="510" y="7" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1583849772102" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
     <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582830647275">
@@ -406,10 +417,10 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584733774657" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1584743447230">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1584919922867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584743447230" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584919922867" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -422,10 +433,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1581786425086" />
-    <state x="711" y="209" width="476" height="640" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584917121591">
+    <state x="711" y="209" width="476" height="640" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584997911565">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584917121591" />
+    <state x="711" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584997911565" />
     <state x="689" y="-25" width="476" height="640" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1583849080091" />
     <state x="711" y="237" width="409" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1582552444547" />
     <state x="727" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584572156084">
@@ -436,10 +447,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758902147" />
-    <state x="613" y="113" width="700" height="854" key="find.popup" timestamp="1583849383451">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="613" y="109" width="948" height="822" key="find.popup" timestamp="1584996855417">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="109" width="694" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582759254840" />
+    <state x="613" y="109" width="948" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584996855417" />
     <state x="613" y="113" width="700" height="854" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1583849383451" />
     <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
     <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1582830639856">
