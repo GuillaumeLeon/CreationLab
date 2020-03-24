@@ -31,6 +31,10 @@ nav {
     height: 10px;
     top: 30px;
 }
+.submit-button {
+   border: transparent;
+   background: transparent;
+}
 
 /* Inscription form*/
 .inscription {
