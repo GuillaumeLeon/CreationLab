@@ -118,7 +118,6 @@ $downvote_nb = $get_downvote->fetch();
         <div class="contenue p-4">
             <?= $post[0]['contenue'] ?>
         </div>
-
         <div class="interaction">
             <?php if($suite == false) {?>
                 <button type="button" class="btn btn-light">Partager</button>
@@ -164,7 +163,6 @@ if($suite != false) {
                 <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             </div>
         <?php }?>
-    </div>
     </div>
     <?php
     while($suite != false) {
@@ -225,16 +223,11 @@ if($suite != false) {
         ?>
         <div class="container comment mb-3" >
             <div class="row">
-            <p> Crée le <?=  $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
-                </div>
+                <p> Crée le <?= $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+            </div>
             <div class="content row p-4">
                 <p><?= $com[$i]['content']; ?></p>
             </div>
-            <!-- <form action="replies.php" method="POST">
-                <input id="content_com" type="text" style="display: none">
-                <input class="send_but" type="submit" value="Répondre" name="answer" style="display: none">
-            </form>
-            <button class="replies" onclick="comment();">Répondre</button>-->
         </div>
     <?php }
 }
@@ -242,7 +235,7 @@ if($suite != false) {
 <?php include '../includes/footer.php';?>
 <script>
     function upvote() {
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){
@@ -253,7 +246,7 @@ if($suite != false) {
         xhr.send("voteType=upvote&post_id=<?=  $post[0]['post_id']?>");
     }
     function downvote() {
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open('POST', '../vote.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function(){

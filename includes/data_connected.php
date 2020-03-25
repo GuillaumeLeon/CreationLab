@@ -16,7 +16,7 @@ $downvote_nb = $get_downvote->fetch();
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
                 <button type="button" class="btn btn-light downvote" id="<?= $post[$i]['post_id'] ?>" onclick="downvote(this.id)"><img src="image/arrow_down.svg" alt="downvote"></button>
             </div>
-            <?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?>
+            <p><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></p>
         </div>
         <div class="title">
             <h1><?= $post[$i]['post_name'] ?></h1>
@@ -25,9 +25,9 @@ $downvote_nb = $get_downvote->fetch();
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="../post/post.php?post=<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
+            <a href="../post/<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
             <button type="button" class="btn btn-light">Partager</button>
-            <a href="suite.php?post=<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <a href="<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
         </div>
     </div>
 </div>

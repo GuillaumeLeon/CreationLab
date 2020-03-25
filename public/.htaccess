@@ -7,3 +7,4 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
+RewriteRule ^(.*)$ suite.php?post=$1 [L]
