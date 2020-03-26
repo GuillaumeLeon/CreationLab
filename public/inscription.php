@@ -37,15 +37,15 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
         </div>
         <div class="form-group">
             <label>Nom d'utilisateur</label>
-            <input type="username" class="form-control" id="username" name="username">
+            <input type="username" class="form-control" id="username" name="username" maxlength="20">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe </label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" maxlength="20" required>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Confirmer le mot de passe </label>
-            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" maxlength="20" required>
         </div>
         <div class="form-group">
             <input type="checkbox" name="cgu" id="cgu" required>

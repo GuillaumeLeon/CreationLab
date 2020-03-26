@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/data_connected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/suite.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/suite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +199,9 @@
       <workItem from="1585043181209" duration="36000" />
       <workItem from="1585049477459" duration="2100000" />
       <workItem from="1585081125176" duration="2738000" />
+      <workItem from="1585095830440" duration="145000" />
+      <workItem from="1585175878859" duration="135000" />
+      <workItem from="1585176025877" duration="60000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -295,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584998344252</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="dunno dude">
+      <created>1585095918463</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585095918463</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +333,8 @@
     <MESSAGE value="tag back-end done needed a fix on the db" />
     <MESSAGE value="search bar implemented" />
     <MESSAGE value="lot of thing but mostly nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="lot of thing but mostly nothing" />
+    <MESSAGE value="dunno dude" />
+    <option name="LAST_COMMIT_MESSAGE" value="dunno dude" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="174" key="#CLI_Interpreters" timestamp="1581796488849">
@@ -384,16 +391,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
-    <state x="512" y="28" width="882" height="989" key="CommitChangelistDialog2" timestamp="1584998343733">
+    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2" timestamp="1585183791568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584998343733" />
+    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585183791568" />
     <state x="510" y="7" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1583849772102" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1585081567410">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1585176081835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585081567410" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585176081835" />
     <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1582830647275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -434,15 +441,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584917655370" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1584733774657">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585176013346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584733774657" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585176013346" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1585095842386">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1585183794082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585095842386" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585183794082" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -479,10 +486,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="613" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585049505472" />
-    <state x="624" y="218" width="672" height="677" key="run.anything.popup" timestamp="1584915219578">
+    <state x="624" y="218" width="672" height="677" key="run.anything.popup" timestamp="1585095920085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="218" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584915219578" />
+    <state x="624" y="218" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585095920085" />
     <state x="624" y="246" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552507767" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584733566352">
       <screen x="0" y="0" width="1920" height="1040" />

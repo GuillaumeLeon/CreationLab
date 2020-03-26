@@ -104,7 +104,7 @@ $downvote_nb = $get_downvote->fetch();
 
 <div class="container row post mt-3 mb-3">
     <div class="corps">
-        <div class="info">
+        <div class="info" style="justify-content: space-between">
             <div class="vote">
                 <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
