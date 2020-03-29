@@ -23,4 +23,4 @@ $add_suite = $db->prepare("INSERT INTO post_text(post_name, contenue, parent_nod
 $add_suite->execute(array($post_name[0],$content,$post_id,$_SESSION['username'],$date));
 
 unset($_SESSION['post_id']);
-header('Location:index.php');
+header('Location:post/'.$post_id);

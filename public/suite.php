@@ -65,9 +65,9 @@ $downvote_nb = $get_downvote->fetch();
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote">
-                <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="image/arrow_up.svg" alt="upvote"></button>
+                <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><img src="image/arrow_down.svg" alt="downvote"></button>
+                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
             </div>
             <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>

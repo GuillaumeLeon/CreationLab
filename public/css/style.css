@@ -8,6 +8,7 @@ html, body {
     margin: 0;
     padding : 0;
     background-color: #F7F6EE;
+    scroll-behavior: smooth;
 }
 
 .main {
@@ -34,6 +35,18 @@ nav {
 .submit-button {
    border: transparent;
    background: transparent;
+}
+.upvote,.downvote {
+
+}
+.upvote:hover {
+    background: transparent;
+    color: green;
+}
+
+.downvote:hover{
+    background: transparent;
+    color: red;
 }
 
 /* Inscription form*/
@@ -71,6 +84,7 @@ nav {
 .vote {
     display: flex;
 }
+
 button {
     border: transparent;
 }
@@ -102,6 +116,26 @@ button {
 
 #desc_post {
     width: 300px;
+}
+/* back to the top*/
+#back2Top {
+    width: 75px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 10%;
+    color: #555;
+    background-color: #DDF;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: #DDF;
+    color: #000;
 }
 
 /* Footer  */

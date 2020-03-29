@@ -55,7 +55,42 @@ $post = $get_post->fetchAll();
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include '../includes/data_connected.php';
 }?>
+<a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
+
+<script>
+    function upvote(id) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '../vote.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            if(xhr.status === 200){
+            } else if(xhr.status !== 200){
+            }
+        };
+        xhr.send("voteType=upvote&post_id="+id);
+    }
+    function downvote(id) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '../vote.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function(){
+            if(xhr.status === 200) {
+            } else if(xhr.status !== 200) {
+            }
+        };
+        xhr.send("voteType=downvote&post_id="+id);
+    }
+
+    const button = document.getElementById('back2Top');
+    window.addEventListener('scroll', function(e){
+        if(window.scrollY > 300) {
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+</script>
 <script src="js/font_awesome.js"></script>
 </body>
 </html>

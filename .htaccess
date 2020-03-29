@@ -1,7 +1,0 @@
-#--------------------------------------------------
-# Répertoire : root
-#--------------------------------------------------
-Options +FollowSymlinks
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f

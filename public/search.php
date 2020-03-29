@@ -1,12 +1,12 @@
 <?php
-    require '../database/db.php';
+require '../database/db.php';
 
 if(isset($_GET['q'])) {
     $search = $_GET['q'];
 }
-    $get_post = $db->prepare("SELECT author,date_post,post_id,contenue,post_name,slug,tag FROM post_text WHERE post_name LIKE '%$search%' OR tag LIKE '%$search%' LIMIT 10");
-    $get_post->execute();
-    $post = $get_post->fetchAll();
+$get_post = $db->prepare("SELECT author,date_post,post_id,contenue,post_name,slug,tag FROM post_text WHERE post_name LIKE '%$search%' OR tag LIKE '%$search%' OR author LIKE '%$search%' LIMIT 10");
+$get_post->execute();
+$post = $get_post->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,46 +49,19 @@ if(isset($_GET['q'])) {
 
 <?php include '../includes/menu.php';?>
 <div class="main">
-
-<?php
-if(!empty($post)){
-for ($i = 0; $i <count($post); $i++) {
-    include '../includes/data_connected.php';
-}
-} else {
-    echo "C'EST VIDE LA PUTAIN DE TA RACE";
-}
-?>
+    <?php
+    if(!empty($post)){
+        for ($i = 0; $i <count($post); $i++) {
+            include '../includes/data_connected.php';
+        }
+    } else {
+        echo "<img src='image/empty.jpg' alt='ironic isn\'t it'";
+    }
+    ?>
 </div>
+<a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
-<script>
-    function upvote(id) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200){
-                //console.log('upvote');
-            } else if(xhr.status !== 200){
-                //console.log('c\'est la merde');
-            }
-        };
-        xhr.send("voteType=upvote&post_id="+id);
-    }
-    function downvote(id) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200) {
-                //console.log('downvote');
-            } else if(xhr.status !== 200) {
-                //console.log('c\'est la merde');
-            }
-        };
-        xhr.send("voteType=downvote&post_id="+id);
-    }
-</script>
+<script src="js/index.js"></script>
 <script src="js/font_awesome.js"></script>
 </body>
 </html>

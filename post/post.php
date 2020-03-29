@@ -12,6 +12,10 @@ if (!isset($_GET['post'])){
     exit;
 }
 $id = $_GET["post"];
+$user = $_SESSION['username'];
+$user_id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
+$user_id->execute();
+$uid = $user_id->fetch(PDO::FETCH_ASSOC);
 
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
@@ -35,6 +39,33 @@ $upvote_nb = $get_upvote->fetch();
 $get_downvote = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$post_id'");
 $get_downvote->execute();
 $downvote_nb = $get_downvote->fetch();
+
+$has_upvoted = $db->prepare("SELECT user_id FROM upvote WHERE post_id='$post_id'");
+$has_upvoted->execute();
+$upvote = $has_upvoted->fetchALL(PDO::FETCH_ASSOC);
+
+$has_downvoted = $db->prepare("SELECT user_id FROM downvote WHERE post_id='$post_id'");
+$has_downvoted->execute();
+$downvote = $has_downvoted->fetchALL(PDO::FETCH_ASSOC);
+
+if(isset($upvote) && !empty($upvote)){
+    foreach($upvote as $upvotes) {
+        if($upvotes['user_id'] === $uid['Uid']){
+            $upvoted = true;
+        }
+    }
+} else {
+    $upvoted = false;
+}
+if(isset($downvote) && !empty($downvote)) {
+    foreach ($downvote as $downvotes) {
+        if ($downvotes['user_id'] === $uid['Uid']) {
+            $downvoted = true;
+        }
+    }
+} else {
+    $downvoted = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -106,9 +137,9 @@ $downvote_nb = $get_downvote->fetch();
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote">
-                <button type="button" class="btn btn-light upvote" id="<?= $post[0]['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
+                <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $post[0]['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                <button type="button" class="btn btn-light downvote" id="<?= $post[0]['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+                <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $post[0]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
             </div>
             <?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?>
         </div>
@@ -144,13 +175,14 @@ if($suite != false) {
     ?>
     <div class="container row post mt-3 mb-3">
         <div class="corps">
-            <div class="info">
-                <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
-                <div class="numberVote"><?= $upvote_nb_suite[0] - $downvote_nb_suite[0] ?></div>
-                <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+            <div class="info" style="justify-content: space-between">
+                <div class="vote">
+                    <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+                    <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+                    <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                </div>
                 <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
             </div>
-        </div>
         <div class="title">
             <h1><?= $suite['post_name'] ?></h1>
         </div>
@@ -163,6 +195,7 @@ if($suite != false) {
                 <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
             </div>
         <?php }?>
+        </div>
     </div>
     <?php
     while($suite != false) {
@@ -188,9 +221,9 @@ if($suite != false) {
             <div class="container row post mt-3 mb-3">
                 <div class="corps">
                     <div class="info">
-                        <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><img src="../public/image/arrow_up.svg" alt="upvote"></button>
+                        <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></button>
                         <div class="numberVote"><?= $upvote_nb_suite[0] - $downvote_nb_suite[0] ?></div>
-                        <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><img src="../public/image/arrow_down.svg" alt="downvote"></button>
+                        <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
                         <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
                     </div>
                     <div class="title">

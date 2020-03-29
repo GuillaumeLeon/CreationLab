@@ -56,7 +56,10 @@ $post = $get_post->fetchAll();
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'includes/data_connected.php';
 }?>
+<a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
+
+<script src="js/index.js"></script>
 <script src="js/font_awesome.js"></script>
 </body>
 </html>
