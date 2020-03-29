@@ -45,10 +45,10 @@ if(isset($downvote) && !empty($downvote)) {
         <div class="info" style="justify-content: space-between">
             <div class="vote">
                 <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>
-                        id="<?= $post[$i]['post_id']?> " onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+                        id="<?= $post[$i]['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
                 <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?>
-                        id="<?= $post[$i]['post_id']?> " onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                        id="<?= $post[$i]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
             </div>
             <p><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></p>
         </div>

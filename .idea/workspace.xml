@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="vote are now colored, code fragmentation (javascript), search engine adjustment (can search by username),&#10;Back to the top button, and removed the svg for the vote (Fa icon)">
-      <change afterPath="$PROJECT_DIR$/public/image/empty.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="28188192-34af-4d3c-9c67-826c33af93ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_suite.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_suite.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/data_connected.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/data_connected.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/post/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/autre.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/autre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/arrow_down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/arrow_up.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/new_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/new_project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/suite.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/suite.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/user_project.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/user_project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/profil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +246,7 @@
       <workItem from="1585406324850" duration="418000" />
       <workItem from="1585406753928" duration="2444000" />
       <workItem from="1585496664331" duration="459000" />
-      <workItem from="1585498715509" duration="4637000" />
+      <workItem from="1585498715509" duration="5575000" />
     </task>
     <task id="LOCAL-00001" summary="aaa">
       <created>1581698452588</created>
@@ -360,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585183799935</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="vote are now colored, code fragmentation (javascript), search engine adjustment (can search by username),&#10;Back to the top button, and removed the svg for the vote (Fa icon)">
+      <created>1585515909841</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585515909841</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,10 +456,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758864081" />
-    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2" timestamp="1585515900958">
+    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2" timestamp="1585515909272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585515900958" />
+    <state x="512" y="28" width="1194" height="984" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585515909272" />
     <state x="510" y="7" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1583849772102" />
     <state x="512" y="53" width="882" height="989" key="CommitChangelistDialog2/0.25.1920.1055@0.25.1920.1055" timestamp="1582553516330" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1585412028078">
@@ -511,10 +511,10 @@
     </state>
     <state x="461" y="162" width="1185" height="803" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585515579687" />
     <state x="461" y="189" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1582536582732" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1585515732102">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1585515913104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585515732102" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585515913104" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1582154340871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -541,10 +541,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1582758902147" />
-    <state x="613" y="109" width="948" height="822" key="find.popup" timestamp="1584996855417">
+    <state x="613" y="109" width="948" height="822" key="find.popup" timestamp="1585518546914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="109" width="948" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1584996855417" />
+    <state x="613" y="109" width="948" height="822" key="find.popup/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1585518546914" />
     <state x="613" y="113" width="700" height="854" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1583849383451" />
     <state x="984" y="67" width="747" height="834" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1582552281733" />
     <state x="613" y="293" key="git4idea.merge.GitPullDialog" timestamp="1585049505472">

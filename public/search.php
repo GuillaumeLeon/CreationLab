@@ -1,5 +1,6 @@
 <?php
 require '../database/db.php';
+session_start();
 
 if(isset($_GET['q'])) {
     $search = $_GET['q'];
@@ -22,7 +23,7 @@ $post = $get_post->fetchAll();
 </head>
 
 <body>
-<nav class="navbar">
+<nav id="nav" class="navbar">
     <div class="logo row">
         <div class="red_line-nav col"></div>
         <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
