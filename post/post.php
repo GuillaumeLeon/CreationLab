@@ -1,7 +1,7 @@
 <?php
 require '../database/db.php';
-session_start();
 
+session_start();
 
 if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
@@ -266,30 +266,6 @@ if($suite != false) {
 }
 ?>
 <?php include '../includes/footer.php';?>
-<script>
-    function upvote() {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200) {
-            } else if(xhr.status !== 200){
-            }
-        };
-        xhr.send("voteType=upvote&post_id=<?=  $post[0]['post_id']?>");
-    }
-    function downvote() {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200) {
-            } else if(xhr.status !== 200){
-            }
-        };
-        xhr.send("voteType=downvote&post_id=<?= $post[0]['post_id']?>");
-    }
-</script>
 <script src="../public/js/index.js"></script>
 <script src="../public/js/font_awesome.js"></script>
 </body>
