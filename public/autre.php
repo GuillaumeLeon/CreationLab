@@ -7,7 +7,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
 }
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL ORDER BY date_post DESC');
+$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL AND post_name IS NOT NULL ORDER BY date_post DESC');
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>

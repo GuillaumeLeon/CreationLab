@@ -51,7 +51,6 @@ $get_post = $db->prepare($query);
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
-</div>
 <h1>Voici vos projets</h1>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'includes/data_connected.php';

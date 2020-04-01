@@ -198,7 +198,7 @@ if($suite != false) {
         </div>
     </div>
     <?php
-    while($suite != false) {
+    while($suite_existing != false) {
         $id_suite = $suite['post_id'];
 
         $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
@@ -220,26 +220,29 @@ if($suite != false) {
             ?>
             <div class="container row post mt-3 mb-3">
                 <div class="corps">
-                    <div class="info">
-                        <button type="button" class="btn btn-light upvote" id="<?= $suite['post_id'] ?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></button>
-                        <div class="numberVote"><?= $upvote_nb_suite[0] - $downvote_nb_suite[0] ?></div>
-                        <button type="button" class="btn btn-light downvote" id="<?= $suite['post_id'] ?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                    <div class="info" style="justify-content: space-between">
+                        <div class="vote">
+                            <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+                            <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+                            <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                        </div>
                         <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
                     </div>
                     <div class="title">
                         <h1><?= $suite['post_name'] ?></h1>
                     </div>
                     <div class="contenue p-4">
-                        <?= $suite['contenue'] ?>
+                        <p><?= $suite['contenue'] ?></p>
                     </div>
-                    <?php if ($suite_existing == false) { ?>
+                    <?php if($suite_existing == false){ ?>
                         <div class="interaction">
                             <button type="button" class="btn btn-light">Partager</button>
-                            <a href="../public/suite.php?post=<?= $suite['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                            <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
                         </div>
-                    <?php } ?>
+                    <?php }?>
                 </div>
             </div>
+
             <?php
         }
     }
