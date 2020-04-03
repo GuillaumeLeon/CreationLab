@@ -32,10 +32,10 @@ $post = $get_post->fetchAll();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="Profil" width="45" height="45"></a>
-        <a href="project.php"><img class="m-2" src="image/star.png" alt="Projet" width="45" height="45"></a>
-        <a href="new_project.php"><img class="m-2" src="image/cross.png" alt="nouveau Projet" width="45" height="45"></a>
-        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="Déconnexion" width="45" height="45"/></a>
+        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="Profil" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Profil"/></a>
+        <a href="project.php"><img class="m-2" src="image/star.png" alt="Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Favoris"/></a>
+        <a href="new_project.php"><img class="m-2" src="image/cross.png" alt="nouveau Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Nouveaux projet"/></a>
+        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="Déconnexion" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"/></a>
     </div>
     <div class="search_bar">
         <form class="" action="search.php" method="GET">
@@ -56,7 +56,7 @@ for ($i = 0; $i <count($post); $i++) {
 }
 ?>
 </div>
-<a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
+<a href="#nav" id="back2Top" class="btn" data-toggle="tooltip" data-placement="bottom" title="Retour en haut"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
 
 <script src="js/index.js"></script>
