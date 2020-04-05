@@ -258,8 +258,8 @@ if($suite != false) {
     for ($i = 0; $i < count($com) ; $i++) {
         ?>
         <div class="container comment mb-3" >
-            <div class="row">
-                <p> Crée le <?= $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p>
+            <div class="row" style="justify-content: space-between">
+	    <p class="p-3"> Crée le <?= $com[$i]['created_at'] . " par " . $com[$i]['author']; ?></p><?php if($com[$i]['author'] == $_SESSION['username']) {echo '<img class="mt-4 mr-3" src="../public/image/cross.png" width="15" height="15" alt="suppr" style="transform: rotate(45deg)"/>';}  ?>
             </div>
             <div class="content row p-4">
                 <p><?= $com[$i]['content']; ?></p>
