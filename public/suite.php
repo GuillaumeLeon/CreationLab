@@ -73,6 +73,12 @@ if(isset($downvote) && !empty($downvote)) {
     <link rel="icon" href="image/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <title><?= $post[0]['post_name'] ?></title>
 </head>
 
@@ -84,10 +90,10 @@ if(isset($downvote) && !empty($downvote)) {
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="Profil" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Profil"/></a>
-        <a href="project.php"><img class="m-2" src="image/star.png" alt="Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Favoris"/></a>
-        <a href="new_project.php"><img class="m-2" src="image/cross.png" alt="nouveau Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Nouveaux projet"/></a>
-        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="Déconnexion" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"/></a>
+        <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
+        <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
+        <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet" style="font-size:40px"></i></a>
+        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
     <div class="search_bar">
         <form action="search.php" method="get">
@@ -104,7 +110,7 @@ if(isset($downvote) && !empty($downvote)) {
 
 <?php include '../includes/menu.php';?>
 
-<div class="container row post mt-3 mb-3">
+<div class="container row post mt-3 mb-3 shadow">
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote">
@@ -146,7 +152,7 @@ if(isset($downvote) && !empty($downvote)) {
         $get_suite_existing->execute();
         $suite_existing = $get_suite_existing->fetch();
         ?>
-        <div class="container row post mt-3 mb-3">
+        <div class="container row post mt-3 mb-3 shadow">
             <div class="corps">
                 <div class="info" style="justify-content: space-between">
                     <div class="vote">
@@ -190,7 +196,7 @@ if(isset($downvote) && !empty($downvote)) {
                 $get_suite_existing->execute();
                 $suite_existing = $get_suite_existing->fetch();
                 ?>
-                <div class="container row post mt-3 mb-3">
+                <div class="container row post mt-3 mb-3 shadow">
                     <div class="corps">
                         <div class="info" style="justify-content: space-between">
                             <div class="vote">
@@ -208,7 +214,8 @@ if(isset($downvote) && !empty($downvote)) {
                         </div>
                         <?php if($suite_existing == false){ ?>
                             <div class="interaction">
-                                <button type="button" class="btn btn-light">Partager</button>
+                              <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:32px"></i>
+                              <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:32px"></i></a>
                             </div>
                         <?php }?>
                     </div>
@@ -224,15 +231,14 @@ if(isset($downvote) && !empty($downvote)) {
         <form action="../add_suite.php" method="post">
             <div class="form-group">
                 <label for="content">Ecrivez votre histoire :</label>
-                <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox" maxlength='280' required></textarea>
+                <textarea class="form-control text-area-suite" name="content" id="content" rows="10" spellcheck="true" role="textbox" maxlength='280' required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
     </div>
 
     <?php include '../includes/footer.php';?>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/font_awesome.js"></script>
 </body>
 </html>
-
-

@@ -77,21 +77,27 @@ if(isset($downvote) && !empty($downvote)) {
     <link rel="icon" href="../public/image/favicon.ico" />
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../public/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <title><?= $post[0]['post_name']; ?></title>
 </head>
 
 <body>
-<nav id="nav"  class="navbar">
+<nav id="nav" class="navbar">
     <div class="logo row">
         <div class="red_line-nav col"></div>
         <a href="../index.php" class="ml-5 mr-5" ><img src="../public/image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-        <a href="../users/profil.php"><img class="m-2" src="../public/image/user.png" alt="Profil" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Profil"/></a>
-        <a href="../public/project.php"><img class="m-2" src="../public/image/star.png" alt="Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Favoris"/></a>
-        <a href="../public/new_project.php"><img class="m-2" src="../public/image/cross.png" alt="nouveau Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Nouveaux projet"/></a>
-        <a href="../deco.php"><img class="m-2" src="../public/image/door.svg" alt="Déconnexion" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"/></a>
+        <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
+        <a href="../public/project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
+        <a href="../public/new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet" style="font-size:40px"></i></a>
+        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="../public/search.php" method="get">
@@ -119,7 +125,7 @@ if(isset($downvote) && !empty($downvote)) {
                     <li> <a href="../public/user_project.php"> Mes projets </a></li>
                     <li> <a href="#"> Abonnements </a></li>
                     <li> <a href="#"> Mes projets préféres </a></li>
-                    <li> <a href="#"> Aléatoire </a></li>
+                    <li> <a href="../random.php"> Aléatoire </a></li>
                 </ul>
             </li>
             <li><a href="#"> Abonnements </a></li>
@@ -133,7 +139,7 @@ if(isset($downvote) && !empty($downvote)) {
     <div class="blue_line"></div>
 </div>
 
-<div class="container row post mt-3 mb-3">
+<div class="container row post mt-3 mb-3 shadow">
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote">
@@ -149,13 +155,12 @@ if(isset($downvote) && !empty($downvote)) {
         <div class="contenue p-4">
             <?= $post[0]['contenue'] ?>
         </div>
-        <div class="interaction">
             <?php if($suite == false) {?>
+        <div class="interaction">
                 <button type="button" class="btn btn-light">Partager</button>
                 <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
-            <?php }?>
-
         </div>
+            <?php }?>
     </div>
 </div>
 <?php
@@ -173,7 +178,7 @@ if($suite != false) {
     $get_suite_existing->execute();
     $suite_existing = $get_suite_existing->fetch();
     ?>
-    <div class="container row post mt-3 mb-3">
+    <div class="container row post mt-3 mb-3 shadow">
         <div class="corps">
             <div class="info" style="justify-content: space-between">
                 <div class="vote">
@@ -218,7 +223,7 @@ if($suite != false) {
             $get_suite_existing->execute();
             $suite_existing = $get_suite_existing->fetch();
             ?>
-            <div class="container row post mt-3 mb-3">
+            <div class="container row post mt-3 mb-3 shadow">
                 <div class="corps">
                     <div class="info" style="justify-content: space-between">
                         <div class="vote">
@@ -236,8 +241,9 @@ if($suite != false) {
                     </div>
                     <?php if($suite_existing == false){ ?>
                         <div class="interaction">
-                            <button type="button" class="btn btn-light">Partager</button>
-                            <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                          <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:32px"></i>
+                          <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:32px"></i></a>
+                          <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:32px"></i></a>
                         </div>
                     <?php }?>
                 </div>
@@ -270,6 +276,7 @@ if($suite != false) {
 ?>
 <?php include '../includes/footer.php';?>
 <script src="../public/js/index.js"></script>
+<script src="../public/js/bootstrap.bundle.min.js"></script>
 <script src="../public/js/font_awesome.js"></script>
 </body>
 </html>

@@ -20,6 +20,12 @@ $result = $query->fetchAll();
     <link rel="icon" href="../public/image/favicon.ico" />
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../public/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <title>Creation Lab</title>
 </head>
 
@@ -31,10 +37,10 @@ $result = $query->fetchAll();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-        <a href="../users/profil.php"><img class="m-2" src="../public/image/user.png" alt="Profil" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Profil"/></a>
-        <a href="../public/project.php"><img class="m-2" src="../public/image/star.png" alt="Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Favoris"/></a>
-        <a href="../public/new_project.php"><img class="m-2" src="../public/image/cross.png" alt="nouveau Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Nouveaux projet"/></a>
-        <a href="../deco.php"><img class="m-2" src="../public/image/door.svg" alt="Déconnexion" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"/></a>
+        <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
+        <a href="../public/project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
+        <a href="../public/new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet" style="font-size:40px"></i></a>
+        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="../public/search.php" method="get">
@@ -93,6 +99,7 @@ $result = $query->fetchAll();
     </div>
 </div>
 <?php include '../includes/footer.php';?>
-<script src="js/font_awesome.js"></script>
+<script src="../public/js/bootstrap.bundle.min.js"></script>
+<script src="../public/js/font_awesome.js"></script>
 </body>
 </html>

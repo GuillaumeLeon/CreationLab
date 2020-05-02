@@ -40,7 +40,7 @@ if(isset($downvote) && !empty($downvote)) {
     $downvoted = false;
 }
 ?>
-<div class="container row post mt-3 mb-3">
+<div class="container row post mt-3 mb-3 shadow">
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote">
@@ -50,7 +50,7 @@ if(isset($downvote) && !empty($downvote)) {
                 <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?>
                         id="<?= $post[$i]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
             </div>
-            <p><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></p>
+            <p class="ml-5"><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></p>
         </div>
         <div class="title">
             <h1><?= $post[$i]['post_name'] ?></h1>
@@ -59,9 +59,10 @@ if(isset($downvote) && !empty($downvote)) {
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="../post/<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Commenter</button></a>
-            <button type="button" class="btn btn-light">Partager</button>
-            <a href="<?= $post[$i]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <a href="../post/<?= $post[$i]['post_id']; ?>"> <i class="fas fa-comments ml-3" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:32px"></i> </a>
+            <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:32px"></i>
+            <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:32px"></i></a>
+            <a href="<?= $post[$i]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:32px"></i></a>
         </div>
     </div>
 </div>

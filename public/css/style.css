@@ -20,6 +20,15 @@ nav {
     background-color: #F7F6EE;
 }
 
+a {
+  color: black;
+}
+
+.fa-arrow-down, .fa-arrow-up {
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+
 .button-menu {
     bottom: 30px;
 }
@@ -35,9 +44,6 @@ nav {
 .submit-button {
    border: transparent;
    background: transparent;
-}
-.upvote,.downvote {
-
 }
 .upvote:hover {
     background: transparent;
@@ -63,7 +69,7 @@ nav {
 
 .post {
     padding: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 610px;
     width: 640px;
     margin-left: auto;
@@ -105,8 +111,10 @@ button {
 }
 .interaction {
     background-color: #e8606b;
+    height: 37px;
+    padding-top: 2px;
 }
-.interaction button {
+.interaction i {
     background: transparent;
 }
 

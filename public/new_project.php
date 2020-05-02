@@ -26,6 +26,11 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap-tokenfield.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <title>Creation Lab</title>
 </head>
 
@@ -37,9 +42,9 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
         <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-        <a href="../users/profil.php"><img class="m-2" src="image/user.png" alt="Profil" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Profil"/></a>
-        <a href="project.php"><img class="m-2" src="image/star.png" alt="Projet" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Favoris"/></a>
-        <a href="../deco.php"><img class="m-2" src="image/door.svg" alt="Déconnexion" width="45" height="45" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"/></a>
+        <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
+        <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
+        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="search.php" method="GET">
@@ -94,6 +99,7 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
 
     </script>
     <?php include '../includes/footer.php';?>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/font_awesome.js"></script>
 </body>
 </html>

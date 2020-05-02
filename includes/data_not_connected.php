@@ -12,9 +12,9 @@ $downvote_nb = $get_downvote->fetch();
     <div class="corps">
         <div class="info" style="justify-content: space-between">
             <div class="vote ">
-                <a href="connexion.php"><button type="button" class="btn btn-light upvote"><img src="image/arrow_up.svg" alt="upvote"></button></a>
+                <a href="connexion.php"><button type="button" class="btn btn-light upvote"><i class="fas fa-arrow-up"></i></button></a>
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                <a href="connexion.php"><button type="button" class="btn btn-light downvote"><img src="image/arrow_down.svg" alt="downvote"></button></a>
+                <a href="connexion.php"><button type="button" class="btn btn-light downvote"><i class="fas fa-arrow-down"></i></button></a>
             </div>
             <div class="mr-3"><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></div>
         </div>
