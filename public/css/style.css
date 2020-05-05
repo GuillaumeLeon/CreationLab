@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+
 html, body {
     position: relative;
     font-family: sans-serif;
@@ -15,13 +16,17 @@ html, body {
     min-height: 69.70vh;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: #99DEDF;
+}
+
 /* Navigation bar */
 nav {
     background-color: #F7F6EE;
-}
-
-a {
-  color: black;
 }
 
 .fa-arrow-down, .fa-arrow-up {
@@ -92,6 +97,9 @@ a {
 }
 
 button {
+    border: transparent;
+}
+button:active {
     border: transparent;
 }
 .info {
@@ -253,9 +261,6 @@ h1 {
     width: 40em;
     font-size: 14px;
     text-align: justify;
-}
-.content-profil {
-
 }
 
 .profile button {

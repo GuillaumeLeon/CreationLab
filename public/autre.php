@@ -10,6 +10,8 @@ if ($_SESSION['connected'] != 1) {
 $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL AND post_name IS NOT NULL ORDER BY date_post DESC');
 $get_post->execute();
 $post = $get_post->fetchAll();
+unset($_SESSION['post_id'], $_SESSION['post']);
+// include('../includes/debugger.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,7 +27,7 @@ $post = $get_post->fetchAll();
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
-        })
+        });
     </script>
     <title>Creation Lab</title>
 </head>

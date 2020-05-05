@@ -12,6 +12,7 @@ if (!isset($_GET['post'])){
     exit;
 }
 $id = $_GET["post"];
+$_SESSION['post_id'] = $_GET['post'];
 $user = $_SESSION['username'];
 $user_id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
 $user_id->execute();
@@ -25,7 +26,6 @@ $get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
 $get_com->execute();
 $com = $get_com->fetchAll();
 $_SESSION['post'] = $post;
-
 $get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id'");
 $get_suite->execute();
 $suite = $get_suite->fetch();
@@ -66,6 +66,10 @@ if(isset($downvote) && !empty($downvote)) {
 } else {
     $downvoted = false;
 }
+if(empty($post)){
+    header('404.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -95,7 +99,7 @@ if(isset($downvote) && !empty($downvote)) {
     </div>
     <div class="button-menu d-flex m-2">
         <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
-        <a href="../public/project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
+        <a href="../public/project.php"><i class="far fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
         <a href="../public/new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet" style="font-size:40px"></i></a>
         <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
@@ -157,8 +161,9 @@ if(isset($downvote) && !empty($downvote)) {
         </div>
             <?php if($suite == false) {?>
         <div class="interaction">
-                <button type="button" class="btn btn-light">Partager</button>
-                <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+          <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i>
+          <a href="#"><i class="far fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a>
+          <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a>
         </div>
             <?php }?>
     </div>
@@ -196,13 +201,14 @@ if($suite != false) {
         </div>
         <?php if($suite_existing == false){ ?>
             <div class="interaction">
-                <button type="button" class="btn btn-light">Partager</button>
-                <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+                <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i>
+                <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a>
             </div>
         <?php }?>
         </div>
     </div>
     <?php
+    $_SESSION['post_id'] = $suite['post_id'];
     while($suite_existing != false) {
         $id_suite = $suite['post_id'];
 
@@ -241,15 +247,16 @@ if($suite != false) {
                     </div>
                     <?php if($suite_existing == false){ ?>
                         <div class="interaction">
-                          <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:32px"></i>
-                          <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:32px"></i></a>
-                          <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:32px"></i></a>
+                          <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i>
+                          <a href="#"><i class="far fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a>
+                          <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a>
                         </div>
                     <?php }?>
                 </div>
             </div>
 
             <?php
+            $_SESSION['post_id'] = $suite['post_id'];
         }
     }
 }

@@ -30,7 +30,6 @@ for($i = 0; $i < count($downvote); $i++){
 }
 if(isset($_POST['voteType'])) {
     if($votable){
-        echo 'com voter';
         if ($_POST['voteType'] == 'upvote') {
             $new_upvote = $db->prepare("INSERT INTO upvote (user_id, post_id) VALUES (?,?)");
             $new_upvote->execute(array($Uid, $id));
@@ -42,5 +41,4 @@ if(isset($_POST['voteType'])) {
         }
     }
 } else {
-    echo 'com non voter';
 }

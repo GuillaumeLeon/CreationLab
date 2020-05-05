@@ -42,7 +42,7 @@ $post = $get_post->fetchAll();
         <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
     </div>
     <div class="search_bar">
-        <form class="" action="search.php" method="get">
+        <form action="search.php" method="get">
             <div class="input-group md-form form-sm form-2 pl-0">
                 <input class="form-control my-0 py-1 lime-border search-field" type="text" placeholder="recherche" name="q" id="search" required>
                 <div class="input-group-append">
@@ -56,6 +56,9 @@ $post = $get_post->fetchAll();
 
 <?php include '../includes/menu.php';?>
 <div class="main">
+  <div class="text-center mb-5">
+    <h1>Recherche : <?= $search ?></h1>
+  </div>
     <?php
     if(!empty($post)){
         for ($i = 0; $i <count($post); $i++) {

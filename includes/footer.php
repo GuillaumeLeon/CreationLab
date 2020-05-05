@@ -4,9 +4,9 @@
 <footer class="footer page-footer text-center">
     <div class="container">
         <div id="monfooter1" class="container-fluid">
-            <a href="#"> A notre propos </a>
-            <a href="#"> Recrutement </a>
-            <a href="#"> Mention legale</a>
+            <a href="#"> À notre propos </a>
+            <a href="mention-legals.php"> Mention légales</a>
+            <a href="cgu.php"> GCU </a>
         </div>
 
         <div id="monfooter2" class="container-fluid">

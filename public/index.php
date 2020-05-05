@@ -23,6 +23,13 @@ $post = $get_post->fetchAll();
     <link rel="icon" href="image/favicon.ico"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jequery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
     <title>Creation Lab</title>
 </head>
 

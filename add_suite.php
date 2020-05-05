@@ -21,7 +21,7 @@ $post_name = $get_name->fetch();
 
 $add_suite = $db->prepare("INSERT INTO post_text(post_name, contenue, parent_node, author, date_post) VALUES (?,?,?,?,?)");
 $add_suite->execute(array($post_name[0],$content,$_SESSION['post_id'],$_SESSION['username'],$date));
-
 unset($_SESSION['post_id']);
 unset($_SESSION['post']);
+
 header('Location:post/'.$post_id);

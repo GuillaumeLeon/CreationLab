@@ -25,9 +25,10 @@ $downvote_nb = $get_downvote->fetch();
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="connexion.php"><button type="button" class="btn btn-light">Commenter</button></a>
-            <button type="button" class="btn btn-light">Partager</button>
-            <a href="connexion.php"><button type="button" class="btn btn-light">Continuer l'histoire</button></a>
+            <a href="connection.php"><i class="fas fa-comments ml-3" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a>
+            <a href="#"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a>
+            <a href="connection.php"><i class="far fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a>
+            <a href="connection.php"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a>
         </div>
     </div>
 </div>

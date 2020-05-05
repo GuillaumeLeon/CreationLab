@@ -59,10 +59,10 @@ if(isset($downvote) && !empty($downvote)) {
             <?= $post[$i]['contenue'] ?>
         </div>
         <div class="interaction">
-            <a href="../post/<?= $post[$i]['post_id']; ?>"> <i class="fas fa-comments ml-3" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:32px"></i> </a>
-            <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:32px"></i>
-            <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:32px"></i></a>
-            <a href="<?= $post[$i]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:32px"></i></a>
+            <a href="../post/<?= $post[$i]['post_id']; ?>"> <i class="fas fa-comments ml-3" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a>
+            <a href="#"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a>
+            <a href="#"><i class="far fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a>
+            <a href="<?= $post[$i]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a>
         </div>
     </div>
 </div>
