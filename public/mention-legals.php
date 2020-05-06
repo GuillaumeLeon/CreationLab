@@ -12,6 +12,9 @@
 </head>
 
 <body>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
 
   <div class="container m-5">
 
@@ -67,6 +70,9 @@
     sites ayant un lien hypertexte avec le présent site et décline toute responsabilité quant à leur
     contenu et à leur utilisation.
     </div>
+</div>
+<div class="col-md-2"></div>
+</div>
   <a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
 <script src="js/index.js"></script>

@@ -13,9 +13,13 @@
 
 <body>
 
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+
   <div class="container m-5">
 
-<h1>  Conditions Générales D’Utilisation</h1>
+<h1>Conditions Générales D’Utilisation</h1>
 Le présent document a pour objet de définir les modalités et conditions dans lesquelles d’une part,  WebChemisters, ci-après dénommé l’EDITEUR, met à la disposition de ses utilisateurs le site, et les services disponibles sur le site et d’autre part, la manière par laquelle l’utilisateur accède au site et utilise ses services.
 Toute connexion au site est subordonnée au respect des présentes conditions.
 Pour l’utilisateur, le simple accès au site de l’EDITEUR à l’adresse URL suivante …  implique l’acceptation de l’ensemble des conditions décrites ci-après.
@@ -77,6 +81,10 @@ Le titulaire des droits autorise toute utilisation de l’œuvre originale (y co
 
 Pour toute question relative aux présentes conditions d’utilisation du site, vous pouvez nous écrire à l’adresse suivante : webchemisters@gmail.com.
   </div>
+</div>
+<div class="col-md-2"></div>
+</div>
+
   <a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
 <script src="js/index.js"></script>

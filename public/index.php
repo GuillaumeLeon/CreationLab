@@ -41,8 +41,8 @@ $post = $get_post->fetchAll();
         <div class="red_line-nav col"></div>
     </div>
     <div class="button">
-        <button type="button" class="btn btn-outline-primary m-1"><a href="inscription.php">Inscription</a></button>
-        <button type="button" class="btn btn-outline-primary m-1"><a href="connexion.php">Connexion</a></button>
+        <button type="button" class="btn btn-primary m-1"><a href="inscription.php">Inscription</a></button>
+        <button type="button" class="btn btn-primary m-1"><a href="connexion.php">Connexion</a></button>
     </div>
 </nav>
 <div class="red_line"></div>

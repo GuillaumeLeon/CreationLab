@@ -41,7 +41,7 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
             <input type="password" class="form-control" id="password" name="password">
         </div>
 
-        <button type="submit" class="btn btn-light">Envoyer</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
 </div>
 <?php include '../includes/footer.php';?>
