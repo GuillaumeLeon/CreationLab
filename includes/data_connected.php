@@ -60,10 +60,10 @@ if(isset($downvote) && !empty($downvote)) {
         </div>
         <div class="interaction">
           <div class="row">
-            <div class="col-sm-1 ml-3"><a href="../post/<?= $value['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-            <div class="col-sm-1"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
-            <div class="col-sm-1"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
-            <div class="col-sm-1"><a href="<?= $value['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+            <div class="col-1 icon-bar ml-3"><a href="../post/<?= $value['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
+            <div class="col-1 icon-bar"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
+            <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+            <div class="col-1 icon-bar"><a href="<?= $value['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
           </div>
         </div>
       </div>
@@ -84,6 +84,7 @@ if(isset($downvote) && !empty($downvote)) {
               <input type="text" name="lien" value='creationlab.local/post/<?=$value['post_id']?>' readonly>
             </div>
             <div class="modal-footer">
+              <div class="fb-share-button" data-href="google.com" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fguillaumeleon.yo.fr%2Fcreationlab%2Fpost%2F83&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
             </div>
           </div>
         </div>

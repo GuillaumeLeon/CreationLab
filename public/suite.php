@@ -173,9 +173,9 @@ if(isset($downvote) && !empty($downvote)) {
                   <?php if($suite_existing == false){ ?>
                     <div class="interaction">
                       <div class="row">
-                      <div class="col-sm-1 ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-                      <div class="col-sm-1"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
-                      <div class="col-sm-1"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+                      <div class="col-1 icon-bar ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
+                      <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+                      <div class="col-1 icon-bar"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
                       </div>
                     </div>
                   <?php }?>

@@ -25,6 +25,9 @@ a:hover {
 }
 
 /* Navigation bar */
+  .icon-bar {
+    font-size: 1.125em;
+  }
 nav {
   background-color: #F7F6EE;
 }
@@ -48,7 +51,8 @@ nav {
   top: 30px;
 }
 .submit-button {
-  border: transparent;
+  border: transpar
+  nt;
   background: transparent;
 }
 .upvote:hover {
