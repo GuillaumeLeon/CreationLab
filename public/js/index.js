@@ -7,6 +7,7 @@ function upvote(id) {
     } else if(xhr.status !== 200){
     }
   };
+  id = id.substring(0,1)
   xhr.send("voteType=upvote&post_id="+id);
   id = String(id);
   const vote = document.getElementById(id);
@@ -21,6 +22,7 @@ function downvote(id) {
     } else if(xhr.status !== 200) {
     }
   };
+  id = id.substring(0,1)
   xhr.send("voteType=downvote&post_id="+id);
   const vote = document.getElementById(id);
   vote.style.color = "red";

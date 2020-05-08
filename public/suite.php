@@ -158,9 +158,9 @@ if(isset($downvote) && !empty($downvote)) {
             <div class="corps">
               <div class="info" style="justify-content: space-between">
                 <div class="vote">
-                  <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+                  <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
                     <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                    <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                    <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
                     </div>
                     <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
                   </div>
@@ -173,9 +173,9 @@ if(isset($downvote) && !empty($downvote)) {
                   <?php if($suite_existing == false){ ?>
                     <div class="interaction">
                       <div class="row">
-                      <div class="col-1 icon-bar ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-                      <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
-                      <div class="col-1 icon-bar"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+                        <div class="col-1 icon-bar ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
+                        <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+                        <div class="col-1 icon-bar"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
                       </div>
                     </div>
                   <?php }?>
@@ -208,9 +208,9 @@ if(isset($downvote) && !empty($downvote)) {
                     <div class="corps">
                       <div class="info" style="justify-content: space-between">
                         <div class="vote">
-                          <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+                          <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
                             <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-                            <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+                            <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
                             </div>
                             <?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?>
                           </div>
@@ -245,6 +245,7 @@ if(isset($downvote) && !empty($downvote)) {
                 </div>
 
                 <?php include '../includes/footer.php';?>
+                <script src="js/index.js"></script>
                 <script src="js/bootstrap.bundle.min.js"></script>
                 <script src="js/font_awesome.js"></script>
               </body>

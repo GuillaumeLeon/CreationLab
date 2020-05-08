@@ -11,7 +11,6 @@ $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slu
 $get_post->execute();
 $post = $get_post->fetchAll();
 unset($_SESSION['post_id'], $_SESSION['post']);
-// include('../includes/debugger.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
