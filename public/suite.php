@@ -91,10 +91,10 @@ if(isset($downvote) && !empty($downvote)) {
       <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
-      <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil" style="font-size:40px"></i></a>
-      <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris" style="font-size:40px"></i></a>
-      <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet" style="font-size:40px"></i></a>
-      <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion" style="font-size:40px"></i></a>
+      <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
+      <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
+      <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet"></i></a>
+      <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
       <form action="search.php" method="get">
@@ -172,7 +172,11 @@ if(isset($downvote) && !empty($downvote)) {
                   </div>
                   <?php if($suite_existing == false){ ?>
                     <div class="interaction">
-                      <button type="button" class="btn btn-light">Partager</button>
+                      <div class="row">
+                      <div class="col-sm-1 ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
+                      <div class="col-sm-1"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+                      <div class="col-sm-1"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+                      </div>
                     </div>
                   <?php }?>
                 </div>
@@ -233,7 +237,7 @@ if(isset($downvote) && !empty($downvote)) {
                 <div class="container" id="form_text">
                   <form action="../add_suite.php" method="post">
                     <div class="form-group">
-                      <label for="content">Ecrivez votre histoire :</label>
+                      <label for="content">Ecrivez votre suite :</label>
                       <textarea class="form-control text-area-suite" name="content" id="content" rows="10" spellcheck="true" role="textbox" maxlength='280' required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Envoyer</button>

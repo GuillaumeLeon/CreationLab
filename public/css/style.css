@@ -3,17 +3,17 @@
 
 
 html, body {
-    position: relative;
-    font-family: sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    padding : 0;
-    background-color: #F7F6EE;
-    scroll-behavior: smooth;
+  position: relative;
+  font-family: sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding : 0;
+  background-color: #F7F6EE;
+  scroll-behavior: smooth;
 }
 
 .main {
-    min-height: 69.70vh;
+  min-height: 69.70vh;
 }
 
 a {
@@ -26,287 +26,311 @@ a:hover {
 
 /* Navigation bar */
 nav {
-    background-color: #F7F6EE;
+  background-color: #F7F6EE;
 }
 
 .fa-arrow-down, .fa-arrow-up {
-  font-size: 18px;
+  font-size: 1.125em;
   padding-bottom: 4px;
 }
 
 .button-menu {
-    bottom: 30px;
+  bottom: 30px;
+  font-size:2.5em;
 }
 .logo {
-    width: 100%;
-    justify-content: center;
+  width: 100%;
+  justify-content: center;
 }
 .red_line-nav {
-    background-color: #e8606b;
-    height: 10px;
-    top: 30px;
+  background-color: #e8606b;
+  height: 10px;
+  top: 30px;
 }
 .submit-button {
-   border: transparent;
-   background: transparent;
+  border: transparent;
+  background: transparent;
 }
 .upvote:hover {
-    background: transparent;
-    color: green;
+  background: transparent;
+  color: green;
 }
 
 .downvote:hover{
-    background: transparent;
-    color: red;
+  background: transparent;
+  color: red;
 }
 
 /* Inscription form*/
 .inscription {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #F7F6EE;
-    width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F7F6EE;
+  width: 15em;
 }
 
 .inscription label {
-    color: #000000;
+  color: #000000;
 }
 
 .post {
-    padding: 0;
-    /* border: 1px solid black; */
-    height: 610px;
-    width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto', sans-serif;
-    overflow-wrap: break-word;
-    background-color: #ffffff;
-    color: #000000;
+  padding: 0;
+  /* border: 1px solid black; */
+  height: 610px;
+  width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto', sans-serif;
+  overflow-wrap: break-word;
+  background-color: #ffffff;
+  color: #000000;
 }
 .corps {
-    width: 100%;
+  width: 100%;
 }
 
 .vote button {
-    background: transparent;
-    border: transparent;
+  background: transparent;
+  border: transparent;
 }
 .vote {
-    display: flex;
+  display: flex;
 }
 
 button {
-    border: transparent;
+  border: transparent;
 }
 button:active {
-    border: transparent;
+  border: transparent;
 }
 .info {
-    background-color: #e8606b;
-    height: 30px;
-    display: flex;
+  background-color: #e8606b;
+  height: 30px;
+  display: flex;
 }
 
 .title {
-    position: relative;
+  position: relative;
 }
 
 .contenue {
-    height: calc(100% - 168px);
-    position: relative;
-    text-align: justify;
+  height: calc(100% - 168px);
+  position: relative;
+  text-align: justify;
 }
 .interaction {
-    background-color: #e8606b;
-    height: 37px;
-    padding-top: 2px;
+  background-color: #e8606b;
+  height: 37px;
+  padding-top: 2px;
 }
 .interaction i {
-    background: transparent;
+  background: transparent;
 }
 
 #title_post {
-    width: 200px;
+  width: 200px;
 }
 
 #desc_post {
-    width: 300px;
+  width: 300px;
 }
 /* back to the top*/
 #back2Top {
-    width: 75px;
-    overflow: hidden;
-    z-index: 999;
-    display: none;
-    cursor: pointer;
-    position: fixed;
-    bottom: 100px;
-    right: 10%;
-    color: #555;
-    background-color: #DDF;
-    text-align: center;
-    font-size: 30px;
-    text-decoration: none;
+  width: 75px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 100px;
+  right: 10%;
+  color: #555;
+  background-color: #DDF;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
 }
 #back2Top:hover {
-    background-color: #DDF;
-    color: #000;
+  background-color: #DDF;
+  color: #000;
 }
 
 /* Footer  */
 footer {
-    bottom: 0;
-    width: 100%;
-    color: #000000;
-    background-color: #99DEDF;
-    font-size: 14px;
+  bottom: 0;
+  width: 100%;
+  color: #000000;
+  background-color: #99DEDF;
+  font-size: 1em;
 }
 footer a {
-    color: #e8606b;
+  color: #e8606b;
 }
 
 /* Menu  */
 .menu ul li {
-    position: relative;
-    color: #000000;
+  position: relative;
+  color: #000000;
 }
 
 .menu {
-    text-transform: uppercase;
-    height: 4em;
-    background-color: #F7F6EE;
-    width: 100%;
+  text-transform: uppercase;
+  height: 4em;
+  background-color: #F7F6EE;
+  width: 100%;
 }
 .menu a {
-    color: #000000;
+  color: #000000;
 }
 
 li {
-    list-style: none;
-    font-size: 1.2em;
-    display: inline-block;
-    margin-top: 1em;
-    margin-right: 4%;
+  list-style: none;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-top: 1em;
+  margin-right: 4%;
 }
 
 .sous {
-    display: none;
-    background-color: lightgrey;
-    position: absolute;
-    z-index: 1000;
-    right: auto;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    border: 1px solid black;
+  display: none;
+  background-color: lightgrey;
+  position: absolute;
+  z-index: 1000;
+  right: auto;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  border: 1px solid black;
 }
 
 .menu>ul li:hover .sous {
-    display: block;
-    background-color: #F7F6EE;
+  display: block;
+  background-color: #F7F6EE;
 }
 
 .sous li {
-    float: none;
-    width: 12em;
-    text-align: left;
-    font-size: 0.7em;
-    margin-bottom: 0.3em;
-    margin-left: 0px;
-    list-style-type: none;
+  float: none;
+  width: 12em;
+  text-align: left;
+  font-size: 0.8em;
+  margin-bottom: 0.3em;
+  margin-left: 0px;
+  list-style-type: none;
 }
 
 .sous a {
-    margin-bottom: 0.2em;
-    margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
 }
 
 .sous a:hover {
-    color: orange;
-    list-style-type: none;
+  color: orange;
+  list-style-type: none;
 }
 
 #firstli {
-    padding-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li a {
-    display: block;
-    color: lightgray;
+  display: block;
+  color: lightgray;
 }
 
 #publier {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    padding-bottom: 5px;
-    padding-top: 1em;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  padding-bottom: 5px;
+  padding-top: 1em;
 }
 
 #profiloption {
-    width: 60%;
+  width: 60%;
 }
 
 /* Profile */
 .profil {
-    width: 40em;
-    font-size: 14px;
-    text-align: justify;
+  width: 40em;
+  font-size: 1em;
+  text-align: justify;
 }
 
 .profile button {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 /* Comment and replies section */
 .comment {
-    border: 1px solid black;
-    width: 428px;
-    height: 10em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1.5%;
-    font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  width: 428px;
+  height: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1.5%;
+  font-family: 'Roboto', sans-serif;
 }
 .replies {
-    height: 2.5em;
+  height: 2.5em;
 }
 .add_comment{
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .content {
-    max-width: 100%;
-    line-height: 1.5;
-    font-size: 18px;
-    overflow-wrap: break-word;
-    justify-content: normal;
+  max-width: 100%;
+  line-height: 1.5;
+  font-size: 1.125em;
+  overflow-wrap: break-word;
+  justify-content: normal;
 }
 
 /* Menu and footer line */
 .red_line {
-    background-color: #e8606b;
-    width: 100%;
-    height: 5px;
+  background-color: #e8606b;
+  width: 100%;
+  height: 5px;
 }
 
 .yellow_line {
-    background-color: #FCD068;
-    width: 100%;
-    height: 5px;
+  background-color: #FCD068;
+  width: 100%;
+  height: 5px;
 }
 
 .blue_line {
-    background-color: #99DEDF;
-    width: 100%;
-    height: 5px;
+  background-color: #99DEDF;
+  width: 100%;
+  height: 5px;
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px){
+  .red_line-nav {
+    display: none;
+  }
+  .red_line {
+    display: none;
+  }
+  .yellow_line {
+    display: none;
+  }
+  .blue_line {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .post {
+    width: 23em;
+  }
 }

@@ -1,5 +1,5 @@
 <?php
-$post_id = $post[$i]['post_id'];
+$post_id = $value['post_id'];
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
 $upvote_nb = $get_upvote->fetch();
@@ -16,13 +16,13 @@ $downvote_nb = $get_downvote->fetch();
                 <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
                 <a href="connexion.php"><button type="button" class="btn btn-light downvote"><i class="fas fa-arrow-down"></i></button></a>
             </div>
-            <div class="mr-3"><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></div>
+            <div class="mr-3"><?= "Crée par " . $value['author'] . " le " . $value['date_post']; ?></div>
         </div>
         <div class="title">
-            <h1><?= $post[$i]['post_name'] ?></h1>
+            <h1><?= $value['post_name'] ?></h1>
         </div>
         <div class="contenue p-4">
-            <?= $post[$i]['contenue'] ?>
+            <?= $value['contenue'] ?>
         </div>
         <div class="interaction">
             <a href="connection.php"><i class="fas fa-comments ml-3" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a>

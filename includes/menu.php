@@ -1,4 +1,3 @@
-<div id="menu">
     <div class="red_line"></div>
     <div class="yellow_line"></div>
     <div class="blue_line"></div>
@@ -22,4 +21,3 @@
     <div class="red_line"></div>
     <div class="yellow_line"></div>
     <div class="blue_line"></div>
-</div>

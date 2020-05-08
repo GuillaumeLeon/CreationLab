@@ -4,7 +4,7 @@ $id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
 $id->execute();
 $uid = $id->fetch(PDO::FETCH_ASSOC);
 
-$post_id = $post[$i]['post_id'];
+$post_id = $value['post_id'];
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
 $upvote_nb = $get_upvote->fetch();
@@ -45,43 +45,43 @@ if(isset($downvote) && !empty($downvote)) {
     <div class="info" style="justify-content: space-between">
       <div class="vote">
         <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>
-          id="<?= $post[$i]['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+          id="<?= $value['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
           <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
           <button type="button" class="btn btn-light downvote"<?php if($downvoted){ echo "style='color:red;'"; } ?>
-            id="<?= $post[$i]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+            id="<?= $value['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
           </div>
-          <p class="ml-5"><?= "Crée par " . $post[$i]['author'] . " le " . $post[$i]['date_post']; ?></p>
+          <p class="ml-5"><?= "Crée par " . $value['author'] . " le " . $value['date_post']; ?></p>
         </div>
         <div class="title">
-          <h1><?= $post[$i]['post_name'] ?></h1>
+          <h1><?= $value['post_name'] ?></h1>
         </div>
         <div class="contenue p-4">
-          <?= $post[$i]['contenue'] ?>
+          <?= $value['contenue'] ?>
         </div>
         <div class="interaction">
           <div class="row">
-            <div class="col-sm-1 ml-3"><a href="../post/<?= $post[$i]['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-            <div class="col-sm-1"><a href="#modal_<?= $post[$i]['post_id']?>" onclick="$('#modal_<?= $post[$i]['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
+            <div class="col-sm-1 ml-3"><a href="../post/<?= $value['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
+            <div class="col-sm-1"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
             <div class="col-sm-1"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
-            <div class="col-sm-1"><a href="<?= $post[$i]['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+            <div class="col-sm-1"><a href="<?= $value['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id="modal_<?= $post[$i]['post_id']?>">
+    <div class="modal" tabindex="-1" role="dialog" id="modal_<?= $value['post_id']?>">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title"><?= $post[$i]['post_name']?></h5>
+              <h5 class="modal-title"><?= $value['post_name']?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <label for="lien">Partager le lien</label>
-              <input type="text" name="lien" value='creationlab.local/post/<?=$post[$i]['post_id']?>' readonly>
+              <input type="text" name="lien" value='creationlab.local/post/<?=$value['post_id']?>' readonly>
             </div>
             <div class="modal-footer">
             </div>
