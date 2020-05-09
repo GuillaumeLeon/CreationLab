@@ -3,15 +3,15 @@ include '../database/db.php';
 session_start();
 if(isset($_SESSION['connected'])) {
     if ($_SESSION['connected'] == 1) {
-        header("Location:autre.php");
-        exit;
+	header("Location:autre.php");
+	exit;
     } else {
-        $_SESSION['connected'] = 0;
+	$_SESSION['connected'] = 0;
     }
-}
-$get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text ORDER BY date_post DESC');
-$get_post->execute();
-$post = $get_post->fetchAll();
+    }
+    $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text ORDER BY date_post DESC');
+    $get_post->execute();
+    $post = $get_post->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,9 +26,9 @@ $post = $get_post->fetchAll();
     <script src="js/jquery.min.js"></script>
     <script src="js/jequery-ui.min.js"></script>
     <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        });
+    $(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+    });
     </script>
     <title>Creation Lab</title>
 </head>
@@ -36,13 +36,13 @@ $post = $get_post->fetchAll();
 <body>
 <nav id="nav" class="navbar">
     <div class="logo row">
-        <div class="red_line-nav col"></div>
-        <a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
-        <div class="red_line-nav col"></div>
+	<div class="red_line-nav col"></div>
+	<a href="index.php" class="ml-5 mr-5" ><img src="image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180" ></a>
+	<div class="red_line-nav col"></div>
     </div>
     <div class="button">
-        <button type="button" class="btn btn-primary m-1"><a href="inscription.php">Inscription</a></button>
-        <button type="button" class="btn btn-primary m-1"><a href="connexion.php">Connexion</a></button>
+	<button type="button" class="btn btn-primary m-1"><a href="inscription.php">Inscription</a></button>
+	<button type="button" class="btn btn-primary m-1"><a href="connexion.php">Connexion</a></button>
     </div>
 </nav>
 <div class="red_line"></div>
@@ -50,9 +50,9 @@ $post = $get_post->fetchAll();
 <div class="blue_line"></div>
 <?php
 
-for ($i = count($post) - 1; $i >= 0; $i--) {
-    include('../includes/data_not_connected.php');
-}
+    foreach($post as $value) {
+	include('../includes/data_not_connected.php');
+    }
 ?>
 
 }?>

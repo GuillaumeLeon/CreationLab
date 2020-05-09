@@ -42,13 +42,13 @@ nav {
   font-size:2.5em;
 }
 .logo {
-  width: 100%;
+  width: 101%;
   justify-content: center;
 }
 .red_line-nav {
-  background-color: #e8606b;
-  height: 10px;
-  top: 30px;
+  background-color: #e8607b;
+  height: 11px;
+  top: 31px;
 }
 .submit-button {
   border: transpar
@@ -69,18 +69,18 @@ nav {
 .inscription {
   margin-left: auto;
   margin-right: auto;
-  background-color: #F7F6EE;
-  width: 15em;
+  background-color: #F8F6EE;
+  width: 16em;
 }
 
 .inscription label {
-  color: #000000;
+  color: #000001;
 }
 
 .post {
-  padding: 0;
-  /* border: 1px solid black; */
-  height: 610px;
+  padding: 1;
+  /* border: 2px solid black; */
+  height: 611px;
   width: 40em;
   margin-left: auto;
   margin-right: auto;
@@ -111,6 +111,7 @@ button:active {
   background-color: #e8606b;
   height: 30px;
   display: flex;
+  width: 100%;
 }
 
 .title {
@@ -154,6 +155,7 @@ button:active {
   font-size: 30px;
   text-decoration: none;
 }
+
 #back2Top:hover {
   background-color: #DDF;
   color: #000;
@@ -336,5 +338,8 @@ and (max-device-width: 480px){
   }
   .post {
     width: 23em;
+  }
+  #back2Top {
+      display:none;
   }
 }
