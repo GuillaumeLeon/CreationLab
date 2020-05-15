@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
@@ -23,4 +23,4 @@ var_dump($_POST);
 $new_post = $db->prepare('INSERT INTO post_text (post_name, post_desc,contenue ,author, date_post,slug,tag) VALUES(?,?,?,?,?,?,?)');
 $new_post->execute(array($title, $desc, $content,$_SESSION['username'], $date,$slug,$tag));
 
-header('Location:index.php');
+header('Location:../index.php');

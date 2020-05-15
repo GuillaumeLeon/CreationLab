@@ -9,7 +9,7 @@
             <li> <a href="../public/project.php"> Mes projets </a></li>
             <li> <a href="#"> Abonnements </a></li>
             <li> <a href="#"> Mes projets préféres </a></li>
-            <li> <a href="../random.php"> Aléatoire </a></li>
+            <li> <a href="../app/random.php"> Aléatoire </a></li>
           </ul>
         </li>
         <li><a href="#"> Abonnements </a></li>

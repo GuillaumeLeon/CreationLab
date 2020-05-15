@@ -18,7 +18,7 @@
 <div class="col-md-8">
 
   <div class="container m-5">
-
+      <a href="index.php" class="btn btn-primary">Retour</a>
 <h1>Conditions Générales D’Utilisation</h1>
 Le présent document a pour objet de définir les modalités et conditions dans lesquelles d’une part,  WebChemisters, ci-après dénommé l’EDITEUR, met à la disposition de ses utilisateurs le site, et les services disponibles sur le site et d’autre part, la manière par laquelle l’utilisateur accède au site et utilise ses services.
 Toute connexion au site est subordonnée au respect des présentes conditions.

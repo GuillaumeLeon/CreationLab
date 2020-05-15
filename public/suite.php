@@ -94,7 +94,7 @@ if(isset($downvote) && !empty($downvote)) {
       <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
       <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
       <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet"></i></a>
-      <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
+      <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
       <form action="search.php" method="get">
@@ -235,7 +235,7 @@ if(isset($downvote) && !empty($downvote)) {
                 }
                 ?>
                 <div class="container" id="form_text">
-                  <form action="../add_suite.php" method="post">
+                  <form action="../app/add_suite.php" method="post">
                     <div class="form-group">
                       <label for="content">Ecrivez votre suite :</label>
                       <textarea class="form-control text-area-suite" name="content" id="content" rows="10" spellcheck="true" role="textbox" maxlength='280' required></textarea>

@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 
 if($_SESSION['connected'] != 1){
@@ -24,4 +24,4 @@ $add_suite->execute(array($post_name[0],$content,$_SESSION['post_id'],$_SESSION[
 unset($_SESSION['post_id']);
 unset($_SESSION['post']);
 
-header('Location:post/'.$post_id);
+header('Location:../post/'.$post_id);

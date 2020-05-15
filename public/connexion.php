@@ -31,7 +31,7 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
 <div class="blue_line"></div>
 
 <div class="main">
-    <form class="inscription mt-3" action="../connexion_confirm.php" method="post">
+    <form class="inscription mt-3" action="../app/connexion_confirm.php" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Adresse Email</label>
             <input type="email" class="form-control" id="email" name="email">

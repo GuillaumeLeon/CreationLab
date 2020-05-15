@@ -17,7 +17,7 @@
 <div class="col-md-8">
 
   <div class="container m-5">
-
+      <a href="index.php" class="btn btn-primary">Retour</a>
     <h1>Mentions Légales</h1>
     <p>Ce site est édité par la société Web Chemisters.</p>
     <p>Mail : Webchemisters@gmail.com</p>

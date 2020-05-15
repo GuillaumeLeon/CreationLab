@@ -101,7 +101,7 @@ if(empty($post)){
         <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
         <a href="../public/project.php"><i class="far fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
         <a href="../public/new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet"></i></a>
-        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
+        <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="../public/search.php" method="get">
@@ -129,7 +129,7 @@ if(empty($post)){
                     <li> <a href="../public/user_project.php"> Mes projets </a></li>
                     <li> <a href="#"> Abonnements </a></li>
                     <li> <a href="#"> Mes projets préféres </a></li>
-                    <li> <a href="../random.php"> Aléatoire </a></li>
+                    <li> <a href="../app/random.php"> Aléatoire </a></li>
                 </ul>
             </li>
             <li><a href="#"> Abonnements </a></li>
@@ -262,7 +262,7 @@ if($suite != false) {
 }
 ?>
 <div class="container add_comment">
-    <form action="../comment.php" method="POST">
+    <form action="../app/comment.php" method="POST">
         <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
         <input class="submit_comment mb-1" type="submit" value="Commenter">
     </form>

@@ -6,8 +6,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
 
-$query = "SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "' AND parent_node IS NULL";
-$get_post = $db->prepare($query);
+$get_post = $db->prepare("SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "' AND parent_node IS NULL");
 $get_post->execute();
 $post = $get_post->fetchAll();
 ?>
@@ -41,7 +40,7 @@ $post = $get_post->fetchAll();
         <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
         <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
         <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet"></i></a>
-        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
+        <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="search.php" method="GET">
@@ -58,45 +57,15 @@ $post = $get_post->fetchAll();
 
 <?php include '../includes/menu.php';?>
 <h1>Voici vos projets</h1>
-<?php for ($i = count($post) - 1; $i >= 0; $i--) {
-    include '../includes/data_connected.php';
-}?>
+<?php
+    foreach ($post as $value) {
+      include '../includes/data_connected.php';
+    }
+?>
 <a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
 <?php include '../includes/footer.php';?>
 
-<script>
-    function upvote(id) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200){
-            } else if(xhr.status !== 200){
-            }
-        };
-        xhr.send("voteType=upvote&post_id="+id);
-    }
-    function downvote(id) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '../vote.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function(){
-            if(xhr.status === 200) {
-            } else if(xhr.status !== 200) {
-            }
-        };
-        xhr.send("voteType=downvote&post_id="+id);
-    }
-
-    const button = document.getElementById('back2Top');
-    window.addEventListener('scroll', function(e){
-        if(window.scrollY > 300) {
-            button.style.display = 'block';
-        } else {
-            button.style.display = 'none';
-        }
-    });
-</script>
+<script src="js/index.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/font_awesome.js"></script>
 </body>

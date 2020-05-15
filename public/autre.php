@@ -45,7 +45,7 @@ unset($_SESSION['post_id'], $_SESSION['post']);
       <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
       <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
       <a href="new_project.php"><i class="fas fa-plus-circle m-2" data-toggle="tooltip" data-placement="top" title="Nouveaux projet"></i></a>
-      <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
+      <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
       <form class="" action="search.php" method="GET">
@@ -61,9 +61,10 @@ unset($_SESSION['post_id'], $_SESSION['post']);
   <?php include '../includes/menu.php';?>
   <div id="main">
     <?php
-/*    for ($i = 0; $i <count($post); $i++) {
-      include '../includes/data_connected.php';
-    }*/
+    /*
+    for ($i = 0; $i <count($post); $i++) {
+    include '../includes/data_connected.php';
+  }*/
     foreach ($post as $value) {
       include '../includes/data_connected.php';
     }

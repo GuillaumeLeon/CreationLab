@@ -45,7 +45,7 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     <div class="button-menu d-flex m-2">
         <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
         <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
-        <a href="../deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
+        <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">
         <form class="" action="search.php" method="GET">
@@ -60,7 +60,7 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
 <?php include '../includes/menu.php';?>
 <div class="main">
     <div class="container" id="form_text">
-        <form action="../add_post.php" method="post">
+        <form action="../app/add_post.php" method="post">
             <div class="form-group mt-2">
                 <label for="title">Titre :</label>
                 <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" required/>

@@ -1,5 +1,5 @@
 <?php
-require 'database/db.php';
+require '../database/db.php';
 session_start();
 $id = $_SESSION['post'][0]['post_id'];
 if ($_SESSION['connected'] != 1) {
@@ -17,4 +17,4 @@ if (!isset($_POST['com_content'])) {
 }
 $new_comment = $db->prepare('INSERT INTO comment (author, post_id, content, created_at) VALUES(?,?,?,?)');
 $new_comment->execute(array($author, $id, $content, $date));
-header("Location:/post/post.php?post=$id");
+header("Location:../post/$id");

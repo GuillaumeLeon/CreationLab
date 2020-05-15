@@ -9,7 +9,7 @@ if(isset($_SESSION['connected'])) {
 	$_SESSION['connected'] = 0;
     }
     }
-    $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name FROM post_text ORDER BY date_post DESC');
+    $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL AND post_name IS NOT NULL ORDER BY date_post DESC');
     $get_post->execute();
     $post = $get_post->fetchAll();
 ?>

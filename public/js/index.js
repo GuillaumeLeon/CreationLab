@@ -1,30 +1,30 @@
 function upvote(id) {
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', '../vote.php');
+  xhr.open('POST', '../app/vote.php');
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onload = function(){
     if(xhr.status === 200){
     } else if(xhr.status !== 200){
     }
   };
-  id = id.substring(0,1)
+  // id = id.substring(0,1)
   xhr.send("voteType=upvote&post_id="+id);
   id = String(id);
-  const vote = document.getElementById(id);
+  const vote = document.querySelectorAll('#'+id+'.upvote');
   vote.style.color = "green";
 }
 function downvote(id) {
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', '../vote.php');
+  xhr.open('POST', '../app/vote.php');
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onload = function(){
     if(xhr.status === 200) {
     } else if(xhr.status !== 200) {
     }
   };
-  id = id.substring(0,1)
+  // id = id.substring(0,1)
   xhr.send("voteType=downvote&post_id="+id);
-  const vote = document.getElementById(id);
+  const vote = document.querySelectorAll('#'+id+'.downvote');
   vote.style.color = "red";
 }
 
