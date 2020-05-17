@@ -1,5 +1,6 @@
 <?php
 require '../database/db.php';
+require '../vendor/autoload.php';
 session_start();
 
 if ($_SESSION['connected'] != 1) {

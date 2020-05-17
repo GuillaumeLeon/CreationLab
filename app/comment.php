@@ -1,5 +1,6 @@
 <?php
 require '../database/db.php';
+require '../vendor/autoload.php';
 session_start();
 $id = $_SESSION['post'][0]['post_id'];
 if ($_SESSION['connected'] != 1) {

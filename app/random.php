@@ -1,6 +1,6 @@
 <?php
-
 require '../database/db.php';
+require '../vendor/autoload.php';
 session_start();
 
 $get_number_post = $db->prepare("SELECT post_id FROM post_text AND parent_node IS NULL");
