@@ -3,7 +3,7 @@ require '../database/db.php';
 session_start();
 $id = $_SESSION['post'][0]['post_id'];
 if ($_SESSION['connected'] != 1) {
-   header('Location:index.php');
+    header('Location:../index.php');
 }
 
 if (!isset($_POST['com_content'])) {
