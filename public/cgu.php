@@ -85,7 +85,7 @@ Pour toute question relative aux présentes conditions d’utilisation du site, 
 <div class="col-md-2"></div>
 </div>
 
-  <a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
+  <button id="back2Top" class="btn" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
 <?php include '../includes/footer.php';?>
 <script src="js/index.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>

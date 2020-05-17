@@ -1,5 +1,6 @@
 <?php
 require '../database/db.php';
+require '../vendor/autoload.php';
 session_start();
 if ($_SESSION['connected'] == 0) {
     if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {

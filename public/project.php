@@ -1,5 +1,6 @@
 <?php
 require '../database/db.php';
+require '../vendor/autoload.php';
 
 session_start();
 if ($_SESSION['connected'] != 1) {
@@ -62,7 +63,7 @@ $post = $get_post->fetchAll();
       include '../includes/data_connected.php';
     }
 ?>
-<a href="#nav" id="back2Top" class="btn"><i class="fa fa-arrow-up"></i></a>
+<button id="back2Top" class="btn" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
 <?php include '../includes/footer.php';?>
 
 <script src="js/index.js"></script>
