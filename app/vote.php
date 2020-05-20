@@ -53,5 +53,13 @@ if(isset($_POST['voteType'])) {
     $delete_upvote->execute();
     $new_downvote = $db->prepare("INSERT INTO downvote (user_id, post_id) VALUES (?,?)");
     $new_downvote->execute(array($Uid, $id));
+
+  } elseif($vote_upvote && $_POST['voteType'] == 'upvote') {
+    $delete_upvote = $db->prepare("DELETE FROM upvote WHERE post_id='$id' AND user_id='$Uid'");
+    $delete_upvote->execute();
+
+  } elseif($vote_downvote && $_POST['voteType'] == 'downvote') {
+    $delete_downvote = $db->prepare("DELETE FROM downvote WHERE post_id='$id' AND user_id='$Uid'");
+    $delete_downvote->execute();
   }
 }

@@ -25,6 +25,7 @@ $auth = 1;
 if ($password == $pass[0]) {
     header("Location:../public/autre.php");
 } else {
+    $_SESSION['login_error'] = 1;
     header("Location:../public/connexion.php");
     exit;
 }

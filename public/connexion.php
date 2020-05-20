@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
     header('Location:index.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,13 +41,31 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
             <label for="exampleInputPassword1">Mot de passe </label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
-
+        <?php
+        if(isset($_SESSION['login_error'])) {
+          ?>
+          <div class="alert alert-danger alert-dismissible" role="alert">
+            <!-- <div class="container-fluid"> -->
+              <div class="alert-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="fas fa-times"></i>
+              </button>
+              <b>Attention ! Mot de passe ou adresse email incorrect </b>
+            <!-- </div> -->
+          </div>
+        <?php }
+        unset($_SESSION['login_error']);
+        ?>
         <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
+        </form>
+
 </div>
 <?php include '../includes/footer.php';?>
 <script src="js/font_awesome.js"></script>
-
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -343,3 +343,11 @@ and (max-device-width: 480px){
       display:none;
   }
 }
+
+#login_error {
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  opacity: 1;
+}
