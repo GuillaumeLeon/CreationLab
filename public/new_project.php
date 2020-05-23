@@ -45,7 +45,7 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     </div>
     <div class="button-menu d-flex m-2">
         <a href="../users/profil.php"><i class="fas fa-user m-2" data-toggle="tooltip" data-placement="top" title="Profil"></i></a>
-        <a href="project.php"><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
+        <a href=fav_post.php><i class="fas fa-bookmark m-2" data-toggle="tooltip" data-placement="top" title="Favoris"></i></a>
         <a href="../app/deco.php"><i class="fas fa-sign-out-alt m-2" data-toggle="tooltip" data-placement="top" title="Déconnexion"></i></a>
     </div>
     <div class="search_bar">

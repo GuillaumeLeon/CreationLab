@@ -56,5 +56,6 @@ window.addEventListener('scroll', function(e){
 // Désactive les tooltips sur les écrans tactile
 if(!('ontouchstart' in window))
 {
-  $('.tooltip').tooltip(options);
+    const tooltip = document.getElementsByClassName('tooltip');
+    tooltip.disabled = 'true';
 }
