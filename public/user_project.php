@@ -56,13 +56,13 @@ if ($_SESSION['connected'] != 1) {
 $query = "SELECT author,date_post,post_id,contenue,post_name FROM post_text WHERE author='" . $_SESSION['username'] . "'";
 $get_post = $db->prepare($query);
 $get_post->execute();
-$post = $get_post->fetchAll();
+$post = $get_post->fetchALL(PDO::FETCH_ASSOC);
 ?>
 <h1>Voici vos projets</h1>
 <?php for ($i = count($post) - 1; $i >= 0; $i--) {
     include 'includes/data_connected.php';
 }?>
-<button id="back2Top" class="btn" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
+<button id="back2Top" class="btn btn-primary btn-lg back-to-top" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
 <?php include '../includes/footer.php';?>
 
 <script src="js/index.js"></script>

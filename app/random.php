@@ -3,7 +3,7 @@ require '../database/db.php';
 require '../vendor/autoload.php';
 session_start();
 
-$get_number_post = $db->prepare("SELECT post_id FROM post_text AND parent_node IS NULL");
+$get_number_post = $db->prepare("SELECT post_id FROM post_text WHERE parent_node IS NULL");
 $get_number_post->execute();
 $count = $get_number_post->fetchAll(PDO::FETCH_ASSOC);
 

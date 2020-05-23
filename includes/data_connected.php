@@ -3,6 +3,7 @@ $user = $_SESSION['username'];
 $id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
 $id->execute();
 $uid = $id->fetch(PDO::FETCH_ASSOC);
+$user_id = $uid['Uid'];
 
 $post_id = $value['post_id'];
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
@@ -20,6 +21,10 @@ $upvote = $has_upvoted->fetchALL(PDO::FETCH_ASSOC);
 $has_downvoted = $db->prepare("SELECT user_id FROM downvote WHERE post_id='$post_id'");
 $has_downvoted->execute();
 $downvote = $has_downvoted->fetchALL(PDO::FETCH_ASSOC);
+
+$is_favorite = $db->prepare("SELECT * FROM favoris WHERE user_id='$user_id' AND post_id='$post_id'");
+$is_favorite->execute();
+$is_favorite = $is_favorite->fetch();
 
 if(isset($upvote) && !empty($upvote)){
   foreach($upvote as $upvotes) {
@@ -62,7 +67,7 @@ if(isset($downvote) && !empty($downvote)) {
           <div class="row">
             <div class="col-1 icon-bar ml-3"><a href="../post/<?= $value['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
             <div class="col-1 icon-bar"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
-            <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+            <div class="col-1 icon-bar"><button id="<?= $value['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
             <div class="col-1 icon-bar"><a href="<?= $value['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
           </div>
         </div>

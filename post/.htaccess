@@ -7,3 +7,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^(.*)$ post.php?post=$1 [t]
+
+ErrorDocument 404 .../public/404.php

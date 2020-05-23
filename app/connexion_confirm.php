@@ -3,16 +3,16 @@ require '../database/db.php';
 require '../vendor/autoload.php';
 session_start();
 if ($_SESSION['connected'] == 0) {
-    if (isset($_POST['email'], $_POST['password'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-    } else {
-        header("Location:public/connexion.php");
-        exit;
-    }
-} else {
+  if (isset($_POST['email'], $_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+  } else {
     header("Location:public/connexion.php");
     exit;
+  }
+} else {
+  header("Location:public/connexion.php");
+  exit;
 }
 
 $password = hash('sha256', $password);
@@ -23,11 +23,11 @@ $pass = $connect->fetch();
 
 $auth = 1;
 if ($password == $pass[0]) {
-    header("Location:../public/autre.php");
+  header("Location:../public/autre.php");
 } else {
-    $_SESSION['login_error'] = 1;
-    header("Location:../public/connexion.php");
-    exit;
+  $_SESSION['login_error'] = 1;
+  header("Location:../public/connexion.php");
+  exit;
 }
 $_SESSION['connected'] = 1;
 

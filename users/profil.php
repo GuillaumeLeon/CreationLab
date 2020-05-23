@@ -9,7 +9,7 @@ if ($_SESSION['connected'] != 1) {
 $user = $_SESSION["username"];
 $query = $db->prepare("SELECT * FROM users WHERE username='$user'");
 $query->execute();
-$result = $query->fetchAll();
+$result = $query->fetchALL(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

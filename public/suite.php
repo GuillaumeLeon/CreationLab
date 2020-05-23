@@ -15,20 +15,32 @@ $user = $_SESSION['username'];
 $user_id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
 $user_id->execute();
 $uid = $user_id->fetch(PDO::FETCH_ASSOC);
+$user_id = $uid['Uid'];
 
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
-$post = $get_post->fetchAll();
+$post = $get_post->fetchALL(PDO::FETCH_ASSOC);
+
+$is_favorite = $db->prepare("SELECT * FROM favoris WHERE user_id='$user_id' AND post_id='$post_id'");
+$is_favorite->execute();
+$is_favorite = $is_favorite->fetch();
+
+if(empty($post)){
+    header('Location:404.php');
+    exit;
+}
 
 $get_com = $db->prepare("SELECT * FROM comment WHERE post_id='$id'");
 $get_com->execute();
-$com = $get_com->fetchAll();
+$com = $get_com->fetchALL(PDO::FETCH_ASSOC);
 $_SESSION['post'] = $post;
 
+// Vérification de la présence d'une suite
 $get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id'");
 $get_suite->execute();
 $suite = $get_suite->fetch();
 
+// Vérification pour savoir si l'utilisateur à voter ou non
 $get_upvote = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$post_id'");
 $get_upvote->execute();
 $upvote_nb = $get_upvote->fetch();
@@ -132,7 +144,7 @@ if(isset($downvote) && !empty($downvote)) {
           </div>
           <?php if($suite == false){ ?>
             <div class="interaction">
-              <i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i>
+              <button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
             </div>
           <?php }?>
         </div>
@@ -175,7 +187,7 @@ if(isset($downvote) && !empty($downvote)) {
                     <div class="interaction">
                       <div class="row">
                         <div class="col-1 icon-bar ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-                        <div class="col-1 icon-bar"><a href="#"><i class="far fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a></div>
+                        <div class="col-1 icon-bar"><button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
                         <div class="col-1 icon-bar"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
                       </div>
                     </div>
@@ -224,7 +236,7 @@ if(isset($downvote) && !empty($downvote)) {
                           <?php if($suite_existing == false){ ?>
                             <div class="interaction">
                               <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i>
-                              <a href="#"><i class="fas fa-bookmark ml-3" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></a>
+                              <button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
                             </div>
                           <?php }?>
                         </div>

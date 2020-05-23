@@ -8,9 +8,10 @@ if ($_SESSION['connected'] != 1) {
   header('Location:index.php');
   exit;
 }
+// Récupération de tout les post originaux
 $get_post = $db->prepare('SELECT author,date_post,post_id,contenue,post_name,slug FROM post_text WHERE parent_node IS NULL AND post_name IS NOT NULL ORDER BY date_post DESC');
 $get_post->execute();
-$post = $get_post->fetchAll();
+$post = $get_post->fetchALL(PDO::FETCH_ASSOC);
 unset($_SESSION['post_id'], $_SESSION['post']);
 ?>
 <!DOCTYPE html>
@@ -62,16 +63,12 @@ unset($_SESSION['post_id'], $_SESSION['post']);
   <?php include '../includes/menu.php';?>
   <div id="main">
     <?php
-    /*
-    for ($i = 0; $i <count($post); $i++) {
-    include '../includes/data_connected.php';
-  }*/
     foreach ($post as $value) {
       include '../includes/data_connected.php';
     }
     ?>
   </div>
-  <button id="back2Top" class="btn" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
+  <button id="back2Top" class="btn btn-primary btn-lg back-to-top" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
   <?php include '../includes/footer.php';?>
   <script src="js/index.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

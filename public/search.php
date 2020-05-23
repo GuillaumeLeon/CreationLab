@@ -8,7 +8,7 @@ if(isset($_GET['q'])) {
 }
 $get_post = $db->prepare("SELECT author,date_post,post_id,contenue,post_name,slug,tag,parent_node FROM post_text WHERE parent_node IS NULL AND post_name LIKE '%$search%' OR tag LIKE '%$search%' OR author LIKE '%$search%'");
 $get_post->execute();
-$post = $get_post->fetchAll();
+$post = $get_post->fetchALL(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -70,7 +70,7 @@ $post = $get_post->fetchAll();
     }
     ?>
   </div>
-  <button id="back2Top" class="btn" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
+  <button id="back2Top" class="btn btn-primary btn-lg back-to-top" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
   <?php include '../includes/footer.php';?>
   <script src="js/index.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

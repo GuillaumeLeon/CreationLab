@@ -16,11 +16,11 @@ $Uid = $profile['Uid'];
 
 $get_upvote = $db->prepare("SELECT user_id FROM upvote WHERE post_id='$id' AND user_id='$Uid'");
 $get_upvote->execute();
-$upvote = $get_upvote->fetchAll();
+$upvote = $get_upvote->fetchALL(PDO::FETCH_ASSOC);
 
 $get_downvote = $db->prepare("SELECT user_id,post_id  FROM downvote WHERE post_id='$id' AND user_id='$Uid'");
 $get_downvote->execute();
-$downvote = $get_downvote->fetchAll();
+$downvote = $get_downvote->fetchALL(PDO::FETCH_ASSOC);
 
 if(!empty($downvote)) {
   $votable = false;

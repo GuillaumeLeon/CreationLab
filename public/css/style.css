@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-
 html, body {
   position: relative;
   font-family: sans-serif;
@@ -25,9 +24,9 @@ a:hover {
 }
 
 /* Navigation bar */
-  .icon-bar {
-    font-size: 1.125em;
-  }
+.icon-bar {
+  font-size: 1.125em;
+}
 nav {
   background-color: #F7F6EE;
 }
@@ -51,8 +50,7 @@ nav {
   top: 31px;
 }
 .submit-button {
-  border: transpar
-  nt;
+  border: transparent;
   background: transparent;
 }
 .upvote:hover {
@@ -141,19 +139,11 @@ button:active {
 }
 /* back to the top*/
 #back2Top {
-  width: 75px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  bottom: 100px;
-  right: 10%;
-  color: #555;
-  background-color: #DDF;
-  text-align: center;
-  font-size: 30px;
-  text-decoration: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
 }
 
 #back2Top:hover {
@@ -318,7 +308,7 @@ h1 {
   height: 5px;
 }
 
-@media only screen
+@media screen
 and (min-device-width: 320px)
 and (max-device-width: 480px){
   .red_line-nav {
@@ -340,14 +330,21 @@ and (max-device-width: 480px){
     width: 23em;
   }
   #back2Top {
-      display:none;
+    display:none;
   }
 }
-
-#login_error {
-  -webkit-transition: opacity 3s ease-in-out;
-  -moz-transition: opacity 3s ease-in-out;
-  -ms-transition: opacity 3s ease-in-out;
-  -o-transition: opacity 3s ease-in-out;
-  opacity: 1;
+@media screen
+and (min-device-width: 480px)
+and (max-device-width: 1025px){
+  .red_line-nav {
+    display: none;
+  }
+  .post {
+  }
+  .menu {
+    display: none;
+  }
+  #back2Top {
+    display:none;
+  }
 }
