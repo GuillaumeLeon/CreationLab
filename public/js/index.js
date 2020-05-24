@@ -10,8 +10,21 @@ function upvote(id) {
   };
   xhr.send("voteType=upvote&post_id="+id);
   id = String(id);
-  const vote = document.getElementById(id);
-  vote.style.color = "green";
+  const upvote = document.getElementsByClassName('btn '+id+' upvote');
+  const downvote = document.getElementsByClassName('btn '+id+' downvote');
+  const nb_vote = document.getElementsByClassName('numberVote '+id);
+
+  if(upvote[0].style.color == 'green') {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) - 1);
+    upvote[0].style.color = "#212529";
+  } else if(downvote[0].style.color == 'red') {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) + 2);
+    upvote[0].style.color = 'green';
+  } else {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) + 1);
+    upvote[0].style.color = "green";
+  }
+  downvote[0].style.color = "#212529";
 }
 
 // Fonction Ajax pour mettre un downvote
@@ -25,8 +38,22 @@ function downvote(id) {
     }
   };
   xhr.send("voteType=downvote&post_id="+id);
-  const vote = document.getElementById(id);
-  vote.style.color = "red";
+  const downvote = document.getElementsByClassName('btn '+id+' downvote');
+  const upvote = document.getElementsByClassName('btn '+id+' upvote');
+  const nb_vote = document.getElementsByClassName('numberVote '+id);
+
+  if(downvote[0].style.color == 'red') {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) + 1);
+    downvote[0].style.color = "#212529";
+  } else if(upvote[0].style.color == 'green') {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) - 2);
+    downvote[0].style.color = "red";
+  } else {
+    nb_vote[0].innerHTML = (parseInt(nb_vote[0].innerHTML) - 1);
+    downvote[0].style.color = "red";
+  }
+  upvote[0].style.color = "#212529";
+
 }
 
 function favoris(id) {
@@ -38,13 +65,13 @@ function favoris(id) {
     } else if(xhr.status !== 200) {
     }
   };
-    const test = document.getElementsByClassName(id);
-    if(test[0].childNodes[0].className == 'far fa-bookmark') {
-	test[0].childNodes[0].className = 'fas fa-bookmark'
-    } else if (test[0].childNodes[0].className == 'fas fa-bookmark') {
-	test[0].childNodes[0].className = 'far fa-bookmark'
-    }
-    
+  const fav = document.getElementsByClassName('fav_btn '+id);
+  if(fav[0].childNodes[0].className == 'far fa-bookmark') {
+    fav[0].childNodes[0].className = 'fas fa-bookmark'
+  } else if (fav[0].childNodes[0].className == 'fas fa-bookmark') {
+    fav[0].childNodes[0].className = 'far fa-bookmark'
+  }
+
   xhr.send("post_id="+id);
 }
 
@@ -63,6 +90,6 @@ window.addEventListener('scroll', function(e){
 // Désactive les tooltips sur les écrans tactile
 if(!('ontouchstart' in window))
 {
-    const tooltip = document.getElementsByClassName('tooltip');
-    tooltip.disabled = 'true';
+  const tooltip = document.getElementsByClassName('tooltip');
+  tooltip.disabled = 'true';
 }

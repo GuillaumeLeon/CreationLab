@@ -4,7 +4,7 @@ require '../vendor/autoload.php';
 
 /*
  *  À TOI QUI LIRAS SE CODE
- *  SACHE QUE JE N'EN SUIS PAS FIÈRE 
+ *  SACHE QUE JE N'EN SUIS PAS FIÈRE
  *
  */
 
@@ -15,7 +15,7 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
     exit;
 }
-if (!isset($_GET['post'])){
+if (!isset($_GET['post'])) {
     header('Location:../index.php');
     exit;
 }
@@ -28,7 +28,7 @@ $user_id = $_SESSION['id'];
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
 $post = $get_post->fetchAll(PDO::FETCH_ASSOC);
-if(empty($post)){
+if (empty($post)) {
     header('Location:../public/404.php');
     exit;
 }
@@ -64,20 +64,20 @@ $is_favorite = $db->prepare("SELECT * FROM favoris WHERE user_id='$user_id' AND 
 $is_favorite->execute();
 $is_favorite = $is_favorite->fetch();
 
-if(isset($upvote) && !empty($upvote)){
-    foreach($upvote as $upvotes) {
-	if($upvotes['user_id'] === $user_id){
-	    $upvoted = true;
-	}
+if (isset($upvote) && !empty($upvote)) {
+    foreach ($upvote as $upvotes) {
+        if ($upvotes['user_id'] === $user_id) {
+            $upvoted = true;
+        }
     }
 } else {
     $upvoted = false;
 }
-if(isset($downvote) && !empty($downvote)) {
+if (isset($downvote) && !empty($downvote)) {
     foreach ($downvote as $downvotes) {
-	if ($downvotes['user_id'] === $user_id) {
-	    $downvoted = true;
-	}
+        if ($downvotes['user_id'] === $user_id) {
+            $downvoted = true;
+        }
     }
 } else {
     $downvoted = false;
@@ -106,7 +106,7 @@ $(function() {
   <nav id="nav" class="navbar">
     <div class="logo row">
       <div class="red_line-nav col"></div>
-      <a href="../index.php" class="ml-5 mr-5" ><img src="../public/image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
+      <a href="../index.php" class="ml-5 mr-5"><img src="../public/image/Creation_Lab.png" class="logo-creation_lab" alt="logo_creationLab" width="350" height="180"></a>
       <div class="red_line-nav col"></div>
     </div>
     <div class="button-menu d-flex m-2">
@@ -159,153 +159,180 @@ $(function() {
     <div class="corps">
       <div class="info" style="justify-content: space-between">
 	<div class="vote">
-	  <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $post[0]['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
-	  <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-	  <button type="button" class="btn btn-light downvote" <?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $post[0]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+	<button type="button" class="btn btn-light upvote" <?php if ($upvoted) {
+    echo "style='color:green;'";
+} ?>id="<?= $post[0]['post_id']?> upvote" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+    <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+    <button type="button" class="btn btn-light downvote" <?php if ($downvoted) {
+    echo "style='color:red;'";
+} ?> id="<?= $post[0]['post_id']?> downvote" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+	    </div>
+	    <p class="mr-3"><?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?></p>
+	    </div>
+	    <div class="title">
+	    <h1><?= $post[0]['post_name'] ?></h1>
+	    </div>
+	    <div class="contenue p-4">
+	    <?= $post[0]['contenue'] ?>
+	    </div>
+	    <?php if ($suite == false) {?>
+	    <div class="interaction">
+	    <div class="row">
+	    <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
+	    <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if ($is_favorite != null) {
+    echo 'fas';
+} else {
+    echo 'far';
+} ?> fa-bookmark"
+		data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
+	  <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
 	</div>
-	<p class="mr-3"><?= "Crée par " . $post[0]['author'] . " le " . $post[0]['date_post']; ?></p>
+	<?php }?>
       </div>
-      <div class="title">
-	<h1><?= $post[0]['post_name'] ?></h1>
-      </div>
-      <div class="contenue p-4">
-	<?= $post[0]['contenue'] ?>
-      </div>
-      <?php if($suite == false) {?>
-      <div class="interaction">
-<div class="row">
-    <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
-    <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
-    <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
-</div>
-      <?php }?>
     </div>
-  </div>
 <?php
-if($suite != false) {
-    $id_suite = $suite['post_id'];
+    if ($suite != false) {
+        $id_suite = $suite['post_id'];
 
-    $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
-    $get_upvote_suite->execute();
-    $upvote_nb_suite = $get_upvote_suite->fetch();
-    $get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
-    $get_downvote_suite->execute();
-    $downvote_nb_suite = $get_downvote_suite->fetch();
+        $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
+        $get_upvote_suite->execute();
+        $upvote_nb_suite = $get_upvote_suite->fetch();
+        $get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
+        $get_downvote_suite->execute();
+        $downvote_nb_suite = $get_downvote_suite->fetch();
 
-    $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
-    $get_suite_existing->execute();
-    $suite_existing = $get_suite_existing->fetch();
+        $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
+        $get_suite_existing->execute();
+        $suite_existing = $get_suite_existing->fetch(); ?>
+    <div class="container row post mt-3 mb-3 shadow">
+      <div class="corps">
+	<div class="info" style="justify-content: space-between">
+	  <div class="vote">
+	  <button type="button" class="btn btn-light upvote" <?php if ($upvoted) {
+            echo "style='color:green;'";
+        } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+		<div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+		<button type="button" class="btn btn-light downvote" <?php if ($downvoted) {
+            echo "style='color:red;'";
+        } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+	      </div>
+	      <p class="mr-3"><?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?></p>
+	      </div>
+	      <div class="title">
+	      <h1><?= $suite['post_name'] ?></h1>
+	      </div>
+	      <div class="contenue p-4">
+	      <p><?= $suite['contenue'] ?></p>
+	      </div>
+	      <?php if ($suite_existing == false) { ?>
+	      <div class="interaction">
+	      <div class="row">
+	      <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
+	      <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if ($is_favorite != null) {
+            echo 'fas';
+        } else {
+            echo 'far';
+        } ?> fa-bookmark"
+		  data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
+	    <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+	  </div>
+	</div>
+      <?php } ?>
+      </div>
+    </div>
+<?php
+            $_SESSION['post_id'] = $suite['post_id'];
+        while ($suite_existing != false) {
+            $id_suite = $suite['post_id'];
+
+            $get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
+            $get_upvote_suite->execute();
+            $upvote_nb_suite = $get_upvote_suite->fetch();
+            $get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
+            $get_downvote_suite->execute();
+            $downvote_nb_suite = $get_downvote_suite->fetch();
+
+            $get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id_suite'");
+            $get_suite->execute();
+            $suite = $get_suite->fetch();
+
+            if ($suite != false) {
+                $id_suite = $suite['post_id'];
+                $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
+                $get_suite_existing->execute();
+                $suite_existing = $get_suite_existing->fetch(); ?>
+    <div class="container row post mt-3 mb-3 shadow">
+      <div class="corps">
+	<div class="info" style="justify-content: space-between">
+	  <div class="vote">
+	  <button type="button" class="btn btn-light upvote" <?php if ($upvoted) {
+                    echo "style='color:green;'";
+                } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
+			<div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
+			<button type="button" class="btn btn-light downvote" <?php if ($downvoted) {
+                    echo "style='color:red;'";
+                } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
+	      </div>
+	      <p class="mr-3"><?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?></p>
+	      </div>
+	      <div class="title">
+	      <h1><?= $suite['post_name'] ?></h1>
+	      </div>
+	      <div class="contenue p-4">
+	      <p><?= $suite['contenue'] ?></p>
+	      </div>
+	      <?php if ($suite_existing == false) { ?>
+	      <div class="interaction">
+	      <div class="row">
+	      <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
+	      <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if ($is_favorite != null) {
+                    echo 'fas';
+                } else {
+                    echo 'far';
+                } ?> fa-bookmark"
+		  data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
+	    <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
+	  </div>
+	</div>
+	<?php } ?>
+      </div>
+    </div>
+<?php
+                $_SESSION['post_id'] = $suite['post_id'];
+            }
+        }
+    }
 ?>
-  <div class="container row post mt-3 mb-3 shadow">
-    <div class="corps">
-      <div class="info" style="justify-content: space-between">
-	<div class="vote">
-	  <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
-	  <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-	  <button type="button" class="btn btn-light downvote" <?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
-	</div>
-	<p class="mr-3"><?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?></p>
-      </div>
-      <div class="title">
-	<h1><?= $suite['post_name'] ?></h1>
-      </div>
-      <div class="contenue p-4">
-	<p><?= $suite['contenue'] ?></p>
-      </div>
-      <?php if($suite_existing == false){ ?>
-      <div class="interaction">
-<div class="row">
-    <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
-    <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
-    <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
-</div>
-      </div>
-      <?php }?>
+    <div class="container add_comment">
+      <form action="../app/comment.php" method="POST">
+	<textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
+	<input class="submit_comment mb-1" type="submit" value="Commenter">
+      </form>
     </div>
-  </div>
-<?php
-    $_SESSION['post_id'] = $suite['post_id'];
-    while($suite_existing != false) {
-	$id_suite = $suite['post_id'];
-
-	$get_upvote_suite = $db->prepare("SELECT count(id) as upvote_nb FROM upvote WHERE post_id='$id_suite'");
-	$get_upvote_suite->execute();
-	$upvote_nb_suite = $get_upvote_suite->fetch();
-	$get_downvote_suite = $db->prepare("SELECT count(id) as downvote_nb FROM downvote WHERE post_id='$id_suite'");
-	$get_downvote_suite->execute();
-	$downvote_nb_suite = $get_downvote_suite->fetch();
-
-	$get_suite = $db->prepare("SELECT author,date_post,post_name,post_id,contenue FROM post_text WHERE parent_node='$id_suite'");
-	$get_suite->execute();
-	$suite = $get_suite->fetch();
-
-	if($suite != false) {
-	    $id_suite = $suite['post_id'];
-	    $get_suite_existing = $db->prepare("SELECT post_id FROM post_text WHERE parent_node='$id_suite'");
-	    $get_suite_existing->execute();
-	    $suite_existing = $get_suite_existing->fetch();
-?>
-  <div class="container row post mt-3 mb-3 shadow">
-    <div class="corps">
-      <div class="info" style="justify-content: space-between">
-	<div class="vote">
-	  <button type="button" class="btn btn-light upvote" <?php if($upvoted){ echo "style='color:green;'"; } ?>id="<?= $suite['post_id']?>" onclick="upvote(this.id)"><i class="fa fa-arrow-up"></i></button>
-	  <div class="numberVote"><?= $upvote_nb[0] - $downvote_nb[0] ?></div>
-	  <button type="button" class="btn btn-light downvote" <?php if($downvoted){ echo "style='color:red;'"; } ?> id="<?= $suite['post_id']?>" onclick="downvote(this.id)"><i class="fa fa-arrow-down"></i></button>
-	</div>
-	<p class="mr-3"><?= "Crée par " . $suite['author'] . " le " . $suite['date_post']; ?></p>
+<?php if (!empty($com)) {
+    /* for ($i = 0; $i < count($com) ; $i++) { */
+    foreach ($com as $comment) {
+        ?>
+    <div class="container comment mb-3">
+      <div class="row" style="justify-content: space-between">
+	<p class="p-3"> Crée le <?= $comment['created_at'] . " par " . $comment['author']; ?></p>
+<?php if ($comment['author'] == $_SESSION['username']) {
+            echo '<img class="mt-4 mr-3" src="../public/image/cross.png" width="15" height="15" alt="suppr" style="transform: rotate(45deg)"/>';
+        } ?>
       </div>
-      <div class="title">
-	<h1><?= $suite['post_name'] ?></h1>
+      <div class="content row p-4">
+	<p><?= $comment['content']; ?></p>
       </div>
-      <div class="contenue p-4">
-	<p><?= $suite['contenue'] ?></p>
-      </div>
-      <?php if($suite_existing == false){ ?>
-      <div class="interaction">
-<div class="row">
-    <div class="col-1 icon-bar"><i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></div>
-    <div class="col-1 icon-bar"><button id="<?= $post[0]['post_id']; ?>" class="bg-transparent <?= $post[0]['post_id']; ?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
-    <div class="col-1 icon-bar"> <a href="../public/suite.php?post=<?= $post[0]['post_id']; ?>"><i class="fas fa-sign-in-alt ml-3" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
-</div>
-      </div>
-      <?php }?>
     </div>
-  </div>
-
 <?php
-	    $_SESSION['post_id'] = $suite['post_id'];
-	}
     }
 }
 ?>
-  <div class="container add_comment">
-    <form action="../app/comment.php" method="POST">
-      <textarea class="form-control add_comment mb-1" id="com_content" name="com_content" placeholder="Commentez !!" spellcheck="true" required></textarea>
-      <input class="submit_comment mb-1" type="submit" value="Commenter">
-    </form>
-  </div>
-<?php if (!empty($com)) {
-/* for ($i = 0; $i < count($com) ; $i++) { */
-foreach($com as $comment) {
-?>
-  <div class="container comment mb-3">
-    <div class="row" style="justify-content: space-between">
-      <p class="p-3"> Crée le <?= $comment['created_at'] . " par " . $comment['author']; ?></p>
-      <?php if($comment['author'] == $_SESSION['username']) {echo '<img class="mt-4 mr-3" src="../public/image/cross.png" width="15" height="15" alt="suppr" style="transform: rotate(45deg)"/>';}  ?>
-    </div>
-    <div class="content row p-4">
-      <p><?= $comment['content']; ?></p>
-    </div>
-  </div>
-<?php }
-}
-?>
-  <button id="back2Top" class="btn btn-primary btn-lg back-to-top" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
-  <?php include '../includes/footer.php';?>
-  <script src="../public/js/index.js"></script>
-  <script src="../public/js/bootstrap.bundle.min.js"></script>
-  <script src="../public/js/font_awesome.js"></script>
+    <button id="back2Top" class="btn btn-primary btn-lg back-to-top" onclick="window.scroll(0,0);" data-toggle="tooltip" data-placement="top" title="Retour en hauts"><i class="fa fa-arrow-up"></i></button>
+    <?php include '../includes/footer.php';?>
+    <script src="../public/js/index.js"></script>
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/js/font_awesome.js"></script>
 </body>
 
 </html>
