@@ -7,15 +7,9 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
 
-$get_user = $db->prepare("SELECT * FROM users WHERE username='".$_SESSION['username']."'");
-$get_user->execute();
-$user = $get_user->fetch();
+$Uid = $_SESSION['id'];
 
-/* $get_post = $db->prepare("SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "' AND parent_node IS NULL ORDER BY date_post DESC"); 
- $get_post->execute(); 
-$post = $get_post->fetchALL(PDO::FETCH_ASSOC); */
-
-$get_fav = $db->prepare("SELECT * FROM favoris WHERE user_id='".$user['Uid']."'");
+$get_fav = $db->prepare("SELECT * FROM favoris WHERE user_id='$Uid' ORDER BY created_at DESC");
 $get_fav->execute();
 $fav = $get_fav->fetchAll(PDO::FETCH_ASSOC);
 
@@ -23,7 +17,8 @@ $tab_fav = [];
 foreach($fav as $favories) {
     $tab_fav[] = $favories['post_id'];
 }
-$get_post = $db->prepare("SELECT * FROM post_text WHERE post_id IN (".implode(',',$tab_fav).") AND parent_node IS NULL ORDER BY date_post DESC"); 
+// Récupération des postes en fonctions des favoris de l'utilisateurs
+$get_post = $db->prepare("SELECT * FROM post_text WHERE post_id IN (".implode(',',$tab_fav).") AND parent_node IS NULL"); 
 $get_post->execute(); 
 $post = $get_post->fetchALL(PDO::FETCH_ASSOC); 
 ?>

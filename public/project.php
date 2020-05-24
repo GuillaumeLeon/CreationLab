@@ -7,10 +7,6 @@ if ($_SESSION['connected'] != 1) {
     header('Location:index.php');
 }
 
-$get_user = $db->prepare("SELECT * FROM users WHERE username='".$_SESSION['username']."'");
-$get_user->execute();
-$user = $get_user->fetch();
-
 $get_post = $db->prepare("SELECT * FROM post_text WHERE author='" . $_SESSION['username'] . "' AND parent_node IS NULL ORDER BY date_post DESC");
 $get_post->execute();
 $post = $get_post->fetchALL(PDO::FETCH_ASSOC);

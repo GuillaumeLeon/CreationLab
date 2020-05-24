@@ -38,6 +38,13 @@ function favoris(id) {
     } else if(xhr.status !== 200) {
     }
   };
+    const test = document.getElementsByClassName(id);
+    if(test[0].childNodes[0].className == 'far fa-bookmark') {
+	test[0].childNodes[0].className = 'fas fa-bookmark'
+    } else if (test[0].childNodes[0].className == 'fas fa-bookmark') {
+	test[0].childNodes[0].className = 'far fa-bookmark'
+    }
+    
   xhr.send("post_id="+id);
 }
 

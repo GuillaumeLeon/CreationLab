@@ -11,11 +11,8 @@ if ($_SESSION['connected'] != 1) {
   exit;
 }
 $id = $_GET["post"];
-$user = $_SESSION['username'];
-$user_id = $db->prepare("SELECT Uid FROM users WHERE username='$user'");
-$user_id->execute();
-$uid = $user_id->fetch(PDO::FETCH_ASSOC);
-$user_id = $uid['Uid'];
+
+$user_id = $_SESSION['id'];
 
 $get_post = $db->prepare("SELECT * FROM post_text WHERE post_id='$id'");
 $get_post->execute();
@@ -59,7 +56,7 @@ $downvote = $has_downvoted->fetchALL(PDO::FETCH_ASSOC);
 
 if(isset($upvote) && !empty($upvote)){
   foreach($upvote as $upvotes) {
-    if($upvotes['user_id'] === $uid['Uid']){
+    if($upvotes['user_id'] === $user_id){
       $upvoted = true;
     }
   }
@@ -68,7 +65,7 @@ if(isset($upvote) && !empty($upvote)){
 }
 if(isset($downvote) && !empty($downvote)) {
   foreach ($downvote as $downvotes) {
-    if ($downvotes['user_id'] === $uid['Uid']) {
+    if ($downvotes['user_id'] === $user_id) {
       $downvoted = true;
     }
   }
@@ -144,7 +141,7 @@ if(isset($downvote) && !empty($downvote)) {
           </div>
           <?php if($suite == false){ ?>
             <div class="interaction">
-              <button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
+              <button id="<?= $suite['post_id']?>" class="bg-transparent <?= $suite['post_id']?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
             </div>
           <?php }?>
         </div>
@@ -187,7 +184,7 @@ if(isset($downvote) && !empty($downvote)) {
                     <div class="interaction">
                       <div class="row">
                         <div class="col-1 icon-bar ml-3"><a href="../post/<?= $suite['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-                        <div class="col-1 icon-bar"><button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
+                        <div class="col-1 icon-bar"><button id="<?= $suite['post_id']?>" class="bg-transparent <?= $suite['post_id']?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
                         <div class="col-1 icon-bar"><a href="<?= $suite['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
                       </div>
                     </div>
@@ -236,8 +233,9 @@ if(isset($downvote) && !empty($downvote)) {
                           <?php if($suite_existing == false){ ?>
                             <div class="interaction">
                               <i class="fas fa-share ml-3" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i>
-                              <button id="<?= $suite['post_id']?>" class="bg-transparent" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
+                              <button id="<?= $suite['post_id']?>" class="bg-transparent <?= $suite['post_id']?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button>
                             </div>
+
                           <?php }?>
                         </div>
                       </div>
