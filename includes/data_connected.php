@@ -45,7 +45,7 @@ if(isset($downvote) && !empty($downvote)) {
     $downvoted = false;
 }
 ?>
-<div class="container row post mt-3 mb-3 shadow">
+<div class="row post mt-3 mb-3 shadow">
   <div class="corps">
     <div class="info" style="justify-content: space-between">
       <div class="vote">

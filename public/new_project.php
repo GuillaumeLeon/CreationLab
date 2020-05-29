@@ -24,10 +24,11 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-tokenfield.min.css">
+    <link rel="stylesheet" href="css/trumbowyg.min.css" media="all">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap-tokenfield.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -59,24 +60,44 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
 </nav>
 
 <?php include '../includes/menu.php';?>
+      <?php
+      if(isset($_SESSION['error'])) {
+        ?>
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <div class="alert-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </button>
+          <b>La Limite est de 280 charactères</b>
+        </div>
+	<?php 
+	 } 
+	unset($_SESSION['error']);
+      ?>
 <div class="main">
     <div class="container" id="form_text">
         <form action="../app/add_post.php" method="post">
             <div class="form-group mt-2">
                 <label for="title">Titre :</label>
-                <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" required/>
+		<input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" <?= isset($_SESSION['title']) ? 'value="'.$_SESSION['title'].'"': '' ?> required/>
             </div>
             <div class="form-group mt-2">
                 <label for="description">Description :</label>
-                <input  type="text" class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='280'required/>
+		<textarea  type="text" class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='140' required>
+ <?= isset($_SESSION['desc']) ? $_SESSION['desc'] : '' ?> 
+</textarea>
             </div>
-            <div class="tag mt-2">
-                <label for="tag">Tag :</label>
-                <input type="text" class="form-control" id="tokenfield" name="tag" row="5" />
-            </div>
+	    <div class="tag mt-2">
+		<label for="tag">Tag :</label>
+		<input type="text" class="form-control" id="tokenfield" name="tag" style="width: 45%"/>
+	 </div>
             <div class="form-group mt-2">
                 <label for="contenue">Ecrivez votre histoire :</label>
-                <textarea class="form-control" name="content" id="content" rows="20" spellcheck="true" role="textbox" required></textarea>
+		<div id="content">
+		    <?= isset($_SESSION['content']) ? $_SESSION['content'] : '' ?>
+		</div>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
@@ -103,11 +124,19 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     <?php include '../includes/footer.php';?>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/font_awesome.js"></script>
-    <script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
-    <script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
-    <!-- <script type="text/javascript">
-    const editor = new Editor();
-    editor.render();
-    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.20.0/trumbowyg.min.js"></script>
+    <script>
+	$('#content').trumbowyg({
+	    autogrow: true,
+	});
+	// Retrait de la possibilité d'ajouter des images 
+	const btn = document.getElementsByClassName('trumbowyg-button-pane')[0].childNodes[5];
+	btn.parentNode.removeChild(btn);
+    </script>
+<?php 
+
+unset($_SESSION['desc'],$_SESSION['title'], $_SESSION['content'], $_SESSION['error']);
+
+?>
 </body>
 </html>

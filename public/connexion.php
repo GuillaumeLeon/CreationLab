@@ -55,8 +55,9 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
           <b>Attention ! Mot de passe ou adresse email incorrect </b>
           <!-- </div> -->
         </div>
-      <?php }
-      unset($_SESSION['login_error']);
+	<?php 
+	}
+	unset($_SESSION['login_error']);
       ?>
       <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
