@@ -4,11 +4,11 @@ require '../vendor/autoload.php';
 session_start();
 if ($_SESSION['connected'] == 0) {
     if (isset($_POST['email'], $_POST['password'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
     } else {
-	header("Location:public/connexion.php");
-	exit;
+        header("Location:public/connexion.php");
+        exit;
     }
 } else {
     header("Location:public/connexion.php");
@@ -35,5 +35,3 @@ if ($password == $pass[0]) {
     header("Location:../public/connexion.php");
     exit;
 }
-
-

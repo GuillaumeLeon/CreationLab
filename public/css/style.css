@@ -150,6 +150,7 @@ button:active {
   height: calc(100% - 168px);
   position: relative;
   text-align: justify;
+  word-break: break-all;
 }
 .interaction {
   background-color: #e8606b;

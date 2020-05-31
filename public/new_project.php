@@ -60,44 +60,43 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
 </nav>
 
 <?php include '../includes/menu.php';?>
-      <?php
-      if(isset($_SESSION['error'])) {
-        ?>
-        <div class="alert alert-danger alert-dismissible text-center" role="alert">
-          <div class="alert-icon">
+<?php
+if (isset($_SESSION['error'])) {
+    ?>
+    <div class="alert alert-danger alert-dismissible text-center" role="alert">
+        <div class="alert-icon">
             <i class="fas fa-exclamation-triangle"></i>
-          </div>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <i class="fas fa-times"></i>
-          </button>
-          <b>La Limite est de 280 charactères</b>
         </div>
-	<?php 
-	 } 
-	unset($_SESSION['error']);
-      ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <b>La Limite est de 280 charactères</b>
+    </div>
+    <?php
+}
+?>
 <div class="main">
     <div class="container" id="form_text">
         <form action="../app/add_post.php" method="post">
             <div class="form-group mt-2">
-                <label for="title">Titre :</label>
-		<input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" <?= isset($_SESSION['title']) ? 'value="'.$_SESSION['title'].'"': '' ?> required/>
+                <label for="title_post">Titre :</label>
+                <input type="text" class="form-control" id="title_post" name="title_post" placeholder="Entrez un titre" spellcheck="true" <?= isset($_SESSION['title']) ? 'value="'.$_SESSION['title'].'"': '' ?> required/>
             </div>
             <div class="form-group mt-2">
-                <label for="description">Description :</label>
-		<textarea  type="text" class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='140' required>
+                <label for="desc_post">Description :</label>
+                <textarea  type="text" class="form-control" id="desc_post" name="desc_post" placeholder="Entrez une description" spellcheck="true" maxlength='140' required>
  <?= isset($_SESSION['desc']) ? $_SESSION['desc'] : '' ?> 
 </textarea>
             </div>
-	    <div class="tag mt-2">
-		<label for="tag">Tag :</label>
-		<input type="text" class="form-control" id="tokenfield" name="tag" style="width: 45%"/>
-	 </div>
+            <div class="tag mt-2">
+                <label for="tokenfield">Tag :</label>
+                <input type="text" class="form-control" id="tokenfield" name="tag" style="width: 45%"/>
+            </div>
             <div class="form-group mt-2">
-                <label for="contenue">Ecrivez votre histoire :</label>
-		<div id="content">
-		    <?= isset($_SESSION['content']) ? $_SESSION['content'] : '' ?>
-		</div>
+                <label for="content">Ecrivez votre histoire :</label>
+                <textarea id="content" name="content" required>
+                    <?= isset($_SESSION['content']) ? $_SESSION['content'] : '' ?>
+                </textarea>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
@@ -108,7 +107,7 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
             autocomplete:{
                 source: [<?php
                     for ($i = 0; $i < count($result); $i++) {
-                        if(isset($result[$i+1])){
+                        if (isset($result[$i+1])) {
                             echo "'".$result[$i]."',";
                         } else {
                             echo "'".$result[$i]."'";
@@ -126,17 +125,16 @@ $result = $get_tag->fetchAll(PDO::FETCH_COLUMN);
     <script src="js/font_awesome.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.20.0/trumbowyg.min.js"></script>
     <script>
-	$('#content').trumbowyg({
-	    autogrow: true,
-	});
-	// Retrait de la possibilité d'ajouter des images 
-	const btn = document.getElementsByClassName('trumbowyg-button-pane')[0].childNodes[5];
-	btn.parentNode.removeChild(btn);
+        $('#content').trumbowyg({
+            autogrow: true,
+        });
+        // Retrait de la possibilité d'ajouter des images
+        const btn = document.getElementsByClassName('trumbowyg-button-pane')[0].childNodes[5];
+        btn.parentNode.removeChild(btn);
     </script>
-<?php 
-
-unset($_SESSION['desc'],$_SESSION['title'], $_SESSION['content'], $_SESSION['error']);
-
-?>
+    <?php
+    // Suppression des variables de session
+    unset($_SESSION['desc'],$_SESSION['title'], $_SESSION['content'], $_SESSION['error']);
+    ?>
 </body>
 </html>

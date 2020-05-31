@@ -3,14 +3,27 @@ require '../database/db.php';
 require '../vendor/autoload.php';
 session_start();
 
-if($_SESSION['connected'] != 1){
-    header('Location:index.php');
+if ($_SESSION['connected'] != 1) {
+    header('Location:../index.php');
     exit;
 }
-if(!isset($_POST['content'])){
-    header('Location:index.php');
+if (!isset($_POST['content'])) {
+    header('Location:../index.php');
     exit;
 } else {
+    $content = $_POST['content'];
+
+    $trim = strip_tags($content);
+    $trim=str_replace([" ","\n","\t","&ndash;","&rsquo;","&#39;","&quot;","&nbsp;"], '', $trim);
+
+    $totalCharacter = strlen(utf8_decode($trim));
+    if ($totalCharacter > 280) {
+        $_SESSION['error'] = 1;
+        $_SESSION['content'] = $_POST['content'];
+
+        header('Location:../public/'.$_SESSION['post'][0]['post_id']);
+        exit;
+    }
     $post_id = $_SESSION['post'][0]['post_id'];
     date_default_timezone_set(date_default_timezone_get());
     $date = date('Y/m/d h:i:s');

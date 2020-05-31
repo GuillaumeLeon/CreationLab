@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
+if (isset($_SESSION['connected']) && $_SESSION['connected'] == 1) {
     header('Location:index.php');
 }
 ?>

@@ -2,12 +2,12 @@
 
 ?>
 <style media="screen">
-body {
-  background: #dedede;
-}
-.page-wrap {
-  min-height: 100vh;
-}
+    body {
+        background: #dedede;
+    }
+    .page-wrap {
+        min-height: 100vh;
+    }
 </style>
 <!DOCTYPE html>
 <html lang="fr">

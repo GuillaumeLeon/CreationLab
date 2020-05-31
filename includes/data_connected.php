@@ -66,7 +66,7 @@ if(isset($downvote) && !empty($downvote)) {
 	<div class="interaction">
 	  <div class="row">
 	    <div class="col-1 icon-bar ml-3"><a href="../post/<?= $value['post_id']; ?>"> <i class="fas fa-comments" data-toggle="tooltip" data-placement="top" title="Commentez" style="font-size:30px"></i> </a></div>
-	    <div class="col-1 icon-bar"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
+	    <div class="col-1 icon-bar" style="margin-right: -12px;"><a href="#modal_<?= $value['post_id']?>" onclick="$('#modal_<?= $value['post_id']?>').modal('show');"><i class="fas fa-share" data-toggle="tooltip" data-placement="top" title="Partager" style="font-size:30px"></i></a></div>
 	    <div class="col-1 icon-bar"><button id="<?= $value['post_id']?>" class="fav_btn bg-transparent <?= $value['post_id'] ?>" onclick="favoris(this.id)"><i class="<?php if($is_favorite != null) {echo 'fas';} else { echo 'far';} ?> fa-bookmark" data-toggle="tooltip" data-placement="top" title="Enregistrer" style="font-size:30px"></i></button></div>
 	    <div class="col-1 icon-bar"><a href="<?= $value['post_id']; ?>"><i class="fas fa-sign-in-alt" data-toggle="tooltip" data-placement="top" title="Continuer l'histoire" style="font-size:30px"></i></a></div>
 	  </div>

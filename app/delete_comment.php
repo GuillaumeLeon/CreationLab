@@ -5,7 +5,7 @@ session_start();
 require '../includes/debugger.php';
 
 
-if(!isset($_POST['id']) || !isset($_SESSION['connected'])) {
+if (!isset($_POST['id']) || !isset($_SESSION['connected'])) {
     header('Location: ../index.php');
     exit;
 } else {

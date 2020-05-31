@@ -67,7 +67,6 @@ function favoris(id) {
     }
   };
   const fav = document.getElementsByClassName('fav_btn '+id);
-    console.log(fav[0].childNodes)
   if(fav[0].childNodes[0].className == 'far fa-bookmark') {
     fav[0].childNodes[0].className = 'fas fa-bookmark'
   } else if (fav[0].childNodes[0].className == 'fas fa-bookmark') {
